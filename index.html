@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    .rw-conversation-container .rw-header{
+        background-color: rgb(55, 146, 195);
+    }
+  </style>
+</head>
+<body>
+    <script>!(function () {
+        localStorage.removeItem('chat_session');
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+          // Replace 1.x.x with the version that you want
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                initPayload: '/greet',
+                customData: { language: "vi" },
+                socketUrl: "http://localhost:5005",
+                title: 'Savvy xin chào'
+                // add other props here
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      </script>
+</body>
+</html>
