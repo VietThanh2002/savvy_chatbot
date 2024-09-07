@@ -1,30 +1,16 @@
 version: "3.1"
 
 stories:
-
-- story: happy path
+- story: greet path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: ask_categories
+  - action: utter_ask_categories
+  - action: response_list_categories
+  - intent: goodbye
   - action: utter_goodbye
+  - intent: thanks
+  - action: utter_thanks
+  - intent: bot_challenge
+  - action: utter_iamabot

@@ -1,13 +1,29 @@
 version: "3.1"
 
 rules:
+- rule: Say greet anytime the user says greet
+  steps:
+  - intent: greet
+  - action: utter_greet
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: Say thanks anytime the user says thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Ask for categories
+  steps:
+  - intent: ask_categories
+  - action: utter_ask_categories
+  - action: response_list_categories

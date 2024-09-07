@@ -1,91 +1,68 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - Chào bạn
+      - Chào
+      - Xin chào
+      - Chào em
+      - Chào
+      - Tôi có vài câu hỏi
+      - Có ai ở đây không
+      - Chào shop
+      - alo
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - Hẹn gặp lại
+      - Tạm biệt
+      - Tạm biệt nhé
+      - Tạm biệt bạn
+      - Tạm biệt shop
+      
+  - intent: thanks
+    examples: |
+      - thật tuyệt vời
+      - cảm ơn bạn
+      - cảm ơn
+      - cảm ơn nhiều
+      - cảm ơn bạn đã tư vấn
+      - cảm ơn bạn đã giúp đỡ
+      - cảm ơn bạn đã hỗ trợ
+      - cảm ơn bạn đã giúp tôi
+      - cảm ơn bạn đã tư vấn cho tôi
+      - cảm ơn bạn đã giúp đỡ tôi
+      - cảm ơn bạn đã hỗ trợ tôi
+      - xin cảm ơn
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+  - intent: bot_challenge
+    examples: |
+      - Bạn là bot à
+      - Bạn là bot phải không
+      - Bạn là bot à
+      - Bạn là bot phải không
+      - Bạn là bot à
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+  - intent: ask_categories
+    examples: |
+      - Cửa hàng mình có những loại sản phẩm gì
+      - Cửa hàng mình bán những mặt hàng gì
+      - Cửa hàng mình chuyển về những loại sản phẩm gì
+      - Cửa hàng mình chuyên về những mặt hàng gì
+      - Cửa hàng mình bán những loại hàng gì
+      - Shop có những loại hàng gì
+      - Shop bán những mặt hàng gì
+      - Shop chuyên về những loại hàng gì
+      - Shop chuyên về những mặt hàng gì
+      - Shop có những loại hàng gì
+      - Shop bán những mặt hàng gì
+      - Cửa hàng mình kinh doanh những loại hàng gì
+      - Cửa hàng mình kinh doanh những mặt hàng gì
+      
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
