@@ -22,8 +22,40 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Ask for categories
+- rule: Say the opening time of the shop
+  steps:
+  - intent: opening_time
+  - action: utter_opening_time
+
+- rule: Say the address of the shop
+  steps:
+  - intent: ask_address
+  - action: utter_ask_address
+
+- rule: Say the contact information of the shop
+  steps:
+  - intent: contact_info
+  - action: utter_contact_info
+
+- rule: Give advice on oil change
+  steps:
+  - intent: oil_change_advice
+  - action: utter_oil_change_advice
+
+- rule: Recommend oil type
+  steps:
+  - intent: recommend_oil_type
+  - action: utter_recommend_oil_type
+
+- rule: Recommend oil type for a specific vehicle
+  steps:
+  - intent: recommend_oil
+  - action: utter_recommend_oil
+  - action: action_return_recommend_oil
+
+- rule: Say the categories of the shop
   steps:
   - intent: ask_categories
   - action: utter_ask_categories
-  - action: response_list_categories
+  - action: action_return_categories
+

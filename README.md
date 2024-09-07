@@ -4,7 +4,7 @@ Create new virtual environment
 ```bash
 python –m venv .venv
 ```
-Activate the virtual environment (using properly file for your OS, my case in windows and i'm using PowerShell)
+Activate the virtual environment (Using PowerShell)
 
 ```bash
 .venv\Scripts\Activate.ps1

@@ -48,6 +48,92 @@ nlu:
       - Bạn là bot phải không
       - Bạn là bot à
 
+  - intent: ask_address
+    examples: |
+      - Địa chỉ cửa hàng
+      - Địa chỉ shop
+      - Địa chỉ của shop
+      - Địa chỉ của cửa hàng
+      - Địa chỉ shop của bạn ở đâu ?
+      - Địa chỉ cửa hàng của bạn ở đâu ?
+      - Địa chỉ của shop ở đâu ?
+      - Địa chỉ của cửa hàng ở đâu ?
+
+  - intent: opening_time
+    examples: |
+      - Cửa hàng mở cửa vào lúc nào
+      - Cửa hàng mở cửa vào lúc mấy giờ
+      - Shop mở cửa vào lúc nào
+      - Shop mở cửa vào lúc mấy giờ
+      - Cửa hàng mở cửa vào lúc mấy giờ
+      - Shop mở cửa vào lúc nào
+      - Cửa hàng mở cửa vào lúc mấy giờ
+      - Shop mình bắt đầu hoạt động vào lúc mấy giờ
+
+  - intent: contact_info
+    examples: |
+      - Cho mình xin thông tin liên hệ với cửa hàng
+      - Mình cần thông tin liên hệ của cửa hàng
+      - Mình cần thông tin liên lạc của shop
+      - Mình cần thông tin liên hệ của shop
+      - Cho anh xin thông tin liên hệ của shop
+      - Cho chị xin thông tin liên lạc của shop
+      - Cho chú xin thông tin liên hệ với cửa hàng
+
+  - intent: oil_change_advice
+    examples: |
+      - Khi nào thì nên thay nhớt cho xe
+      - Khi nào thì nên thay nhớt cho xe máy
+      - Xe đi được bao lâu thì nên thay nhớt
+      - Xe đi được bao lâu thì nên thay nhớt cho xe máy
+      - Khi nào thì nên thay nhớt
+      - Khi nào thì nên thay nhớt cho xe máy
+      - Cho em hỏi đi bao nhiêu km thì nên thay nhớt
+      - Cho em hỏi đi bao nhiêu km thì nên thay nhớt cho xe máy
+      - Bao nhiêu km thì nên thay nhớt
+
+  - intent: recommend_oil_type
+    examples: |
+      - Tôi muốn thay nhớt thì nên chọn loại nhớt nào
+      - Tôi muốn thay nhớt thì nên chọn loại nhớt nào cho xe
+      - Tôi muốn thay nhớt thì nên chọn loại nhớt nào cho xe máy
+      - Tôi muốn thay nhớt thì nên chọn loại nhớt nào cho xe của mình
+      - Tôi muốn thay nhớt thì nên chọn loại nhớt nào cho xe máy của mình
+      - Tôi muốn thay nhớt thì nên chọn loại nhớt nào cho xe của tôi
+      - Nên chọn loại nhớt nào cho xe
+      - Nên chọn loại nhớt nào cho xe máy
+      - Nên chọn loại nhớt nào cho xe
+
+  - intent: recommend_oil
+    examples: |
+      - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi xe [xe số phổ thông](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi xe [xe số phổ thông](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi xe [xe số phổ thông](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Xe tôi là [xe tay ga](vehicle_type)
+      - Xe tôi là [xe số phổ thông](vehicle_type)
+      - Xe tôi là [xe số côn tay](vehicle_type)
+      - Xe tôi là [xe côn tay](vehicle_type)
+      - Xe tôi là [xe tay ga](vehicle_type)
+      - Xe tôi là [xe số phổ thông] 
+      - Xe chú là [xe tay ga](vehicle_type)
+      - Xe chú là [xe số phổ thông](vehicle_type)
+      - Xe chú là [xe côn tay](vehicle_type)
+      - Xe anh là [xe côn tay](vehicle_type)  
+      - Xe anh là [xe tay ga](vehicle_type)
+      - Xe anh là [xe số phổ thông](vehicle_type)
+      - Xe em là [xe tay ga](vehicle_type)
+      - Xe em là [xe số phổ thông](vehicle_type)
+      - Xe em là [xe côn tay]
+      - Xe em là [xe côn tay](vehicle_type)
+
   - intent: ask_categories
     examples: |
       - Cửa hàng mình có những loại sản phẩm gì
