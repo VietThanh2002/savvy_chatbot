@@ -15,11 +15,17 @@ intents:
       use_entities: []
   - contact_info:
       use_entities: []
-
+    # about oil
   - oil_change_advice:
       use_entities: []
   - recommend_oil_type:
       use_entities: []
+
+    # about size
+  - ask_size_recommendation:
+      use_entities: []
+
+    # about categories
   - ask_categories:
       use_entities: []
 
@@ -43,7 +49,6 @@ slots:
           - recommend_oil
 
 
-
 responses:
   utter_greet:
   - text: "Savvy xin chào !. Quý khách cần tư vấn thông tin gì ạ ?"
@@ -57,7 +62,6 @@ responses:
   utter_iamabot:
   - text: "Em là bot ạ !. Em có thể giúp gì cho anh/chị ạ ?"
   
-
   utter_opening_time:
   - text: "Dạ cửa hàng mở cửa từ 8h sáng đến 9h tối ạ !"
 
@@ -65,16 +69,20 @@ responses:
   - text: "Dạ cửa hàng của chúng tôi ở địa chỉ: 643A/2, ấp Tân Mỹ, xã Tân Phước, huyện Lai Vung, tỉnh Đồng Tháp ạ !"
   
   utter_contact_info:
-  - text: "Dạ quý khách có thể liên hệ với chúng tôi qua số điện thoại: 0767 957 642 hoặc email: saferidemotoshop@gmail.com ạ !"
+  - text: "Dạ quý khách có thể liên hệ với cửa hàng bên em qua số điện thoại: 0767 957 642 hoặc email: saferidemotoshop@gmail.com ạ !"
 
   utter_oil_change_advice:
   - text: "Quý khách nên thay nhớt xe định kỳ sau mỗi 1.500 - 2.000 km để đảm bảo động cơ hoạt động tốt nhất."
 
   utter_recommend_oil_type:
-  - text: "Dạ quý khách cung cấp thông tin về loại xe để chúng tôi tư vấn loại nhớt phù hợp nhất ạ !"
+  - text: "Dạ quý khách cung cấp thông tin về loại xe để chúng tôi tư vấn loại nhớt phù hợp nhất ạ !. Ví dụ như xe tay ga, xe số hay xe côn tay ạ !"
 
   utter_recommend_oil:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm phụ gia phù hợp cho anh/chị ạ !"
+
+  utter_ask_size_recommendation:
+  - text: "Em gửi bảng size cho anh/chị ạ !"
+    image: "https://rg.com.vn/23BPo"
 
   utter_ask_categories:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"

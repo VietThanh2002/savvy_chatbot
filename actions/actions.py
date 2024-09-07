@@ -51,7 +51,6 @@ class action_return_categories(Action):
         return []
     
 # response recommend oil  
-
 class action_return_recommend_oil(Action):
     
     def name(self) -> Text:
@@ -67,10 +66,18 @@ class action_return_recommend_oil(Action):
             product = ProductInfo().get_products_by_category_and_subcategory("Phụ gia xe tay ga")
         elif type == "xe số phổ thông":
             product = ProductInfo().get_products_by_category_and_subcategory("Phụ gia xe số")
+        elif type == "xe côn tay":
+            product = ProductInfo().get_products_by_category_and_subcategory("Phụ gia xe côn tay")
         else:
-            product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe máy")
-            
-        list_items = "Danh sách sản phẩm phù hợp với loại xe của bạn:\n"
+            dispatcher.utter_message(text="Xin lỗi, em không tìm thấy sản phẩm phù hợp với loại xe của anh/chị !")
+            return []
+        
+         # Kiểm tra nếu không có sản phẩm phù hợp
+        if not product:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
+            return []
+        
+        list_items = "Danh sách sản phẩm phù hợp với loại xe:\n"
         
         for item in product:
             list_items += f"- {str(item[0])} \n"
@@ -78,6 +85,7 @@ class action_return_recommend_oil(Action):
         dispatcher.utter_message(text=list_items)
         
         return []
+
             
         
         

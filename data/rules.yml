@@ -53,6 +53,11 @@ rules:
   - action: utter_recommend_oil
   - action: action_return_recommend_oil
 
+- rule: Ask for size recommendation
+  steps:
+  - intent: ask_size_recommendation
+  - action: utter_ask_size_recommendation
+
 - rule: Say the categories of the shop
   steps:
   - intent: ask_categories

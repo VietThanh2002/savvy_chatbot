@@ -18,7 +18,8 @@ stories:
   - intent: recommend_oil
   - action: utter_recommend_oil
   - action: action_return_recommend_oil
-  
+  - intent: ask_size_recommendation
+  - action: utter_ask_size_recommendation
   - intent: ask_categories
   - action: utter_ask_categories
   - action: action_return_categories

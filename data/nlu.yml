@@ -103,6 +103,19 @@ nlu:
       - Nên chọn loại nhớt nào cho xe
       - Nên chọn loại nhớt nào cho xe máy
       - Nên chọn loại nhớt nào cho xe
+      - Anh nên chọn loại nhớt nào cho xe
+      - Anh nên chọn loại nhớt nào cho xe máy
+      - Anh nên chọn loại nhớt nào cho xe
+      - Em nên chọn loại nhớt nào cho xe
+      - Em nên chọn loại nhớt nào cho xe máy
+      - Em nên chọn loại nhớt nào cho xe
+      - Anh muốn thay nhớt cho xe thì nên chọn loại nhớt nào
+      - Anh muốn thay nhớt cho xe thì nên chọn loại nhớt nào cho xe
+      - Anh muốn thay nhớt cho xe thì nên chọn loại nhớt nào cho xe máy
+      - Em muốn thay nhớt cho xe thì nên chọn loại nhớt nào
+      - Em muốn thay nhớt cho xe thì nên chọn loại nhớt nào cho xe
+      - Chi muốn thay nhớt cho xe thì nên chọn loại nhớt nào
+      - Chi muốn thay nhớt cho xe thì nên chọn loại nhớt nào cho xe
 
   - intent: recommend_oil
     examples: |
@@ -133,6 +146,19 @@ nlu:
       - Xe em là [xe số phổ thông](vehicle_type)
       - Xe em là [xe côn tay]
       - Xe em là [xe côn tay](vehicle_type)
+
+
+  - intent: ask_size_recommendation
+    examples: |
+      - Tôi cần tư vấn size áo bảo hộ phượt
+      - Tôi cần tư vấn size quần bảo hộ phượt
+      - Giúp tôi chọn size áo bảo hộ phượt
+      - Giúp tôi chọn size quần bảo hộ phượt
+      - Làm thế nào để chọn size áo bảo hộ phượt phù hợp ?
+      - Làm thế nào để chọn size quần bảo hộ phượt phù hợp ?
+      - Size áo bảo hộ phượt như thế nào là vừa ?
+      - Size quần bảo hộ phượt như thế nào là vừa ?
+
 
   - intent: ask_categories
     examples: |
