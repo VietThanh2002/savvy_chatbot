@@ -63,11 +63,9 @@ class action_return_recommend_oil(Action):
         type = tracker.get_slot("vehicle_type")
         
         if type == "xe tay ga":
-            product = ProductInfo().get_products_by_category_and_subcategory("Phụ gia xe tay ga")
-        elif type == "xe số phổ thông":
-            product = ProductInfo().get_products_by_category_and_subcategory("Phụ gia xe số")
-        elif type == "xe côn tay":
-            product = ProductInfo().get_products_by_category_and_subcategory("Phụ gia xe côn tay")
+            product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
+        elif (type == "xe số" or type == "xe số côn tay"):
+            product = ProductInfo().get_products_by_category_and_subcategory("Nhơt xe số")
         else:
             dispatcher.utter_message(text="Xin lỗi, em không tìm thấy sản phẩm phù hợp với loại xe của anh/chị !")
             return []
@@ -84,6 +82,23 @@ class action_return_recommend_oil(Action):
             
         dispatcher.utter_message(text=list_items)
         
+        return []
+    
+# show table chose size
+class action_show_size_table_image(Action):
+    def name(self):
+        return "action_show_size_table_image"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        product_type = tracker.get_slot("product_type")
+        # Gửi hình ảnh
+        if product_type == "áo":
+            dispatcher.utter_message(text="Bảng size:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
+        else:
+            dispatcher.utter_message(text= "Bảng size:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
         return []
 
             

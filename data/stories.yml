@@ -20,6 +20,7 @@ stories:
   - action: action_return_recommend_oil
   - intent: ask_size_recommendation
   - action: utter_ask_size_recommendation
+  - action: action_show_size_table_image
   - intent: ask_categories
   - action: utter_ask_categories
   - action: action_return_categories

@@ -5,13 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Savvy chatbot</title>
-  <style>
-    .rw-conversation-container .rw-header{
-        background-color: rgb(55, 146, 195);
-    }
-  </style>
 </head>
 <body>
+    <style>
+      .rw-conversation-container .rw-header {
+        background-color: #20B2AA;
+      }
+      .rw-conversation-container .rw-messages-container .rw-message .rw-client {
+        background-color: #20B2AA;
+      }
+      .rw-launcher {
+        background-color: #6a8d8b;
+      }
+    </style>
     <script>!(function () {
         localStorage.removeItem('chat_session');
         let e = document.createElement("script"),
@@ -26,7 +32,12 @@
                 initPayload: '/greet',
                 customData: { language: "vi" },
                 socketUrl: "http://localhost:5005",
-                title: 'Savvy xin chào'
+                title: 'Savvy xin chào !',
+                profileAvatar: 'https://nguyenvu-store-medias.tn-cdn.net/2021/08/Icon-Robot.png',
+                openLauncherImage: 'https://nguyenvu-store-medias.tn-cdn.net/2021/08/Icon-Robot.png',
+                showFullScreenButton: true,
+                showMessageDate: true,
+                inputTextFieldHint: "Nhập tin nhắn của bạn...",
                 // add other props here
               },
               null

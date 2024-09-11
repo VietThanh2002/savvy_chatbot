@@ -23,7 +23,8 @@ intents:
 
     # about size
   - ask_size_recommendation:
-      use_entities: []
+      use_entities:
+        - product_type
 
     # about categories
   - ask_categories:
@@ -36,6 +37,7 @@ intents:
 
 entities:
   - vehicle_type
+  - product_type
   
 
 slots:
@@ -47,6 +49,16 @@ slots:
         entity: vehicle_type
         intent:
           - recommend_oil
+
+  product_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: product_type
+        intent:
+          - ask_size_recommendation
+  
 
 
 responses:
@@ -81,8 +93,7 @@ responses:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm phụ gia phù hợp cho anh/chị ạ !"
 
   utter_ask_size_recommendation:
-  - text: "Em gửi bảng size cho anh/chị ạ !"
-    image: "https://rg.com.vn/23BPo"
+  - text: "Em gửi bảng size để anh/chị thao khảo ạ !"
 
   utter_ask_categories:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
@@ -91,6 +102,7 @@ responses:
 actions:
   - action_return_categories
   - action_return_recommend_oil
+  - action_show_size_table_image
 
 session_config:
   session_expiration_time: 60

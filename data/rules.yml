@@ -57,6 +57,7 @@ rules:
   steps:
   - intent: ask_size_recommendation
   - action: utter_ask_size_recommendation
+  - action: action_show_size_table_image
 
 - rule: Say the categories of the shop
   steps:

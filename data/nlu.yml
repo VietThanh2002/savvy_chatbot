@@ -150,14 +150,15 @@ nlu:
 
   - intent: ask_size_recommendation
     examples: |
-      - Tôi cần tư vấn size áo bảo hộ phượt
-      - Tôi cần tư vấn size quần bảo hộ phượt
-      - Giúp tôi chọn size áo bảo hộ phượt
-      - Giúp tôi chọn size quần bảo hộ phượt
-      - Làm thế nào để chọn size áo bảo hộ phượt phù hợp ?
-      - Làm thế nào để chọn size quần bảo hộ phượt phù hợp ?
-      - Size áo bảo hộ phượt như thế nào là vừa ?
-      - Size quần bảo hộ phượt như thế nào là vừa ?
+      - Tôi cần tư vấn size [áo](product_type) bảo hộ phượt
+      - Giúp tôi chọn size [áo](product_type) bảo hộ phượt
+      - Làm thế nào để chọn size [áo](product_type) bảo hộ phượt phù hợp ?
+      - Size [áo](product_type) bảo hộ phượt như thế nào là vừa ?
+      - Size [áo](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
+      - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
+      - Cách để chọn [nón](product_type) bảo hộ phượt phù hợp với tôi ?
+      - Size [nón](product_type) bảo hộ phượt như thế nào là vừa ?
+      - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
 
 
   - intent: ask_categories
