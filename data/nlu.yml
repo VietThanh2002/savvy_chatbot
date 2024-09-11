@@ -121,31 +121,35 @@ nlu:
     examples: |
       - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
-      - Tôi đi xe [xe số phổ thông](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
       - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
       - Anh đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Anh đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
-      - Anh đi xe [xe số phổ thông](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
       - Em đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
-      - Em đi xe [xe số phổ thông](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
       - Em đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Xe tôi là [xe tay ga](vehicle_type)
-      - Xe tôi là [xe số phổ thông](vehicle_type)
+      - Xe tôi là [xe số](vehicle_type)
       - Xe tôi là [xe số côn tay](vehicle_type)
       - Xe tôi là [xe côn tay](vehicle_type)
       - Xe tôi là [xe tay ga](vehicle_type)
-      - Xe tôi là [xe số phổ thông] 
+      - Xe tôi là [xe số] 
       - Xe chú là [xe tay ga](vehicle_type)
-      - Xe chú là [xe số phổ thông](vehicle_type)
+      - Xe chú là [xe số](vehicle_type)
       - Xe chú là [xe côn tay](vehicle_type)
       - Xe anh là [xe côn tay](vehicle_type)  
       - Xe anh là [xe tay ga](vehicle_type)
-      - Xe anh là [xe số phổ thông](vehicle_type)
+      - Xe anh là [xe số](vehicle_type)
       - Xe em là [xe tay ga](vehicle_type)
-      - Xe em là [xe số phổ thông](vehicle_type)
+      - Xe em là [xe số](vehicle_type)
       - Xe em là [xe côn tay]
       - Xe em là [xe côn tay](vehicle_type)
+      - Tôi nên chọn loại dầu nhớt nào cho [xe tay ga](vehicle_type)
+      - Tôi nên chọn loại dầu nhớt nào cho [xe số](vehicle_type)
+      - Tư vấn giúp em nhớt [xe tay ga](vehicle_type)
+      - Tư vấn giúp em nhớt [xe số](vehicle_type)
 
 
   - intent: ask_size_recommendation
@@ -176,6 +180,64 @@ nlu:
       - Shop bán những mặt hàng gì
       - Cửa hàng mình kinh doanh những loại hàng gì
       - Cửa hàng mình kinh doanh những mặt hàng gì
+  
+  - intent: air_filter_change_advice
+    examples: |
+      - Khi nào thì nên thay lọc gió cho xe
+      - Khi nào thì nên thay lọc gió cho xe máy
+      - Xe đi được bao lâu thì nên thay lọc gió
+      - Xe đi được bao lâu thì nên thay lọc gió cho xe máy
+      - Khi nào thì nên thay lọc gió
+      - Khi nào thì nên thay lọc gió cho xe máy
+      - Cho em hỏi đi bao nhiêu km thì nên thay lọc gió
+      - Cho em hỏi đi bao nhiêu km thì nên thay lọc gió cho xe máy
+      - Bao nhiêu km thì nên thay lọc gió
+  
+  - intent: recommend_air_filter
+    examples: |
+      - Lọc gió phù hợp với xe [vision](model_type)
+      - Lọc gió phù hợp với xe Yamaha [Grande](model_type)
+      - Lọc gió phù hợp với xe [Exciter](model_type)
+      - Lọc gió phù hợp với xe [Winner](model_type)
+      - Lọc gió phù hợp với xe [SH](model_type)
+      - Lọc gió phù hợp với xe [AB](model_type)
+      - Lọc gió phù hợp với xe [Air Blade](model_type)
+      - Lọc gió phù hợp với xe [ab](model_type)
+      - Lọc gió phù hợp với xe [air blade](model_type)
+      - Lọc gió phù hợp với xe [winner](model_type)
+      - Lọc gió phù hợp với xe [exciter](model_type)
+      - Lọc gió phù hợp với xe [grande](model_type)
+      - Có lọc gió phù hợp với xe [vision](model_type) không
+      - Có lọc gió phù hợp với xe Yamaha [Grande](model_type) không
+      - Có lọc gió phù hợp với xe [Exciter](model_type) không
+      - Có lọc gió phù hợp với xe [Winner](model_type) không
+      - Có lọc gió phù hợp với xe [SH](model_type) không
+      - Có lọc gió phù hợp với xe [AB](model_type) không
+      - Có lọc gió phù hợp với xe [Air Blade](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe [vision](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe Yamaha [Grande](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe [Exciter](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe [Winner](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe [SH](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe [AB](model_type) không
+      - Anh cần thay lọc gió phù hợp với xe [Air Blade](model_type) không
+      
+
+
+  # - synonyms: model_type
+  #   examples: |
+  #     - Vision
+  #     - grande
+  #     - exciter
+  #     - winner
+  #     - sh
+  #     - Air Blade
+    
+
+
+  
+
+    
       
 
 

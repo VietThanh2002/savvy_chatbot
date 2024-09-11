@@ -15,6 +15,15 @@ intents:
       use_entities: []
   - contact_info:
       use_entities: []
+
+  - air_filter_change_advice:
+      use_entities: []
+      
+  - recommend_air_filter:
+      use_entities:
+        - model_type
+  
+
     # about oil
   - oil_change_advice:
       use_entities: []
@@ -38,6 +47,7 @@ intents:
 entities:
   - vehicle_type
   - product_type
+  - model_type
   
 
 slots:
@@ -58,6 +68,15 @@ slots:
         entity: product_type
         intent:
           - ask_size_recommendation
+
+  model_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: model_type
+        intent:
+          - recommend_air_filter
   
 
 
@@ -93,7 +112,13 @@ responses:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm phụ gia phù hợp cho anh/chị ạ !"
 
   utter_ask_size_recommendation:
-  - text: "Em gửi bảng size để anh/chị thao khảo ạ !"
+  - text: "Em gửi bảng size để anh/chị tham khảo ạ !."
+
+  utter_air_filter_change_advice:
+  - text: "Trung bình xe đi từ 10.000 đến 12.000km thì chúng ta nên thay lọc gió xe máy. Tuy nhiên trong trường hợp xe máy bị ngập nước hoặc đi nhiều trong môi trường xung quanh nhiều bụi bẩn thì bạn nên kiểm tra lọc gió xe máy định kì 2 tháng 1 lần, xem có bẩn không để thay thế nếu cần thiết nhé!"
+
+  utter_recommend_air_filter:
+  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm lọc gió gia phù hợp cho anh/chị ạ !"
 
   utter_ask_categories:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
@@ -103,6 +128,7 @@ actions:
   - action_return_categories
   - action_return_recommend_oil
   - action_show_size_table_image
+  - action_return_recommend_air_filter
 
 session_config:
   session_expiration_time: 60

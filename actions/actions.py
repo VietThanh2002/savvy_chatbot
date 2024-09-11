@@ -62,9 +62,9 @@ class action_return_recommend_oil(Action):
         
         type = tracker.get_slot("vehicle_type")
         
-        if type == "xe tay ga":
+        if (type == "xe tay ga" or type == "Xe tay ga"):
             product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
-        elif (type == "xe số" or type == "xe số côn tay"):
+        elif (type == "xe số" or type == "xe số côn tay" or type == "Xe số" or type == "Xe số côn tay"):
             product = ProductInfo().get_products_by_category_and_subcategory("Nhơt xe số")
         else:
             dispatcher.utter_message(text="Xin lỗi, em không tìm thấy sản phẩm phù hợp với loại xe của anh/chị !")
@@ -83,7 +83,38 @@ class action_return_recommend_oil(Action):
         dispatcher.utter_message(text=list_items)
         
         return []
+
+# response recommend air filter
+
+class action_return_recommend_air_filter(Action):
+    def name(self) -> Text:
+        return "action_return_recommend_air_filter"
     
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        model_type = tracker.get_slot("model_type")
+        
+        print(model_type)
+        
+        product = ProductInfo().get_products_by_name("model_type")
+        
+        print(product)
+        
+        if not product:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
+            return []
+        else:
+            
+            product = ProductInfo().get_products_by_name("model_type")
+            
+            dispatcher.utter_message(text="Danh sách sản phẩm phù hợp với loại xe:\n")
+            
+            
+            return []
+
+        
 # show table chose size
 class action_show_size_table_image(Action):
     def name(self):
@@ -97,6 +128,7 @@ class action_show_size_table_image(Action):
         # Gửi hình ảnh
         if product_type == "áo":
             dispatcher.utter_message(text="Bảng size:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
+            dispatcher.utter_message(text="Anh/chị có thể chọn lớn hơn 1 size để mặc thoải mái hơn ạ")
         else:
             dispatcher.utter_message(text= "Bảng size:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
         return []

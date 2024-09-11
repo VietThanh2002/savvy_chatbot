@@ -59,6 +59,17 @@ rules:
   - action: utter_ask_size_recommendation
   - action: action_show_size_table_image
 
+- rule: Give advice on air filter change
+  steps:
+  - intent: air_filter_change_advice
+  - action: utter_air_filter_change_advice
+
+- rule: Recommend air filter
+  steps:
+  - intent: recommend_air_filter
+  - action: utter_recommend_air_filter
+  - action: action_return_recommend_air_filter
+
 - rule: Say the categories of the shop
   steps:
   - intent: ask_categories

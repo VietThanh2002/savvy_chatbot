@@ -15,6 +15,7 @@ pipeline:
     epochs: 100
   - name: FallbackClassifier
     threshold: 0.7
+  # - name: EntitySynonymMapper
 
 policies:
   - name: MemoizationPolicy

@@ -1,4 +1,4 @@
-from .db_connect import dbConnect
+from db_connect import dbConnect
 
 class ProductInfo:
     
@@ -20,6 +20,11 @@ class ProductInfo:
         category_pattern = f"%{category_name}%"
         return self.db.execute_query(query, (category_pattern, category_pattern))
 
+    def get_products_by_name(self, name):
+        name = f"%{name}%"
+        query = "select name, price from products where name like %s"
+        return self.db.execute_query(query, (name,))
+        
 if __name__ == "__main__":
     product_info = ProductInfo()
-    # product_info.get_products_by_category_and_subcategory("Phụ gia xe tay ga")
+    product_info.get_products_by_name("AB")
