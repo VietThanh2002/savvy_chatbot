@@ -62,15 +62,14 @@ class action_return_recommend_oil(Action):
         
         type = tracker.get_slot("vehicle_type")
         
-        if (type == "xe tay ga" or type == "Xe tay ga"):
+        if (type == "xe tay ga"):
             product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
-        elif (type == "xe số" or type == "xe số côn tay" or type == "Xe số" or type == "Xe số côn tay"):
-            product = ProductInfo().get_products_by_category_and_subcategory("Nhơt xe số")
+        elif (type == "xe số" or type == "xe côn tay"):
+            product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")
+            print(product)
         else:
-            dispatcher.utter_message(text="Xin lỗi, em không tìm thấy sản phẩm phù hợp với loại xe của anh/chị !")
-            return []
-        
-         # Kiểm tra nếu không có sản phẩm phù hợp
+            product = None
+      
         if not product:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
             return []
@@ -95,23 +94,33 @@ class action_return_recommend_air_filter(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         model_type = tracker.get_slot("model_type")
+        filter_type = tracker.get_slot("filter_type")
         
-        print(model_type)
         
-        product = ProductInfo().get_products_by_name("model_type")
+        products = ProductInfo().get_products_by_name_and_category(model_type, filter_type)
         
-        print(product)
-        
-        if not product:
-            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
-            return []
+        if not products:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
         else:
-            
-            product = ProductInfo().get_products_by_name("model_type")
-            
-            dispatcher.utter_message(text="Danh sách sản phẩm phù hợp với loại xe:\n")
-            
-            
+            # list_items = f"Lọc gió phù hợp: \n"  
+            # for item in products:
+            #     list_items += f"- {str(item[0])} \n"
+            # dispatcher.utter_message(text=list_items)
+            cards = ""
+            for product in products:
+                cards += f"""
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{product[0]}</h5>
+                            <p class="card-text">Giá: {product[1]} VND</p>
+                        </div>
+                    </div>
+                    """
+            product_cards = {
+                    "payload": "custom",
+                    "data": cards
+                    }
+            dispatcher.utter_message(json_message=product_cards)
             return []
 
         

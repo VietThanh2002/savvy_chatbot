@@ -22,6 +22,7 @@ intents:
   - recommend_air_filter:
       use_entities:
         - model_type
+        - filter_type
   
 
     # about oil
@@ -48,6 +49,7 @@ entities:
   - vehicle_type
   - product_type
   - model_type
+  - filter
   
 
 slots:
@@ -78,6 +80,15 @@ slots:
         intent:
           - recommend_air_filter
   
+  filter_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: filter_type
+        intent:
+          - recommend_air_filter
+
 
 
 responses:
