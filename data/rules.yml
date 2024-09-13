@@ -70,6 +70,17 @@ rules:
   - action: utter_recommend_air_filter
   - action: action_return_recommend_air_filter
 
+- rule: Give advice on bugi change
+  steps:
+  - intent: bugi_change_advice
+  - action: utter_bugi_change_advice
+
+- rule: Recommend bugi
+  steps:
+  - intent: recommend_bugi
+  - action: utter_recommend_bugi
+  - action: action_return_recommend_bugi
+
 - rule: Say the categories of the shop
   steps:
   - intent: ask_categories

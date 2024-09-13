@@ -152,7 +152,6 @@ nlu:
       - Tư vấn giúp em nhớt [xe tay ga](vehicle_type)
       - Tư vấn giúp em nhớt [xe số](vehicle_type)
 
-
   - intent: ask_size_recommendation
     examples: |
       - Tôi cần tư vấn size [áo](product_type) bảo hộ phượt
@@ -164,7 +163,6 @@ nlu:
       - Cách để chọn [nón](product_type) bảo hộ phượt phù hợp với tôi ?
       - Size [nón](product_type) bảo hộ phượt như thế nào là vừa ?
       - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
-
 
   - intent: ask_categories
     examples: |
@@ -196,28 +194,74 @@ nlu:
   
   - intent: recommend_air_filter
     examples: |
-      - Xe [Vision](model_type) phù hợp với [lọc gió](filter_type) nào
-      - Xe Yamaha [Grande](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [Exciter](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [Winner](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [SH](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [AB](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [Air Blade](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [ab](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [air blade](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [winner](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [exciter](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [grande](model_type) phù hợp với [lọc gió](filter_type)
-      - Xe [vision](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [winner](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [exciter](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [grande](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [vision](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [air blade](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [ab](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [sh](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [winner](model_type) thì nên thay [lọc gió](filter_type) nào
-      - Xe [exciter](model_type) thì nên thay [lọc gió](filter_type) nào
+      - [Lọc gió](filter_type) nào phù hợp với xe [Vision](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe Yamaha [Grande](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [Exciter](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [Winner](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [SH](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [AB](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [Air Blade](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [ab](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [air blade](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [winner](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [exciter](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [grande](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [winner](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [grande](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [air blade](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [ab](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [sh](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [winner](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [exciter](model_type)
+      - Nên thay [lọc gió](filter_type) nào cho xe [vision](model_type)
+      - [Lọc gió](filter_type) nào phù hợp với xe [winner](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [winner](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [grande](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [air blade](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [ab](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [sh](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [exciter](model_type)
+      - Gợi ý [lọc gió](filter_type) phù hợp với [vision](model_type)
+      - Cho hỏi [lọc gió](filter_type) nào phù hợp với xe [winner](model_type)
+      - Cho hỏi [lọc gió](filter_type) nào phù hợp với xe [grande](model_type)
+
+  - intent: bugi_change_advice
+    examples: |
+      - Khi nào thì nên thay bugi cho xe
+      - Khi nào thì nên thay bugi cho xe máy
+      - Xe đi được bao lâu thì nên thay bugi
+      - Xe đi được bao lâu thì nên thay bugi cho xe máy
+      - Khi nào thì nên thay bugi
+      - Khi nào thì nên thay bugi cho xe máy
+      - Cho em hỏi đi bao nhiêu km thì nên thay bugi
+      - Cho em hỏi đi bao nhiêu km thì nên thay bugi cho xe máy
+      - Bao nhiêu km thì nên thay bugi
+  
+  - intent: recommend_bugi
+    examples: |
+      - [Bugi](bugi_type) nào phù hợp với xe [Vision](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe Yamaha [Grande](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [Exciter](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [Winner](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [SH](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [AB](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [Air Blade](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [ab](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [air blade](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [winner](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [exciter](model_type)
+      - [Bugi](bugi_type) nào phù hợp với xe [grande](model_type)
+      - Nên thay [bugi](bugi_type) nào cho xe [winner](model_type)
+      - Nên thay [bugi](bugi_type) nào cho xe [grande](model_type)
+      - Nên thay [bugi](bugi_type) nào cho xe [air blade](model_type)
+      - Nên thay [bugi](bugi_type) nào cho xe [ab](model_type)
+      - Nên thay [bugi](bugi_type) nào cho xe [sh](model_type)
+      - Nên thay [bugi](bugi_type) nào cho xe [winner](model_type)
+
+
+
+  
+  
 
       
 

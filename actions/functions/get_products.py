@@ -36,23 +36,26 @@ class ProductInfo:
         category_pattern = f"%{category_name}%"
         return self.db.execute_query(query, (category_pattern, category_pattern))
     
-    def get_products_by_name_and_category(self, product_name, category_name):
+    def get_products_by_category_and_name(self, category_name, product_name):
         query = """
                 SELECT p.name, p.price, c.name as category, COALESCE(sc.name, 'N/A') as subcategory
                 FROM products p
                 JOIN categories c ON p.category_id = c.id
                 LEFT JOIN sub_categories sc ON p.sub_category_id = sc.id
-                WHERE (p.name LIKE %s OR %s IS NULL)
-                AND (c.name LIKE %s OR sc.name LIKE %s OR %s IS NULL)
+                WHERE (c.name LIKE %s OR sc.name LIKE %s OR %s IS NULL)
+                AND (p.name LIKE %s OR %s IS NULL)
                 """
-        product_pattern = f"%{product_name}%" if product_name else None
+        # Tạo pattern để khớp với tên danh mục và tên sản phẩm
         category_pattern = f"%{category_name}%" if category_name else None
+        product_pattern = f"%{product_name}%" if product_name else None
         
-        return self.db.execute_query(query, (product_pattern, product_name, category_pattern, category_pattern, category_name))
+        # Thực hiện truy vấn với thứ tự danh mục trước, sản phẩm sau
+        return self.db.execute_query(query, (category_pattern, category_pattern, category_name, product_pattern, product_name))
+
     
         
 if __name__ == "__main__":
     product_info = ProductInfo()
     # product_info.get_products_by_name("AB")
-    # product_info.get_products_by_name_and_category("AB", "Lọc gió")
-    product_info.get_products_by_category_and_subcategory("Nhớt xe số")
+    product_info.get_products_by_category_and_name("bugi", "future")
+    # product_info.get_products_by_category_and_subcategory("Nhớt xe số")

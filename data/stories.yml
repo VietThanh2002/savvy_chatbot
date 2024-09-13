@@ -26,6 +26,11 @@ stories:
   - intent: recommend_air_filter
   - action: utter_recommend_air_filter
   - action: action_return_recommend_air_filter
+  - intent: bugi_change_advice
+  - action: utter_bugi_change_advice
+  - intent: recommend_bugi
+  - action: utter_recommend_bugi
+  - action: action_return_recommend_bugi
   - intent: ask_categories
   - action: utter_ask_categories
   - action: action_return_categories

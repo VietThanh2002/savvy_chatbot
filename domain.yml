@@ -16,13 +16,23 @@ intents:
   - contact_info:
       use_entities: []
 
+    # about air filter
   - air_filter_change_advice:
       use_entities: []
-      
+  
   - recommend_air_filter:
       use_entities:
         - model_type
         - filter_type
+  
+    # about bugi advice
+  - bugi_change_advice:
+      use_entities: []
+  - recommend_bugi:
+      use_entities:
+        - model_type
+        - bugi_type
+  
   
 
     # about oil
@@ -30,6 +40,9 @@ intents:
       use_entities: []
   - recommend_oil_type:
       use_entities: []
+  - recommend_oil:
+      use_entities:
+        - vehicle_type
 
     # about size
   - ask_size_recommendation:
@@ -40,16 +53,15 @@ intents:
   - ask_categories:
       use_entities: []
 
-  - recommend_oil:
-      use_entities:
-        - vehicle_type
+
 
 
 entities:
   - vehicle_type
   - product_type
   - model_type
-  - filter
+  - filter_type
+  - bugi_type
   
 
 slots:
@@ -79,6 +91,7 @@ slots:
         entity: model_type
         intent:
           - recommend_air_filter
+          - recommend_bugi
   
   filter_type:
     type: text
@@ -88,6 +101,15 @@ slots:
         entity: filter_type
         intent:
           - recommend_air_filter
+  
+  bugi_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: bugi_type
+        intent:
+          - recommend_bugi
 
 
 
@@ -131,6 +153,12 @@ responses:
   utter_recommend_air_filter:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm lọc gió gia phù hợp cho anh/chị ạ !"
 
+  utter_bugi_change_advice:
+  - text: "Theo khuyến cáo chung, anh/chị nên thay bugi xe máy sau mỗi 13.000 - 16.000 km !"
+
+  utter_recommend_bugi:
+  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm bugi phù hợp cho anh/chị ạ !"
+
   utter_ask_categories:
   - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
 
@@ -140,6 +168,7 @@ actions:
   - action_return_recommend_oil
   - action_show_size_table_image
   - action_return_recommend_air_filter
+  - action_return_recommend_bugi
 
 session_config:
   session_expiration_time: 60

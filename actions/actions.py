@@ -97,32 +97,57 @@ class action_return_recommend_air_filter(Action):
         filter_type = tracker.get_slot("filter_type")
         
         
-        products = ProductInfo().get_products_by_name_and_category(model_type, filter_type)
+        products = ProductInfo().get_products_by_category_and_name(filter_type, model_type)
         
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
         else:
-            # list_items = f"Lọc gió phù hợp: \n"  
-            # for item in products:
-            #     list_items += f"- {str(item[0])} \n"
-            # dispatcher.utter_message(text=list_items)
-            cards = ""
-            for product in products:
-                cards += f"""
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{product[0]}</h5>
-                            <p class="card-text">Giá: {product[1]} VND</p>
-                        </div>
-                    </div>
-                    """
-            product_cards = {
-                    "payload": "custom",
-                    "data": cards
-                    }
-            dispatcher.utter_message(json_message=product_cards)
+            list_items = f"Lọc gió phù hợp: \n"  
+            for item in products:
+                list_items += f"- {str(item[0])} \n"
+            dispatcher.utter_message(text=list_items)
+            # cards = ""
+            # for product in products:
+            #     cards += f"""
+            #         <div class="card" style="width: 18rem;">
+            #             <div class="card-body">
+            #                 <h5 class="card-title">{product[0]}</h5>
+            #                 <p class="card-text">Giá: {product[1]} VND</p>
+            #             </div>
+            #         </div>
+            #         """
+            # product_cards = {
+            #         "payload": "custom",
+            #         "data": cards
+            #         }
+            # dispatcher.utter_message(json_message=product_cards)
+            
             return []
-
+# recommend bugi
+class action_return_recommend_bugi(Action):
+    def name(self) -> Text:
+        return "action_return_recommend_bugi"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        bugi_type = tracker.get_slot("bugi_type")
+        model_type= tracker.get_slot("model_type")
+        
+        products = ProductInfo().get_products_by_category_and_name(bugi_type, model_type)
+        
+        print(products)
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
+        else:
+            list_items = f"Bugi phù hợp: \n"  
+            for item in products:
+                list_items += f"- {str(item[0])} \n"
+            dispatcher.utter_message(text=list_items)
+            
+            return []
         
 # show table chose size
 class action_show_size_table_image(Action):
