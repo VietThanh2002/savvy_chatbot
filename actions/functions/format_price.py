@@ -1,6 +1,13 @@
 class PriceFormatter:
-    @staticmethod
     def format_price(price):
-        formatted_price = "{:,.0f}".format(price)  # Định dạng giá tiền với comma ngăn cách hàng nghìn và không có phần thập phân
-        formatted_price += " ₫"  # Thêm ký hiệu VNĐ vào cuối giá tiền
-        return formatted_price
+        # Kiểm tra và lấy phần tử đầu tiên nếu price là danh sách hoặc tuple
+        if isinstance(price, (list, tuple)):
+            price = price[0]
+        
+        formatted_price = f"{price:,.0f}đ"
+        return formatted_price.replace(",", ".")
+
+    # Ví dụ sử dụng
+    # price = [360000]  # Giả sử đây là danh sách trả về từ truy vấn
+    # formatted_price = format_price(price)
+    # print(formatted_price)  # Output: 360.000đ

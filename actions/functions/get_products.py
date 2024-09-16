@@ -55,7 +55,9 @@ class ProductInfo:
     def get_product_price(self, name):
         name = f"%{name}%"
         query = "select price from products where name like %s"
-        return self.db.execute_query(query, (name,))
+        result = self.db.execute_query(query, (name,))
+        # Giả sử execute_query trả về danh sách các tuple
+        return result[0][0] if result else None
         
 if __name__ == "__main__":
     product_info = ProductInfo()

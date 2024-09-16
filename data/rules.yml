@@ -93,6 +93,12 @@ rules:
   - action: utter_ask_product_price
   - action: action_return_product_price
 
+- rule: Ask for shipping cost
+  steps:
+  - intent: ask_shipping_cost
+  - action: utter_ask_shipping_cost
+  - action: action_return_shipping_cost
+
 - rule: Say the categories of the shop
   steps:
   - intent: ask_categories

@@ -40,6 +40,9 @@ stories:
   - intent: ask_product_price
   - action: utter_ask_product_price
   - action: action_return_product_price
+  - intent: ask_shipping_cost
+  - action: utter_ask_shipping_cost
+  - action: action_return_shipping_cost
   - intent: goodbye
   - action: utter_goodbye
   - intent: thanks

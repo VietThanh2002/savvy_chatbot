@@ -14,6 +14,7 @@ from actions.functions.db_connect import dbConnect
 from actions.functions.format_price import PriceFormatter
 from actions.functions.get_categories import CategoriesInfo
 from actions.functions.get_products import ProductInfo
+from actions.functions.get_shipping_fee import ShippingFee
 
 class ActionHelloWorld(Action):
 
@@ -194,7 +195,32 @@ class action_return_product_price(Action):
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
         else:
             price = PriceFormatter.format_price(price)
-            dispatcher.utter_message(text=f"Giá của sản phẩm {product_name} là: {price} VND")
+            dispatcher.utter_message(text=f"Giá của sản phẩm {product_name} là: {price}")
+        
+        return []
+
+# ask shipping fee
+
+class action_return_shipping_cost(Action):
+    def name(self) -> Text:
+        return "action_return_shipping_cost"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        province = tracker.get_slot("province")
+        
+        shipping_fee = ShippingFee().get_shippingFee_info(province)
+        
+        if not shipping_fee:
+            fee_not_exist = 60000
+            fee_not_exist = PriceFormatter.format_price(fee_not_exist)
+            dispatcher.utter_message(text=f"Phí vận chuyển về { province } là {fee_not_exist}.")
+
+        else:
+            shipping_fee = PriceFormatter.format_price(shipping_fee)
+            dispatcher.utter_message(text=f"Phí vận chuyển về { province } là {shipping_fee}.")
         
         return []
         

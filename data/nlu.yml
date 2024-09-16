@@ -328,6 +328,77 @@ nlu:
       - [Mũ bảo hiểm 3/4 HJC I40 Solid](product_name) có giá là bao nhiêu?
       - [Mũ bảo hiểm dual sport LS2](product_name) giá hiện tại là bao nhiêu?
       - Hỏi giá của [Mũ bảo hiểm LS2 FF900 Valiant II](product_name) là bao nhiêu?
+    
+  - intent: ask_shipping_cost
+    examples: |
+      - Chuyển hàng về [Đồng Tháp](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Hà Nội](province) là bao nhiêu?
+      - Gửi hàng đến [TP HCM](province) có giá là bao nhiêu?
+      - Gửi hàng đến thành phố [Hồ Chí Minh] có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Bắc Ninh](province)
+      - Cần biết giá gửi hàng đến [Cà Mau](province)
+      - Phí vận chuyển về [Hải Phòng](province) là bao nhiêu?
+      - Gửi hàng đến [Đà Nẵng](province) có giá bao nhiêu?
+      - Chuyển hàng về [An Giang](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Bà Rịa - Vũng Tàu](province) là bao nhiêu?
+      - Gửi hàng đến [Bình Dương](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Bình Phước](province)
+      - Cần biết giá gửi hàng đến [Bình Thuận](province)
+      - Phí vận chuyển về [Bình Định](province) là bao nhiêu?
+      - Gửi hàng đến [Bạc Liêu](province) có giá bao nhiêu?
+      - Chuyển hàng về [Bắc Giang](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Bắc Kạn](province) là bao nhiêu?
+      - Gửi hàng đến [Bến Tre](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Cao Bằng](province)
+      - Cần biết giá gửi hàng đến [Điện Biên](province)
+      - Phí vận chuyển về [Đắk Nông](province) là bao nhiêu?
+      - Gửi hàng đến [Đắk Lắk](province) có giá bao nhiêu?
+      - Chuyển hàng về [Đồng Nai](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Đồng Tháp](province) là bao nhiêu?
+      - Gửi hàng đến [Gia Lai](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Hà Giang](province)
+      - Cần biết giá gửi hàng đến [Hà Nam](province)
+      - Phí vận chuyển về [Hà Tĩnh](province) là bao nhiêu?
+      - Gửi hàng đến [Hòa Bình](province) có giá bao nhiêu?
+      - Chuyển hàng về [Hải Dương](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Hậu Giang](province) là bao nhiêu?
+      - Gửi hàng đến [Hưng Yên](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Khánh Hòa](province)
+      - Cần biết giá gửi hàng đến [Kiên Giang](province)
+      - Phí vận chuyển về [Kon Tum](province) là bao nhiêu?
+      - Gửi hàng đến [Lai Châu](province) có giá bao nhiêu?
+      - Chuyển hàng về [Lào Cai](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Lâm Đồng](province) là bao nhiêu?
+      - Gửi hàng đến [Lạng Sơn](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Long An](province)
+      - Cần biết giá gửi hàng đến [Nam Định](province)
+      - Phí vận chuyển về [Nghệ An](province) là bao nhiêu?
+      - Gửi hàng đến [Ninh Bình](province) có giá bao nhiêu?
+      - Chuyển hàng về [Ninh Thuận](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Phú Thọ](province) là bao nhiêu?
+      - Gửi hàng đến [Phú Yên](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Quảng Bình](province)
+      - Cần biết giá gửi hàng đến [Quảng Nam](province)
+      - Phí vận chuyển về [Quảng Ngãi](province) là bao nhiêu?
+      - Gửi hàng đến [Quảng Ninh](province) có giá bao nhiêu?
+      - Chuyển hàng về [Quảng Trị](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Sóc Trăng](province) là bao nhiêu?
+      - Gửi hàng đến [Sơn La](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Tây Ninh](province)
+      - Cần biết giá gửi hàng đến [Thanh Hóa](province)
+      - Phí vận chuyển về [Thái Bình](province) là bao nhiêu?
+      - Gửi hàng đến [Thái Nguyên](province) có giá bao nhiêu?
+      - Chuyển hàng về [Thừa Thiên Huế](province) giá bao nhiêu?
+      - Phí vận chuyển tới [Tiền Giang](province) là bao nhiêu?
+      - Gửi hàng đến [Trà Vinh](province) có giá là bao nhiêu?
+      - Tôi muốn biết phí vận chuyển đến [Tuyên Quang](province)
+      - Cần biết giá gửi hàng đến [Vĩnh Long](province)
+      - Phí vận chuyển về [Vĩnh Phúc](province) là bao nhiêu?
+      - Gửi hàng đến [Yên Bái](province) có giá bao nhiêu?
+    
+  
+
+  
 
 
 
