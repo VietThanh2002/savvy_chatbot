@@ -52,7 +52,10 @@ class ProductInfo:
         # Thực hiện truy vấn với thứ tự danh mục trước, sản phẩm sau
         return self.db.execute_query(query, (category_pattern, category_pattern, category_name, product_pattern, product_name))
 
-    
+    def get_product_price(self, name):
+        name = f"%{name}%"
+        query = "select price from products where name like %s"
+        return self.db.execute_query(query, (name,))
         
 if __name__ == "__main__":
     product_info = ProductInfo()

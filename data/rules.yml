@@ -59,6 +59,12 @@ rules:
   - action: utter_ask_size_recommendation
   - action: action_show_size_table_image
 
+- rule: Recommend protective clothing
+  steps:
+  - intent: recommend_protective_clothing_by_gender
+  - action: utter_recommend_protective_clothing_by_gender
+  - action: action_return_recommend_protective_clothing
+
 - rule: Give advice on air filter change
   steps:
   - intent: air_filter_change_advice
@@ -80,6 +86,12 @@ rules:
   - intent: recommend_bugi
   - action: utter_recommend_bugi
   - action: action_return_recommend_bugi
+
+- rule: Ask for product price
+  steps:
+  - intent: ask_product_price
+  - action: utter_ask_product_price
+  - action: action_return_product_price
 
 - rule: Say the categories of the shop
   steps:

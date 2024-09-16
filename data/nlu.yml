@@ -164,6 +164,17 @@ nlu:
       - Size [nón](product_type) bảo hộ phượt như thế nào là vừa ?
       - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
 
+  - intent: recommend_protective_clothing_by_gender
+    examples: |
+      - Tôi cần tư vấn áo bảo hộ phượt cho [nam](gender)
+      - Tư vấn giúp tôi áo bảo hộ phượt cho [nam](gender)
+      - Gợi ý giúp tôi áo bảo hộ cho [nam](gender)
+      - Tôi cần tư vấn áo bảo hộ phượt cho [nữ](gender)
+      - Tư vấn giúp tôi áo bảo hộ phượt cho [nữ](gender)
+      - Gợi ý giúp tôi áo bảo hộ phượt cho [nữ](gender)
+      - Gợi ý giúp chị áo bảo hộ phượt cho [nữ](gender)
+      - Có áo bảo hộ hộ phượt cho [nữ](gender)
+
   - intent: ask_categories
     examples: |
       - Cửa hàng mình có những loại sản phẩm gì
@@ -257,6 +268,74 @@ nlu:
       - Nên thay [bugi](bugi_type) nào cho xe [ab](model_type)
       - Nên thay [bugi](bugi_type) nào cho xe [sh](model_type)
       - Nên thay [bugi](bugi_type) nào cho xe [winner](model_type)
+
+  - intent: ask_product_price
+    examples: |
+      - Giá của [Nhớt Liqui Molygen Scooter 10W40](product_name) là bao nhiêu?
+      - Cho mình hỏi giá [Nhớt Liqui Molygen Scooter 10W40](product_name) là bao nhiêu?
+      - Bạn có thể cho biết giá của [Nhớt Liqui Molygen Scooter 10W40](product_name) không?
+      - [Nhớt Liqui Molygen Scooter 10W40](product_name) có giá như thế nào?
+      - Bao nhiêu tiền cho [Nhớt Liqui Molygen Scooter 10W40](product_name)?
+      - Giá [Nhớt Liqui Moly 4T Synth 10W40](product_name) hiện tại là bao nhiêu?
+      - Giá bán của [Nhớt Liqui Moly 4T Synth 10W40](product_name) là bao nhiêu?
+      - [Nhớt Motul Scooter Power LE 5W40](product_name) có giá bao nhiêu?
+      - Xin giá của [Nhớt Motul Scooter Power LE 5W40](product_name).
+      - Tôi muốn biết giá của [Nhớt Motul Scooter Power LE 5W40](product_name)?
+      - Giá thành [Nhớt Motul 300V Racing/Road 10W40](product_name) là bao nhiêu?
+      - [Nhớt Motul 300V Racing/Road 10W40](product_name) bao nhiêu một chai?
+      - [Nhớt Motul H-Tech 100 4T 10W40](product_name) có giá là bao nhiêu?
+      - Hỏi giá của [Nhớt Liqui Moly Motorbike Scooter 10W40](product_name) bao nhiêu?
+      - [Nhớt Liqui Moly Motorbike Scooter 10W40](product_name) bán giá như thế nào?
+      - Giá của [Lọc gió zin cho SH350i](product_name) là bao nhiêu?
+      - Cho mình biết giá của [Lọc gió zin cho SH350i](product_name)?
+      - [Lọc gió SH Mode 125](product_name) hiện tại có giá như thế nào?
+      - Bạn có biết giá của [Lọc gió cho Winner 150, Winner X](product_name)?
+      - Giá của [Lọc gió cho Winner 150, Winner X](product_name) hiện tại là bao nhiêu?
+      - Cho mình biết giá bán [Lọc gió Vision](product_name) nhé.
+      - [Lọc gió Yamaha Exciter 150/155](product_name) hiện tại bao nhiêu tiền?
+      - Mình muốn biết giá của [Lọc gió Yamaha Exciter 135](product_name).
+      - Bao nhiêu tiền cho [Lọc gió Yamaha Exciter 135](product_name)?
+      - Xin hỏi giá của [Lọc gió Yamaha Grande](product_name) hiện tại là bao nhiêu?
+      - [Lọc gió Yamaha Grande](product_name) bán giá bao nhiêu?
+      - Giá của [Lọc gió AB 110 Fi](product_name) là bao nhiêu?
+      - Cho mình hỏi giá của [Lọc nhớt Yamaha](product_name) là bao nhiêu?
+      - Bao nhiêu tiền cho [Lọc nhớt Winner](product_name)?
+      - [Bộ nhông sên dĩa Pro-Bike cho Future Fi](product_name) có giá là bao nhiêu?
+      - Hỏi giá của [Bộ nhông sên dĩa Pro-Bike cho Future Fi](product_name)?
+      - [Bộ nhông sên dĩa X1R cho Winner 122L, Đen](product_name) giá bao nhiêu?
+      - Bạn có biết giá của [Bộ nhông sên dĩa X1R cho Exciter 135](product_name)?
+      - Cho mình hỏi giá của [Bộ nhông sên dĩa X1R cho Wave RS, Future 114L, Vàng](product_name)?
+      - Bao nhiêu tiền cho [Bộ nhông sên dĩa ProBike Pin Gold cho Exciter 155 46T](product_name)?
+      - Giá của [Bộ nhông sên dĩa Pro-Bike cho Wave RS, Future 1, Neo, X](product_name) là bao nhiêu?
+      - Giá của [Bộ nhông sên dĩa Pro-Bike cho Winner sên vàng đen Pin Gold 44T](product_name) là bao nhiêu?
+      - [Bộ nhông sên dĩa Pro-Bike cho Winner sên vàng đen Pin Gold 44T](product_name) giá hiện tại là bao nhiêu?
+      - Xin hỏi giá của [Bộ nhông sên dĩa Pro-Bike cho Wave, Dream](product_name).
+      - Bạn có biết giá của [Bộ nhông sên dĩa X1R cho Winner 122L, Vàng](product_name)?
+      - [Bugi NGK Iridium CPR7EAIX-9 cho Wave, AB125, Future](product_name) có giá là bao nhiêu?
+      - Hỏi giá của [Bugi NGK Laser Iridium cho SHVN 2020, SH350i, Vario 160](product_name)?
+      - Giá của [Bugi NGK Iridium CR6HIX chân ngắn dành cho Wave, Dream, Axelo](product_name) là bao nhiêu?
+      - Cho mình biết giá của [Bugi NGK Iridium CPR8EAIX-9 cho Exciter, NVX, SHVN, AB, Future Fi](product_name)?
+      - [Bugi Denso Iridium Power IU27 cho Winner 150](product_name) có giá là bao nhiêu?
+      - [Bugi Denso IU22 Air Blade, PCX, Lead, Future, Wave, SH Mode, Vario](product_name) giá hiện tại bao nhiêu?
+      - [Bugi Denso Iridium IUH24 dành cho SH Ý, Dylan, PS](product_name) bán giá như thế nào?
+      - Cho mình biết giá của [Áo Bảo Hộ LS2 Riva Man](product_name) nhé.
+      - [Áo bảo hộ cho nữ LS2 AIRY Evo](product_name) giá bao nhiêu?
+      - Xin giá của [Áo bảo hộ cho nữ LS2 Alba](product_name).
+      - [Áo bảo hộ Furygan skull](product_name) hiện tại có giá như thế nào?
+      - Hỏi giá của [Áo Komine JK-1171 Project Full Mesh](product_name) là bao nhiêu?
+      - Giá của [ÁO nữ Touring Dainese Tonale Lady](product_name) là bao nhiêu?
+      - Xin giá của [MŨ bảo hiểm 1/2 hjc IS Cruiser](product_name).
+      - [Mũ bảo hiểm 3/4 HJC I40 Solid](product_name) có giá là bao nhiêu?
+      - [Mũ bảo hiểm dual sport LS2](product_name) giá hiện tại là bao nhiêu?
+      - Hỏi giá của [Mũ bảo hiểm LS2 FF900 Valiant II](product_name) là bao nhiêu?
+
+
+
+
+
+
+
+    
 
 
 

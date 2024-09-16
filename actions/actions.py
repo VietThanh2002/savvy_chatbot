@@ -11,6 +11,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from actions.functions.db_connect import dbConnect
+from actions.functions.format_price import PriceFormatter
 from actions.functions.get_categories import CategoriesInfo
 from actions.functions.get_products import ProductInfo
 
@@ -148,6 +149,54 @@ class action_return_recommend_bugi(Action):
             dispatcher.utter_message(text=list_items)
             
             return []
+
+# recommend protective clothing by gender
+
+class action_return_recommend_protective_clothing(Action):
+    def name(self) -> Text:
+        return "action_return_recommend_protective_clothing"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        gender = tracker.get_slot("gender")
+        
+        products = ProductInfo().get_products_by_name(gender)
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
+        else:
+            list_items = f"Áo bảo hộ phù hợp: \n"  
+            
+            for item in products:
+                list_items += f"- {str(item[0])} \n"
+            dispatcher.utter_message(text=list_items)
+            
+            return []
+        
+        return []
+    
+# ask product price
+class action_return_product_price(Action):
+    def name(self) -> Text:
+        return "action_return_product_price"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        product_name = tracker.get_slot("product_name")
+        
+        price = ProductInfo().get_product_price(product_name)
+        
+        if not price:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
+        else:
+            price = PriceFormatter.format_price(price)
+            dispatcher.utter_message(text=f"Giá của sản phẩm {product_name} là: {price} VND")
+        
+        return []
         
 # show table chose size
 class action_show_size_table_image(Action):
