@@ -15,6 +15,7 @@ from actions.functions.format_price import PriceFormatter
 from actions.functions.get_categories import CategoriesInfo
 from actions.functions.get_products import ProductInfo
 from actions.functions.get_shipping_fee import ShippingFee
+from actions.functions.get_promotions import PromotionsInfo
 
 class ActionHelloWorld(Action):
 
@@ -200,7 +201,6 @@ class action_return_product_price(Action):
         return []
 
 # ask shipping fee
-
 class action_return_shipping_cost(Action):
     def name(self) -> Text:
         return "action_return_shipping_cost"
@@ -221,6 +221,26 @@ class action_return_shipping_cost(Action):
         else:
             shipping_fee = PriceFormatter.format_price(shipping_fee)
             dispatcher.utter_message(text=f"Phí vận chuyển về { province } là {shipping_fee}.")
+        
+        return []
+# about promotions
+
+class action_return_promotions(Action):
+    def name(self) -> Text:
+        return "action_return_promotions"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        promotions = PromotionsInfo().get_promotions()
+        
+        if not promotions:
+            dispatcher.utter_message(text="Hiện tại cửa hàng không có chương trình khuyến mãi !")
+        else:
+            url_path = f"http://127.0.0.1:8000/promotions"
+            dispatcher.utter_message(text=f"Chương trình khuyến mãi đang diễn ra anh/chị truy cập vào trang khuyến mãi để lấy những voucher khuyến mãi hấp dẫn !")
+            dispatcher.utter_message(text=f"Truy cập vào đường link sau để xem chi tiết: {url_path}")
         
         return []
         

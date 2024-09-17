@@ -99,6 +99,17 @@ rules:
   - action: utter_ask_shipping_cost
   - action: action_return_shipping_cost
 
+- rule: Ask for payment methods
+  steps:
+  - intent: ask_payment_methods
+  - action: utter_ask_payment_methods
+
+- rule: Ask for promotions
+  steps:
+  - intent: ask_promotions
+  - action: utter_ask_promotions
+  - action: action_return_promotions
+
 - rule: Say the categories of the shop
   steps:
   - intent: ask_categories

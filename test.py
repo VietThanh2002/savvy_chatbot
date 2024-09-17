@@ -8,6 +8,8 @@ db = dbConnect()
 
 # query = "SELECT name FROM sub_categories"
 
-query = "SELECT shipping_fee FROM shipping_cost"
+# query = "SELECT shipping_fee FROM shipping_cost"
 
-db.execute_query(query)
+query = "select count(id) from discount_coupons where status = 1"
+
+db.execute_query(query) 

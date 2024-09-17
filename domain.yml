@@ -64,6 +64,12 @@ intents:
       use_entities:
         - province
 
+  - ask_payment_methods:
+      use_entities: []
+
+  - ask_promotions:
+      use_entities: []
+
 
 
 
@@ -190,19 +196,19 @@ responses:
   - text: "Em gửi bảng size để anh/chị tham khảo ạ !."
 
   utter_recommend_protective_clothing_by_gender:
-  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin sản phẩm cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin sản phẩm cho anh/chị ạ !"
 
   utter_air_filter_change_advice:
   - text: "Trung bình xe đi từ 10.000 đến 12.000km thì chúng ta nên thay lọc gió xe máy. Tuy nhiên trong trường hợp xe máy bị ngập nước hoặc đi nhiều trong môi trường xung quanh nhiều bụi bẩn thì bạn nên kiểm tra lọc gió xe máy định kì 2 tháng 1 lần, xem có bẩn không để thay thế nếu cần thiết nhé!"
 
   utter_recommend_air_filter:
-  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm lọc gió gia phù hợp cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm lọc gió gia phù hợp cho anh/chị ạ !"
 
   utter_bugi_change_advice:
   - text: "Theo khuyến cáo chung, anh/chị nên thay bugi xe máy sau mỗi 13.000 - 16.000 km !"
 
   utter_recommend_bugi:
-  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm bugi phù hợp cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm bugi phù hợp cho anh/chị ạ !"
 
   utter_ask_product_price:
   - text: "Dạ gửi anh/chị giá sản phẩm ạ !"
@@ -210,8 +216,14 @@ responses:
   utter_ask_shipping_cost:
   - text: "Dạ em anh/chị thông tin về phí vận chuyển ạ !"
 
+  utter_ask_payment_methods:
+  - text: "Cửa hàng em hỗ trợ các hình thức thanh toán như thanh toán khi nhận hàng và thanh toán trực qua 2 ví điện tử ZaloPay và VNPay ạ!"
+
+  utter_ask_promotions:
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin khuyến mãi cho anh/chị ạ !"
+
   utter_ask_categories:
-  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
 
 # Xác định các hành động
 actions:
@@ -223,6 +235,7 @@ actions:
   - action_return_recommend_protective_clothing
   - action_return_product_price
   - action_return_shipping_cost
+  - action_return_promotions
 
 session_config:
   session_expiration_time: 60

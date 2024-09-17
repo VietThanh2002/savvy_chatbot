@@ -43,6 +43,11 @@ stories:
   - intent: ask_shipping_cost
   - action: utter_ask_shipping_cost
   - action: action_return_shipping_cost
+  - intent: ask_payment_methods
+  - action: utter_ask_payment_methods
+  - intent: ask_promotions
+  - action: utter_ask_promotions
+  - action: action_return_promotions
   - intent: goodbye
   - action: utter_goodbye
   - intent: thanks

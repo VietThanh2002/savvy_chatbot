@@ -191,6 +191,7 @@ nlu:
       - Cửa hàng mình kinh doanh những loại hàng gì
       - Cửa hàng mình kinh doanh những mặt hàng gì
   
+  
   - intent: air_filter_change_advice
     examples: |
       - Khi nào thì nên thay lọc gió cho xe
@@ -395,6 +396,39 @@ nlu:
       - Cần biết giá gửi hàng đến [Vĩnh Long](province)
       - Phí vận chuyển về [Vĩnh Phúc](province) là bao nhiêu?
       - Gửi hàng đến [Yên Bái](province) có giá bao nhiêu?
+
+  - intent: ask_payment_methods
+    examples: |
+      - Cửa hàng có hỗ trợ những hình thức thanh toán nào ?
+      - Cửa hàng chấp nhận thanh toán bằng những phương thức nào ?
+      - Shop có những hình thức thanh toán nào ?
+      - Có hỗ trợ thanh toán qua ngân hàng không ?
+      - Có hỗ trợ thanh toán qua thẻ không ?
+      - Những phương thức thanh toán ?
+      - Cửa hàng chấp nhận thanh toán qua thẻ không ?
+
+  - intent: ask_promotions
+    examples: |
+      - Cửa hàng có khuyến mãi gì không ?
+      - Có chương trình khuyến mãi nào không ?
+      - Shop có khuyến mãi không ?
+      - Có chương trình giảm giá không ?
+      - Cửa hàng đang có chương trình khuyến mãi không ?
+      - Có chương trình giảm giá không ?
+      - Có chương trình khuyến mãi không ?
+      - Shop có chương trình khuyến mãi gì không ?
+      - Cửa hàng có khuyến mãi không ?
+      - Có chương trình giảm giá không ?
+      - Có chương trình khuyến mãi không ?
+      - Shop có chương trình khuyến mãi gì không ?
+      - Cửa hàng có khuyến mãi không ?
+      - Có chương trình khuyến mãi gì đang diễn ra không ?
+      - Shop có chương trình khuyến mãi không ?
+
+  
+
+  
+
     
   
 
