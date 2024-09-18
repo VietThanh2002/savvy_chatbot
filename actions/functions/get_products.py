@@ -22,7 +22,7 @@ class ProductInfo:
 
     def get_products_by_name(self, name):
         name = f"%{name}%"
-        query = "select name, price from products where name like %s"
+        query = "select name, slug, price from products where name like %s"
         return self.db.execute_query(query, (name,))
     
     def get_products_by_category_and_subcategory(self, category_name):
@@ -38,7 +38,7 @@ class ProductInfo:
     
     def get_products_by_category_and_name(self, category_name, product_name):
         query = """
-                SELECT p.name, p.price, c.name as category, COALESCE(sc.name, 'N/A') as subcategory
+                SELECT p.name, p.slug, p.price, c.name as category, COALESCE(sc.name, 'N/A') as subcategory
                 FROM products p
                 JOIN categories c ON p.category_id = c.id
                 LEFT JOIN sub_categories sc ON p.sub_category_id = sc.id

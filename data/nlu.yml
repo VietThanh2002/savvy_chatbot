@@ -194,7 +194,12 @@ nlu:
       - Tư vấn giúp tôi áo bảo hộ phượt cho [nữ](gender)
       - Gợi ý giúp tôi áo bảo hộ phượt cho [nữ](gender)
       - Gợi ý giúp chị áo bảo hộ phượt cho [nữ](gender)
-      - Có áo bảo hộ hộ phượt cho [nữ](gender)
+      - Có áo bảo hộ phượt cho [nữ](gender)
+      - Tôi cần tư vấn áo giáp bảo hộ cho [nam](gender)
+      - Tư vấn giúp tôi áo giáp bảo hộ cho [nam](gender)
+      - Gợi ý giúp tôi áo giáp bảo hộ cho [nam](gender)
+      - Tôi cần tư vấn áo giáp bảo hộ cho [nữ](gender)
+      - Tư vấn giúp tôi áo giáp bảo hộ cho [nữ](gender)
 
   - intent: ask_categories
     examples: |
@@ -257,7 +262,14 @@ nlu:
       - Gợi ý [lọc gió](filter_type) phù hợp với [vision](model_type)
       - Cho hỏi [lọc gió](filter_type) nào phù hợp với xe [winner](model_type)
       - Cho hỏi [lọc gió](filter_type) nào phù hợp với xe [grande](model_type)
-
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [air blade](model_type)
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [ab](model_type)
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [sh](model_type)
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [exciter](model_type)
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [vision](model_type)
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [winner](model_type)
+      - Cửa hàng có [lọc gió](filter_type) nào phù hợp với xe [grande](model_type)
+    
   - intent: bugi_change_advice
     examples: |
       - Khi nào thì nên thay bugi cho xe
@@ -461,6 +473,7 @@ nlu:
       - Chính sách mua hàng và bảo hành của cửa hàng như thế nào ?
       - Cửa hàng có chính sách bảo hành như thế nào ?
       - Chính sách giao hàng và bảo hành của cửa hàng như thế nào ?
+
 
   
 

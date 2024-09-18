@@ -28,6 +28,7 @@ intents:
     # about bugi advice
   - bugi_change_advice:
       use_entities: []
+      
   - recommend_bugi:
       use_entities:
         - model_type

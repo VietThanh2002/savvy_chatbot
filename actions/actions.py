@@ -77,10 +77,13 @@ class action_return_recommend_oil(Action):
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
             return []
         
-        list_items = "Danh sách sản phẩm phù hợp với loại xe:\n"
-        
+        list_items = f"Danh sách sản phẩm phù hợp với xe {type}:\n"
+        base_url = "http://127.0.0.1:8000/product-details/"
         for item in product:
-            list_items += f"- {str(item[0])} \n"
+            product_name = item[0]
+            product_slug = item[1]
+            product_url = f"{base_url}{product_slug}"
+            list_items += f"- {product_name}: {product_url} \n"
             
         dispatcher.utter_message(text=list_items)
         
@@ -104,28 +107,19 @@ class action_return_recommend_air_filter(Action):
         
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
+            return []
         else:
-            list_items = f"Lọc gió phù hợp: \n"  
+            base_url = "http://127.0.0.1:8000/product-details/"
+            list_items = f"Lọc gió phù hợp với xe {model_type} \n"  
             for item in products:
-                list_items += f"- {str(item[0])} \n"
+                product_name = item[0]
+                product_slug = item[1]
+                product_url = f"{base_url}{product_slug}"
+                list_items += f"- {product_name}: {product_url} \n"
             dispatcher.utter_message(text=list_items)
-            # cards = ""
-            # for product in products:
-            #     cards += f"""
-            #         <div class="card" style="width: 18rem;">
-            #             <div class="card-body">
-            #                 <h5 class="card-title">{product[0]}</h5>
-            #                 <p class="card-text">Giá: {product[1]} VND</p>
-            #             </div>
-            #         </div>
-            #         """
-            # product_cards = {
-            #         "payload": "custom",
-            #         "data": cards
-            #         }
-            # dispatcher.utter_message(json_message=product_cards)
             
             return []
+        
 # recommend bugi
 class action_return_recommend_bugi(Action):
     def name(self) -> Text:
@@ -135,22 +129,30 @@ class action_return_recommend_bugi(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        model_type = tracker.get_slot("model_type")
         bugi_type = tracker.get_slot("bugi_type")
-        model_type= tracker.get_slot("model_type")
+        
+        print(f"bugi_type: {bugi_type}")
+        print(f"model_type: {model_type}")
         
         products = ProductInfo().get_products_by_category_and_name(bugi_type, model_type)
-        
-        print(products)
         
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
         else:
-            list_items = f"Bugi phù hợp: \n"  
+            base_url = "http://127.0.0.1:8000/product-details/"
+            list_items = f"Bugi phù hợp với {model_type}: \n"
+             
             for item in products:
-                list_items += f"- {str(item[0])} \n"
+                product_name = item[0] 
+                product_slug = item[1]
+                product_url = f"{base_url}{product_slug}" 
+                list_items += f"- {product_name}: {product_url} \n"
+            # Gửi tin nhắn danh sách sản phẩm đến người dùng
             dispatcher.utter_message(text=list_items)
             
-            return []
+        return []
+        
 
 # recommend protective clothing by gender
 
@@ -169,10 +171,15 @@ class action_return_recommend_protective_clothing(Action):
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
         else:
-            list_items = f"Áo bảo hộ phù hợp: \n"  
+            base_url = "http://127.0.0.1:8000/product-details/"
+            list_items = f"Áo giáp bảo hộ cho {gender}: \n"  
             
             for item in products:
-                list_items += f"- {str(item[0])} \n"
+                product_name = item[0]
+                product_slug = item[1]
+                product_url = f"{base_url}{product_slug}"
+                list_items += f"- {product_name}: {product_url} \n"
+
             dispatcher.utter_message(text=list_items)
             
             return []
@@ -195,9 +202,16 @@ class action_return_recommend_helmet(Action):
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
         else:
+            base_url = "http://127.0.0.1:8000/product-details/"
+              
             list_items = f"Danh sách mũ bảo hiểm loại {helmet_type}: \n"
+            
             for item in products:
-                list_items += f"- {str(item[0])} \n"
+                product_name = item[0]
+                product_slug = item[1]
+                product_url = f"{base_url}{product_slug}"
+                list_items += f"- {product_name}: {product_url} \n"
+                
             dispatcher.utter_message(text=list_items)
             
             return []
