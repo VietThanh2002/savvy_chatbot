@@ -59,6 +59,12 @@ rules:
   - action: utter_ask_size_recommendation
   - action: action_show_size_table_image
 
+- rule: Recommend helmets by type
+  steps:
+  - intent: recommend_helmets_by_type
+  - action: utter_recommend_helmets_by_type
+  - action: action_return_recommend_helmet
+
 - rule: Recommend protective clothing
   steps:
   - intent: recommend_protective_clothing_by_gender
@@ -109,6 +115,11 @@ rules:
   - intent: ask_promotions
   - action: utter_ask_promotions
   - action: action_return_promotions
+
+- rule: Say warranty shipping and return policy
+  steps:
+  - intent: ask_warranty_shipping_return_policy
+  - action: utter_ask_warranty_shipping_return_policy
 
 - rule: Say the categories of the shop
   steps:

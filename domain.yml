@@ -70,6 +70,13 @@ intents:
   - ask_promotions:
       use_entities: []
 
+  - ask_warranty_shipping_return_policy:
+      use_entities: []
+
+  - recommend_helmets_by_type:
+      use_entities:
+        - helmet_type
+
 
 
 
@@ -83,6 +90,7 @@ entities:
   - gender
   - product_name
   - province
+  - helmet_type
   
 
 slots:
@@ -158,6 +166,15 @@ slots:
         entity: province
         intent:
           - ask_shipping_cost
+  
+  helmet_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: helmet_type
+        intent:
+          - recommend_helmets_by_type
 
 
 
@@ -222,6 +239,12 @@ responses:
   utter_ask_promotions:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin khuyến mãi cho anh/chị ạ !"
 
+  utter_ask_warranty_shipping_return_policy:
+  - text: "Dạ, em xin gửi thông tin về chính sách bảo hành, vận chuyển và đổi trả ạ! Khách hàng có thể đổi trả sản phẩm trong vòng 15 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Giao hàng toàn quốc, thời gian từ 2-5 ngày làm việc, và miễn phí vận chuyển cho đơn hàng đạt giá trị nhất định. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
+
+  utter_recommend_helmets_by_type:
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin mũ bảo hiểm phù hợp cho anh/chị ạ !"
+
   utter_ask_categories:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
 
@@ -236,6 +259,7 @@ actions:
   - action_return_product_price
   - action_return_shipping_cost
   - action_return_promotions
+  - action_return_recommend_helmet
 
 session_config:
   session_expiration_time: 60

@@ -179,6 +179,31 @@ class action_return_recommend_protective_clothing(Action):
         
         return []
     
+# recommend helmet
+class action_return_recommend_helmet(Action):
+    def name(self) -> Text:
+        return "action_return_recommend_helmet"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        helmet_type = tracker.get_slot("helmet_type")
+        
+        products = ProductInfo().get_products_by_name(helmet_type)
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
+        else:
+            list_items = f"Danh sách mũ bảo hiểm loại {helmet_type}: \n"
+            for item in products:
+                list_items += f"- {str(item[0])} \n"
+            dispatcher.utter_message(text=list_items)
+            
+            return []
+        
+        return []
+        
 # ask product price
 class action_return_product_price(Action):
     def name(self) -> Text:

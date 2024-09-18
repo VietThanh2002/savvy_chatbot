@@ -164,6 +164,27 @@ nlu:
       - Size [nón](product_type) bảo hộ phượt như thế nào là vừa ?
       - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
 
+  - intent: recommend_helmets_by_type
+    examples: |
+      - Cửa hàng có nón [3/4](helmet_type) không ?
+      - Cửa hàng có nón [fullface](helmet_type) không ?
+      - Shop có nón [3/4](helmet_type) không ?
+      - Shop có nón [fullface](helmet_type) không ?
+      - Cửa hàng có [1/2](helmet_type) không ?
+      - Shop có nón [1/2](helmet_type) không ?
+      - Cửa hàng nón [1/2](helmet_type) không ?
+      - Shop có bán nón [1/2](helmet_type) nào ?
+      - Cửa hàng có nón [1/2] không ?
+      - Cửa hàng có mũ [3/4](helmet_type) không ?
+      - Cửa hàng có mũ [fullface](helmet_type) không ?
+      - Shop có mũ [3/4](helmet_type) không ?
+      - Shop có mũ [fullface](helmet_type) không ?
+      - Cửa hàng có mũ [1/2](helmet_type) không ?
+      - Shop có mũ [1/2](helmet_type) không ?
+      - Cửa hàng mũ [1/2](helmet_type) không ?
+      - Shop có bán mũ [1/2](helmet_type) nào ?
+      - Cửa hàng có mũ [1/2] không ?
+
   - intent: recommend_protective_clothing_by_gender
     examples: |
       - Tôi cần tư vấn áo bảo hộ phượt cho [nam](gender)
@@ -329,6 +350,10 @@ nlu:
       - [Mũ bảo hiểm 3/4 HJC I40 Solid](product_name) có giá là bao nhiêu?
       - [Mũ bảo hiểm dual sport LS2](product_name) giá hiện tại là bao nhiêu?
       - Hỏi giá của [Mũ bảo hiểm LS2 FF900 Valiant II](product_name) là bao nhiêu?
+      - Cho mình biết giá của [Nón bảo hiểm 1/2 Yema](product_name) nhé.
+      - [Nón bảo hiểm 1/2 Yema](product_name) giá bao nhiêu?
+      - Xin giá của [MŨ bảo hiểm 3/4 Cacbon N03](product_name).
+      - [MŨ bảo hiểm 3/4 Cacbon N03](product_name) có giá như thế nào?
     
   - intent: ask_shipping_cost
     examples: |
@@ -424,6 +449,18 @@ nlu:
       - Cửa hàng có khuyến mãi không ?
       - Có chương trình khuyến mãi gì đang diễn ra không ?
       - Shop có chương trình khuyến mãi không ?
+
+  - intent: ask_warranty_shipping_return_policy
+    examples: |
+      - Cửa hàng có chính sách bảo hành như thế nào ?
+      - Cửa hàng có chính sách bảo hành như thế nào vậy ?
+      - Shop có chính sách bảo hành như thế nào ?
+      - Chính sách đổi trả và bảo hành của cửa hàng như thế nào ?
+      - Cửa hàng có chính sách bảo hành như thế nào ?
+      - Shop có chính sách bảo hành như thế nào ?
+      - Chính sách mua hàng và bảo hành của cửa hàng như thế nào ?
+      - Cửa hàng có chính sách bảo hành như thế nào ?
+      - Chính sách giao hàng và bảo hành của cửa hàng như thế nào ?
 
   
 

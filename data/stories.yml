@@ -21,6 +21,9 @@ stories:
   - intent: ask_size_recommendation
   - action: utter_ask_size_recommendation
   - action: action_show_size_table_image
+  - intent: recommend_helmets_by_type
+  - action: utter_recommend_helmets_by_type
+  - action: action_return_recommend_helmet
   - intent: recommend_protective_clothing_by_gender
   - action:  utter_recommend_protective_clothing_by_gender
   - action: action_return_recommend_protective_clothing
@@ -48,6 +51,8 @@ stories:
   - intent: ask_promotions
   - action: utter_ask_promotions
   - action: action_return_promotions
+  - intent: ask_warranty_shipping_return_policy
+  - action: utter_ask_warranty_shipping_return_policy
   - intent: goodbye
   - action: utter_goodbye
   - intent: thanks

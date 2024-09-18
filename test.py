@@ -10,6 +10,8 @@ db = dbConnect()
 
 # query = "SELECT shipping_fee FROM shipping_cost"
 
-query = "select count(id) from discount_coupons where status = 1"
+# query = "select count(id) from discount_coupons where status = 1"
 
+
+ 
 db.execute_query(query) 
