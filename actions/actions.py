@@ -17,18 +17,36 @@ from actions.functions.get_products import ProductInfo
 from actions.functions.get_shipping_fee import ShippingFee
 from actions.functions.get_promotions import PromotionsInfo
 
-class ActionHelloWorld(Action):
+class action_return_bot_functions(Action):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "action_return_bot_functions"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Danh sách chức năng của bot
+        bot_functions = [
+            "Tư vấn thay lọc gió",
+            "Tư vấn thay nhớt",
+            "Tư vấn chọn bugi",
+            "Tư vấn chọn size áo, nón bảo hộ",
+            "Thông tin giá cả của sản phẩm",
+            "Thông tin khuyến mãi",
+            "Thông tin vận chuyển",
+            "Thông tin chính sách đổi trả, bảo hành, vận chuyển"
+        ]
+        
+        # Dùng vòng lặp để gửi từng chức năng
+        list_items = "Danh sách chức năng:\n"
+        for function in bot_functions:
+            list_items += f"- {function}\n"
 
-        dispatcher.utter_message(text="Hello World!")
-
+        dispatcher.utter_message(text=list_items)
+        
         return []
+
 
 
 # response categories

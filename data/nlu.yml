@@ -48,6 +48,19 @@ nlu:
       - Bạn là bot phải không
       - Bạn là bot à
 
+  - intent: bot_functions
+    examples: |
+      - Em có những chắc năng gì
+      - Em có thể giúp gì cho tôi
+      - Em có thể làm gì
+      - Em có thể giúp gì cho tôi
+      - Bot có thể thực hiện những chức năng gì
+      - Bot có thể làm gì
+      - Bot có thể giúp gì cho tôi
+      - Liệt kê các chức năng của bạn
+      - Liệt kê các chức năng của bot
+      - Liệt kê các chức năng của em
+
   - intent: ask_address
     examples: |
       - Địa chỉ cửa hàng
@@ -151,6 +164,9 @@ nlu:
       - Tôi nên chọn loại dầu nhớt nào cho [xe số](vehicle_type)
       - Tư vấn giúp em nhớt [xe tay ga](vehicle_type)
       - Tư vấn giúp em nhớt [xe số](vehicle_type)
+      - [Xe tay ga](vehicle_type)
+      - [Xe số](vehicle_type)
+      - [Xe côn tay](vehicle_type)
 
   - intent: ask_size_recommendation
     examples: |

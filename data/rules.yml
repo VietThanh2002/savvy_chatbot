@@ -22,6 +22,12 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: Say the functions of the bot
+  steps:
+  - intent: bot_functions
+  - action: utter_bot_functions
+  - action: action_return_bot_functions
+
 - rule: Say the opening time of the shop
   steps:
   - intent: opening_time

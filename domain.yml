@@ -15,6 +15,8 @@ intents:
       use_entities: []
   - contact_info:
       use_entities: []
+  - bot_functions:
+      use_entities: []
 
     # about air filter
   - air_filter_change_advice:
@@ -191,6 +193,9 @@ responses:
 
   utter_iamabot:
   - text: "Em là bot ạ !. Em có thể giúp gì cho anh/chị ạ ?"
+
+  utter_bot_functions:
+  - text: "Em có thể thực hiện được các chức năng sau:"
   
   utter_opening_time:
   - text: "Dạ cửa hàng mở cửa từ 8h sáng đến 9h tối ạ !"
@@ -261,6 +266,7 @@ actions:
   - action_return_shipping_cost
   - action_return_promotions
   - action_return_recommend_helmet
+  - action_return_bot_functions
 
 session_config:
   session_expiration_time: 60
