@@ -1,0 +1,84 @@
+{
+  "product_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "vehicle_type": {
+    "precision": 0.8705882352941177,
+    "recall": 1.0,
+    "f1-score": 0.9308176100628931,
+    "support": 74,
+    "confused_with": {}
+  },
+  "model_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 60,
+    "confused_with": {}
+  },
+  "product_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 416,
+    "confused_with": {}
+  },
+  "bugi_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17,
+    "confused_with": {}
+  },
+  "gender": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
+  },
+  "province": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 129,
+    "confused_with": {}
+  },
+  "filter_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 70,
+    "confused_with": {}
+  },
+  "helmet_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9864864864864865,
+    "recall": 1.0,
+    "f1-score": 0.9931972789115647,
+    "support": 803
+  },
+  "macro avg": {
+    "precision": 0.9856209150326798,
+    "recall": 1.0,
+    "f1-score": 0.9923130677847658,
+    "support": 803
+  },
+  "weighted avg": {
+    "precision": 0.9880741337630943,
+    "recall": 1.0,
+    "f1-score": 0.9936245369173774,
+    "support": 803
+  },
+  "accuracy": 0.996711509715994
+}

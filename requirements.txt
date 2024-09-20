@@ -61,17 +61,21 @@ kiwisolver==1.4.7
 libclang==18.1.1
 locket==1.0.0
 Markdown==3.7
+markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 matplotlib==3.5.3
 mattermostwrapper==2.2
+mdurl==0.1.2
 ml-dtypes==0.4.0
 msgpack==1.0.8
 multidict==5.2.0
 mysql-connector-python==9.0.0
+namex==0.0.8
 networkx==2.6.3
 numpy==1.23.5
 oauthlib==3.2.2
 opt-einsum==3.3.0
+optree==0.12.1
 packaging==20.9
 pamqp==3.2.1
 partd==1.4.2
@@ -86,6 +90,7 @@ pyasn1_modules==0.4.0
 pycparser==2.22
 pydantic==1.10.9
 pydot==1.4.2
+Pygments==2.18.0
 PyJWT==2.9.0
 pykwalify==1.8.0
 pymongo==4.3.3
@@ -108,6 +113,7 @@ regex==2022.10.31
 requests==2.32.3
 requests-oauthlib==2.0.0
 requests-toolbelt==1.0.0
+rich==13.8.1
 rocketchat-API==1.30.0
 rsa==4.9
 ruamel.yaml==0.17.21

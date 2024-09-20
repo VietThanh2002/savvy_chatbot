@@ -1,0 +1,204 @@
+[
+  {
+    "text": "Tôi đi xe xe số thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "xe số",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.7268027067184448,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.9324974417686462,
+        "value": "xe số",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh đi xe xe côn tay thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 10,
+        "end": 20,
+        "value": "xe côn tay",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.5761688947677612,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 20,
+        "confidence_entity": 0.8935436010360718,
+        "value": "xe côn tay",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh đi xe xe tay ga thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 10,
+        "end": 19,
+        "value": "xe tay ga",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.6291569471359253,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 19,
+        "confidence_entity": 0.9482660293579102,
+        "value": "xe tay ga",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh đi xe xe số thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "xe số",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.7656253576278687,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.9419618248939514,
+        "value": "xe số",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Em đi xe xe tay ga thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 9,
+        "end": 18,
+        "value": "xe tay ga",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 6,
+        "end": 8,
+        "confidence_entity": 0.5797918438911438,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 9,
+        "end": 18,
+        "confidence_entity": 0.9412596821784973,
+        "value": "xe tay ga",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Em đi xe xe số thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 9,
+        "end": 14,
+        "value": "xe số",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 6,
+        "end": 8,
+        "confidence_entity": 0.7307236194610596,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 9,
+        "end": 14,
+        "confidence_entity": 0.9338716864585876,
+        "value": "xe số",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe tôi là [xe số]",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 11,
+        "end": 16,
+        "confidence_entity": 0.9386987090110779,
+        "value": "xe số",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe em là [xe côn tay]",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 20,
+        "confidence_entity": 0.9018285274505615,
+        "value": "xe côn tay",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
