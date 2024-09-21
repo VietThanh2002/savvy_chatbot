@@ -267,6 +267,7 @@ actions:
   - action_return_promotions
   - action_return_recommend_helmet
   - action_return_bot_functions
+  - action_custom_fallback
 
 session_config:
   session_expiration_time: 60

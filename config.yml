@@ -25,7 +25,8 @@ policies:
     constrain_similarities: true
   - name: RulePolicy
     core_fallback_threshold: 0.4
-    core_fallback_action_name: "action_default_fallback"
+    #hình động dự phòng
+    core_fallback_action_name: "action_custom_fallback"
     enable_fallback_prediction: True
 
 

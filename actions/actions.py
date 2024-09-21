@@ -17,6 +17,19 @@ from actions.functions.get_products import ProductInfo
 from actions.functions.get_shipping_fee import ShippingFee
 from actions.functions.get_promotions import PromotionsInfo
 
+class action_custom_fallback(Action):
+    def name(self) -> Text:
+        return "action_custom_fallback"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message(text="Xin lỗi, em không hiểu yêu cầu của anh/chị. Anh chị có thể thử lại không ?")
+        
+        return []
+
+
 class action_return_bot_functions(Action):
 
     def name(self) -> Text:
@@ -47,8 +60,6 @@ class action_return_bot_functions(Action):
         
         return []
 
-
-
 # response categories
 class action_return_categories(Action):
     
@@ -66,7 +77,6 @@ class action_return_categories(Action):
         for category in  categories:
              list_items += f"- {str(category[0])} \n"
 
-        # Gửi tin nhắn chứa thông danh mục sản phẩm cho người dùng
         dispatcher.utter_message(text=list_items)
 
         return []
