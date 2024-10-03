@@ -536,18 +536,28 @@ nlu:
       - [Mũ bảo hiểm 3/4 Cacbon N03](product_name) còn hàng không?
       - [Nón bảo hiểm 1/2 Yema](product_name) còn hàng không?
 
-  - intent: ask_warranty_shipping_return_policy
+  - intent: ask_warranty_policy
     examples: |
       - Cửa hàng có chính sách bảo hành như thế nào ?
       - Cửa hàng có chính sách bảo hành như thế nào vậy ?
       - Shop có chính sách bảo hành như thế nào ?
-      - Chính sách đổi trả và bảo hành của cửa hàng như thế nào ?
-      - Cửa hàng có chính sách bảo hành như thế nào ?
-      - Shop có chính sách bảo hành như thế nào ?
-      - Chính sách mua hàng và bảo hành của cửa hàng như thế nào ?
-      - Cửa hàng có chính sách bảo hành như thế nào ?
-      - Chính sách giao hàng và bảo hành của cửa hàng như thế nào ?
+      - Shop bảo hành sản phẩm như thế nào ?
 
+  - intent: ask_shipping_policy
+    examples: |
+      - Cửa hàng có chính sách giao hàng như thế nào ?
+      - Cửa hàng có chính sách giao hàng như thế nào vậy ?
+      - Khoảng bao lâu thì nhận được hàng ?
+      - Shop có chính sách giao hàng như thế nào ?
+      - Shop có chính sách vận chuyển như thế nào ?
+      - Shop có chính sách giao hàng như thế nào vậy ?
+
+  - intent: ask_return_policy
+    examples: |
+      - Cửa hàng có chính sách đổi trả như thế nào ?
+      - Cửa hàng có chính sách đổi trả như thế nào vậy ?
+      - Shop có chính sách đổi trả như thế nào ?
+      - Shop có chính sách đổi trả như thế nào vậy ?
 
 
 

@@ -122,10 +122,20 @@ rules:
   - action: utter_ask_promotions
   - action: action_return_promotions
 
-- rule: Say warranty shipping and return policy
+- rule: Ask for warranty policy
   steps:
-  - intent: ask_warranty_shipping_return_policy
-  - action: utter_ask_warranty_shipping_return_policy
+  - intent: ask_warranty_policy
+  - action: utter_ask_warranty_policy
+
+- rule: Ask for shipping policy
+  steps:
+  - intent: ask_shipping_policy
+  - action: utter_ask_shipping_policy
+
+- rule: Ask for return policy
+  steps:
+  - intent: ask_return_policy
+  - action: utter_ask_return_policy
 
 - rule: Say the categories of the shop
   steps:

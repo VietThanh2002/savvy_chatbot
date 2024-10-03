@@ -70,8 +70,13 @@ stories:
 
 - story: customer_service
   steps:
-    - intent: ask_warranty_shipping_return_policy
-    - action: utter_ask_warranty_shipping_return_policy
+    - intent: ask_warranty_policy
+    - action: utter_ask_warranty_policy
+    - intent: ask_shipping_policy
+    - action: utter_ask_shipping_policy
+    - intent: ask_return_policy
+    - action: utter_ask_return_policy
+    
 
 - story: conversation_closers
   steps:

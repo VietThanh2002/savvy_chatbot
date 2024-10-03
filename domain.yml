@@ -73,7 +73,13 @@ intents:
   - ask_promotions:
       use_entities: []
 
-  - ask_warranty_shipping_return_policy:
+  - ask_warranty_policy:
+      use_entities: []
+  
+  - ask_shipping_policy:
+      use_entities: []
+
+  - ask_return_policy:
       use_entities: []
 
   - recommend_helmets_by_type:
@@ -250,8 +256,14 @@ responses:
   utter_ask_promotions:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin khuyến mãi cho anh/chị ạ !"
 
-  utter_ask_warranty_shipping_return_policy:
-  - text: "Dạ, em xin gửi thông tin về chính sách bảo hành, vận chuyển và đổi trả ạ! Khách hàng có thể đổi trả sản phẩm trong vòng 15 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Giao hàng toàn quốc, thời gian từ 2-5 ngày làm việc, và miễn phí vận chuyển cho đơn hàng đạt giá trị nhất định. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
+  utter_ask_warranty_policy:
+  - text: "Dạ, em xin gửi thông tin về chính sách bảo hành ạ! Chúng tôi cam kết bảo hành sản phẩm trong vòng 6 tháng kể từ ngày mua hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
+
+  utter_ask_shipping_policy:
+  - text: "Dạ, em xin gửi thông tin về chính sách vận chuyển ạ! Giao hàng toàn quốc, thời gian từ 2-5 ngày làm việc, và miễn phí vận chuyển cho đơn hàng đạt giá trị nhất định. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
+
+  utter_ask_return_policy:
+  - text: "Dạ, em xin gửi thông tin về chính sách đổi trả ạ! Khách hàng có thể đổi trả sản phẩm trong vòng 15 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
 
   utter_recommend_helmets_by_type:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin mũ bảo hiểm phù hợp cho anh/chị ạ !"
