@@ -16,6 +16,7 @@ from actions.functions.get_categories import CategoriesInfo
 from actions.functions.get_products import ProductInfo
 from actions.functions.get_shipping_fee import ShippingFee
 from actions.functions.get_promotions import PromotionsInfo
+from actions.functions.check_qty import CheckQty
 
 class action_custom_fallback(Action):
     def name(self) -> Text:
@@ -310,6 +311,24 @@ class action_return_promotions(Action):
             dispatcher.utter_message(text=f"Truy cập vào đường link sau để xem chi tiết: {url_path}")
         
         return []
+# check qty
+
+class action_check_qty(Action):
+    def name(self) -> Text:
+        return "action_check_qty"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        product_name = tracker.get_slot("product_name")
+        
+        check_qty = CheckQty().check_qty(product_name)
+        
+        if check_qty and len(check_qty) > 0:
+            dispatcher.utter_message(text=f"Sản phẩm {product_name} còn hàng! Số lượng còn lại: {check_qty[0][1]}")
+        else:
+            dispatcher.utter_message(text=f"Hiện tại sản phẩm {product_name} đã hết hàng!")
         
 # show table chose size
 class action_show_size_table_image(Action):

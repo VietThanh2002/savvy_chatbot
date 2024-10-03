@@ -133,3 +133,8 @@ rules:
   - action: utter_ask_categories
   - action: action_return_categories
 
+- rule: Check product availability
+  steps:
+  - intent: check_product_availability
+  - action: utter_check_product_availability
+  - action: action_check_qty

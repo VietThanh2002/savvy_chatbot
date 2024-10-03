@@ -477,6 +477,64 @@ nlu:
       - Cửa hàng có khuyến mãi không ?
       - Có chương trình khuyến mãi gì đang diễn ra không ?
       - Shop có chương trình khuyến mãi không ?
+  
+  - intent: check_product_availability
+    examples: |
+      - [Nhớt Liqui Molygen Scooter 10W40](product_name) còn hàng không?
+      - [Nhớt Liqui Moly 4T Synth 10W40](product_name) còn hàng không?
+      - [Nhớt Motul Scooter Power LE 5W40](product_name) còn hàng không?
+      - [Nhớt Motul 300V Racing/Road 10W40](product_name) còn hàng không?
+      - [Nhớt Motul H-Tech 100 4T 10W40](product_name) còn hàng không?
+      - [Nhớt Liqui Moly Motorbike Scooter 10W40](product_name) còn hàng không?
+      - [Nhớt Motul Scooter Le 10W40](product_name) còn hàng không?
+      - [Nhớt Motul Scooter Expert LE 10W40](product_name) còn hàng không?
+      - [Nhớt Shell Advance Ultra Scooter 5W40](product_name) còn hàng không?
+      - [Nhớt Shell Advance Ultra Scooter 5W40 1L](product_name) còn hàng không?
+      - [Nhớt Shell Advance AX7 Scooter 10W40 0.8L](product_name) còn hàng không?
+      - [Nhớt Liqui Moly Motorbike Street 4T 10W40 1L](product_name) còn hàng không?
+      - [Nhớt Liqui Motorbike 10W40 Formula](product_name) còn hàng không?
+      - [Lọc gió zin cho SH350i](product_name) còn hàng không?
+      - [Lọc gió SH Mode 125](product_name) còn hàng không?
+      - [Lọc gió cho Winner 150, Winner X](product_name) còn hàng không?
+      - [Lọc gió Vision](product_name) còn hàng không?
+      - [Lọc gió Yamaha Exciter 150/ 155](product_name) còn hàng không?
+      - [Lọc gió Yamaha Exciter 135](product_name) còn hàng không?
+      - [Lọc gió Yamaha Grande](product_name) còn hàng không?
+      - [Lọc gió AB 110 Fi](product_name) còn hàng không?
+      - [Lọc nhớt Yamaha](product_name) còn hàng không?
+      - [Lọc nhớt Winner](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa Pro-Bike cho Future Fi](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa X1R cho Winner 122L, Đen](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa X1R cho Exciter 135](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa X1R cho Wave RS, Future 114L, Vàng](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa ProBike Pin Gold cho Exciter 155 46T](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa Pro-Bike cho Wave RS, Future 1, Neo, X](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa Pro-Bike cho Winner sên vàng đen Pin Gold 44T](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa Pro-Bike cho Wave, Dream](product_name) còn hàng không?
+      - [Bộ nhông sên dĩa X1R cho Winner 122L, Vàng](product_name) còn hàng không?
+      - [Bugi NGK Iridium CPR7EAIX-9 cho Wave, AB125, Future](product_name) còn hàng không?
+      - [Bugi NGK Laser Iridium cho SHVN 2020, SH350i, Vario 160](product_name) còn hàng không?
+      - [Bugi Denso IUF22 Dream, Wave, Sirius, Jupiter, Future, Viva](product_name) còn hàng không?
+      - [Bugi NGK Iridium CR6HIX chân ngắn dành cho Wave, Dream, Axelo](product_name) còn hàng không?
+      - [Bugi NGK Iridium CPR8EAIX-9 cho Exciter, NVX, SHVN, AB, Future Fi](product_name) còn hàng không?
+      - [Bugi Denso Iridium Power IU27 cho Winner 150](product_name) còn hàng không?
+      - [Bugi Denso IU22 Air Blade, PCX, Lead, Future, Wave, SH Mode, Vario](product_name) còn hàng không?
+      - [Bugi Denso IU24 Exciter, Raider, Vario, SHVN, Liberty, Vespa LX](product_name) còn hàng không?
+      - [Bugi Denso Iridium IUH24 dành cho SH Ý, Dylan, PS](product_name) còn hàng không?
+      - [Áo giáp bảo hộ nam Alpinestar HONDA T-SP-1](product_name) còn hàng không?
+      - [Áo giáp bảo hộ nam LS2 Riva](product_name) còn hàng không?
+      - [Áo giáp bảo hộ cho nữ LS2 AIRY Evo](product_name) còn hàng không?
+      - [Áo giáp bảo hộ cho nữ LS2 Alba](product_name) còn hàng không?
+      - [Áo giáp bảo hộ cho nam Furygan skull](product_name) còn hàng không?
+      - [Áo giáp bảo hộ cho nam Komine JK-1171](product_name) còn hàng không?
+      - [Áo giáp bảo hộ cho nữ Touring Dainese Tonale](product_name) còn hàng không?
+      - [MŨ bảo hiểm 1/2 hjc IS Cruiser](product_name) còn hàng không?
+      - [Mũ bảo hiểm 3/4 HJC I40 Solid](product_name) còn hàng không?
+      - [Mũ bảo hiểm fullface dual sport LS2](product_name) còn hàng không?
+      - [Mũ bảo hiểm fullface LS2 Advant X](product_name) còn hàng không?
+      - [Mũ bảo hiểm fullface LS2 FF900 Valiant II](product_name) còn hàng không?
+      - [Mũ bảo hiểm 3/4 Cacbon N03](product_name) còn hàng không?
+      - [Nón bảo hiểm 1/2 Yema](product_name) còn hàng không?
 
   - intent: ask_warranty_shipping_return_policy
     examples: |
@@ -491,9 +549,8 @@ nlu:
       - Chính sách giao hàng và bảo hành của cửa hàng như thế nào ?
 
 
-  
 
-  
+
 
     
   

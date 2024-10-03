@@ -80,6 +80,10 @@ intents:
       use_entities:
         - helmet_type
 
+  - check_product_availability:
+      use_entities:
+        - product_name
+
 
 
 
@@ -160,6 +164,7 @@ slots:
         entity: product_name
         intent:
           - ask_product_price
+          - check_product_availability
   
   province:
     type: text
@@ -234,7 +239,7 @@ responses:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm bugi phù hợp cho anh/chị ạ !"
 
   utter_ask_product_price:
-  - text: "Dạ gửi anh/chị giá sản phẩm ạ !"
+  - text: "Dạ em gửi anh/chị giá sản phẩm ạ !"
 
   utter_ask_shipping_cost:
   - text: "Dạ em anh/chị thông tin về phí vận chuyển ạ !"
@@ -254,6 +259,9 @@ responses:
   utter_ask_categories:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
 
+  utter_check_product_availability:
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ kiểm tra số lượng của sản phẩm {product_name} cho anh/chị ạ !"
+
 # Xác định các hành động
 actions:
   - action_return_categories
@@ -267,6 +275,7 @@ actions:
   - action_return_promotions
   - action_return_recommend_helmet
   - action_return_bot_functions
+  - action_check_qty
   - action_custom_fallback
 
 session_config:

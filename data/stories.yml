@@ -56,6 +56,9 @@ stories:
     - intent: ask_product_price
     - action: utter_ask_product_price
     - action: action_return_product_price
+    - intent: check_product_availability
+    - action: utter_check_product_availability
+    - action: action_check_qty
     - intent: ask_shipping_cost
     - action: utter_ask_shipping_cost
     - action: action_return_shipping_cost
@@ -78,3 +81,6 @@ stories:
     - action: utter_thanks
     - intent: bot_challenge
     - action: utter_iamabot
+
+
+
