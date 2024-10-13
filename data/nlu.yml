@@ -44,9 +44,6 @@ nlu:
     examples: |
       - Bạn là bot à
       - Bạn là bot phải không
-      - Bạn là bot à
-      - Bạn là bot phải không
-      - Bạn là bot à
 
   - intent: bot_functions
     examples: |
@@ -542,6 +539,10 @@ nlu:
       - Cửa hàng có chính sách bảo hành như thế nào vậy ?
       - Shop có chính sách bảo hành như thế nào ?
       - Shop bảo hành sản phẩm như thế nào ?
+      - Shop có chính sách bảo hành như thế nào vậy ?
+      - Shop bảo hành sản phẩm như thế nào vậy ?
+      - Chính sách bảo hành sản phẩm như thế nào ?
+      - Chính sách bảo hành sản phẩm như thế nào vậy ?
 
   - intent: ask_shipping_policy
     examples: |
@@ -551,6 +552,9 @@ nlu:
       - Shop có chính sách giao hàng như thế nào ?
       - Shop có chính sách vận chuyển như thế nào ?
       - Shop có chính sách giao hàng như thế nào vậy ?
+      - Cho mình hỏi khoảng bao lâu thì nhận được hàng ?
+      - Chính sách giao hàng như thế nào ?
+      - Chính sách giao hàng như thế nào vậy ?
 
   - intent: ask_return_policy
     examples: |
@@ -558,8 +562,23 @@ nlu:
       - Cửa hàng có chính sách đổi trả như thế nào vậy ?
       - Shop có chính sách đổi trả như thế nào ?
       - Shop có chính sách đổi trả như thế nào vậy ?
-
-
+      - Chính sách đổi trả như thế nào ?
+      - Chính sách đổi trả như thế nào vậy ?
+      - Cho mình hỏi chính sách đổi trả như thế nào ?
+      - Cho mình hỏi chính sách đổi trả như thế nào vậy ?
+  
+  - intent: check_orders_status
+    examples: |
+      - Tôi muốn kiểm tra trạng thái đơn hàng
+      - Kiểm tra trạng thái đơn hàng
+      - Kiểm tra đơn hàng giúp tôi
+      - Tôi muốn kiểm tra đơn hàng
+      - Kiểm tra đơn hàng giúp tôi
+      - Tôi muốn kiểm tra trạng thái đơn hàng của mình
+      - Kiểm tra trạng thái đơn hàng của mình
+      - Kiểm tra đơn hàng của mình giúp tôi
+      - Tôi muốn kiểm tra đơn hàng của mình
+      - Giúp tôi kiểm tra thông tin đơn hàng 
 
 
     

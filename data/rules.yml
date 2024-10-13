@@ -148,3 +148,8 @@ rules:
   - intent: check_product_availability
   - action: utter_check_product_availability
   - action: action_check_qty
+
+- rule: Check order status
+  steps:
+  - intent: check_order_status
+  - action: utter_check_order_status

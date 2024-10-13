@@ -76,6 +76,12 @@ stories:
     - action: utter_ask_shipping_policy
     - intent: ask_return_policy
     - action: utter_ask_return_policy
+
+- story: customer_check_order_status
+  steps:
+    - intent: check_order_status
+    - action: utter_check_order_status
+    - action: action_return_order_status
     
 
 - story: conversation_closers

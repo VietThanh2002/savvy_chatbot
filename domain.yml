@@ -89,6 +89,9 @@ intents:
   - check_product_availability:
       use_entities:
         - product_name
+  
+  - check_order_status:
+      use_entities: []
 
 
 
@@ -273,6 +276,9 @@ responses:
 
   utter_check_product_availability:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ kiểm tra số lượng của sản phẩm {product_name} cho anh/chị ạ !"
+
+  utter_check_order_status:
+  - text: "Dạ anh chị vui lòng cung cấp email và mã đơn hàng để em kiểm tra tình trạng đơn hàng ạ !"
 
 # Xác định các hành động
 actions:
