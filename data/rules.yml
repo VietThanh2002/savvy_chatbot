@@ -25,7 +25,6 @@ rules:
 - rule: Say the functions of the bot
   steps:
   - intent: bot_functions
-  - action: utter_bot_functions
   - action: action_return_bot_functions
 
 - rule: Say the opening time of the shop
@@ -148,8 +147,3 @@ rules:
   - intent: check_product_availability
   - action: utter_check_product_availability
   - action: action_check_qty
-
-- rule: Check order status
-  steps:
-  - intent: check_order_status
-  - action: utter_check_order_status

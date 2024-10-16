@@ -47,13 +47,14 @@ class action_return_bot_functions(Action):
             "Tư vấn chọn bugi",
             "Tư vấn chọn size áo, nón bảo hộ",
             "Thông tin giá cả của sản phẩm",
+            "Kiểm tra số lượng tồn kho của sản phẩm",
             "Thông tin khuyến mãi",
             "Thông tin vận chuyển",
             "Thông tin chính sách đổi trả, bảo hành, vận chuyển"
         ]
         
         # Dùng vòng lặp để gửi từng chức năng
-        list_items = "Danh sách chức năng:\n"
+        list_items = "Em có thể thực hiện được các chức năng sau:\n"
         for function in bot_functions:
             list_items += f"- {function}\n"
 

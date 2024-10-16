@@ -57,6 +57,7 @@ nlu:
       - Liệt kê các chức năng của bạn
       - Liệt kê các chức năng của bot
       - Liệt kê các chức năng của em
+      - Em có thể thực hiện được những chức năng gì
 
   - intent: ask_address
     examples: |
@@ -566,19 +567,7 @@ nlu:
       - Chính sách đổi trả như thế nào vậy ?
       - Cho mình hỏi chính sách đổi trả như thế nào ?
       - Cho mình hỏi chính sách đổi trả như thế nào vậy ?
-  
-  - intent: check_orders_status
-    examples: |
-      - Tôi muốn kiểm tra trạng thái đơn hàng
-      - Kiểm tra trạng thái đơn hàng
-      - Kiểm tra đơn hàng giúp tôi
-      - Tôi muốn kiểm tra đơn hàng
-      - Kiểm tra đơn hàng giúp tôi
-      - Tôi muốn kiểm tra trạng thái đơn hàng của mình
-      - Kiểm tra trạng thái đơn hàng của mình
-      - Kiểm tra đơn hàng của mình giúp tôi
-      - Tôi muốn kiểm tra đơn hàng của mình
-      - Giúp tôi kiểm tra thông tin đơn hàng 
+
 
 
     

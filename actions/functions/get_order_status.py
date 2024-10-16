@@ -1,4 +1,4 @@
-from db_connect import dbConnect
+from .db_connect import dbConnect
 
 class OrderStatus:
         

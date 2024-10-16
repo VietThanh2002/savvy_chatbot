@@ -89,9 +89,6 @@ intents:
   - check_product_availability:
       use_entities:
         - product_name
-  
-  - check_order_status:
-      use_entities: []
 
 
 
@@ -208,9 +205,6 @@ responses:
   utter_iamabot:
   - text: "Em là bot ạ !. Em có thể giúp gì cho anh/chị ạ ?"
 
-  utter_bot_functions:
-  - text: "Em có thể thực hiện được các chức năng sau:"
-  
   utter_opening_time:
   - text: "Dạ cửa hàng mở cửa từ 8h sáng đến 9h tối ạ !"
 
@@ -276,9 +270,6 @@ responses:
 
   utter_check_product_availability:
   - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ kiểm tra số lượng của sản phẩm {product_name} cho anh/chị ạ !"
-
-  utter_check_order_status:
-  - text: "Dạ anh chị vui lòng cung cấp email và mã đơn hàng để em kiểm tra tình trạng đơn hàng ạ !"
 
 # Xác định các hành động
 actions:
