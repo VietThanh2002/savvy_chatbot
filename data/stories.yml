@@ -6,6 +6,8 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
+    - intent: give_name
+    - action: utter_greet_with_name
     - intent: opening_time
     - action: utter_opening_time
     - intent: ask_address

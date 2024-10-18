@@ -22,7 +22,14 @@ class ProductInfo:
 
     def get_products_by_name(self, name):
         name = f"%{name}%"
-        query = "select name, slug, price from products where name like %s"
+        query = """ SELECT p.name, p.slug, p.price, 
+                    (SELECT pi.image 
+                        FROM product_images pi 
+                        WHERE pi.product_id = p.id 
+                        ORDER BY pi.id ASC 
+                        LIMIT 1) AS first_image
+                    FROM products p
+                    WHERE p.name LIKE %s"""
         return self.db.execute_query(query, (name,))
     
     def get_products_by_category_and_subcategory(self, category_name):

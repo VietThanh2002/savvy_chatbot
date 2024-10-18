@@ -3,6 +3,10 @@ version: "3.1"
 intents:
   - greet:
       use_entities: []
+  - give_name:
+      use_entities:
+        - cust_sex
+        - cust_name
   - goodbye:
       use_entities: []
   - thanks:
@@ -95,6 +99,8 @@ intents:
 
 
 entities:
+  - cust_sex
+  - cust_name
   - vehicle_type
   - product_type
   - model_type
@@ -107,6 +113,24 @@ entities:
   
 
 slots:
+  cust_sex:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: cust_sex
+        intent:
+          - give_name
+  
+  cust_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: cust_name
+        intent:
+          - give_name
+
   vehicle_type:
     type: text
     influence_conversation: false
@@ -194,16 +218,21 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Savvy xin chào !. Quý khách cần tư vấn thông tin gì ạ ?"
+  - text: "Savvy xin chào!. Quý khách có thể cung cấp tên để em dễ xưng hô được không ạ?"
+
+  utter_greet_with_name:
+  - text: "Savvy xin chào {cust_sex} {cust_name} !. {cust_sex} cần tư vấn thông tin gì ạ?"
 
   utter_goodbye:
-  - text: "Goodbye!"
+  - text: "Xin chào và hẹn gặp lại {cust_sex} ạ!."
+  - text: "Hẹn gặp lại {cust_sex} {cust_name} ạ !"
 
   utter_thanks:
   - text: "Dạ không có chi ạ !"
+  - text: "Hân hạnh được phục vụ quý khách!"
 
   utter_iamabot:
-  - text: "Em là bot ạ !. Em có thể giúp gì cho anh/chị ạ ?"
+  - text: "Em là bot ạ !. Em có thể giúp gì cho {cust_sex} ạ ?"
 
   utter_opening_time:
   - text: "Dạ cửa hàng mở cửa từ 8h sáng đến 9h tối ạ !"
@@ -212,46 +241,46 @@ responses:
   - text: "Dạ cửa hàng của chúng tôi ở địa chỉ: 643A/2, ấp Tân Mỹ, xã Tân Phước, huyện Lai Vung, tỉnh Đồng Tháp ạ !"
   
   utter_contact_info:
-  - text: "Dạ quý khách có thể liên hệ với cửa hàng bên em qua số điện thoại: 0767 957 642 hoặc email: saferidemotoshop@gmail.com ạ !"
+  - text: "{cust_sex} {cust_name} có thể liên hệ với cửa hàng bên em qua số điện thoại: 0767 957 642 hoặc email: saferidemotoshop@gmail.com ạ !"
 
   utter_oil_change_advice:
-  - text: "Quý khách nên thay nhớt xe định kỳ sau mỗi 1.500 - 2.000 km để đảm bảo động cơ hoạt động tốt nhất."
+  - text: "{cust_sex} nên thay nhớt xe định kỳ sau mỗi 1.500 - 2.000 km để đảm bảo động cơ hoạt động tốt nhất."
 
   utter_recommend_oil_type:
-  - text: "Dạ quý khách cung cấp thông tin về loại xe để chúng tôi tư vấn loại nhớt phù hợp nhất ạ !. Ví dụ như xe tay ga, xe số hay xe côn tay ạ !"
+  - text: "{cust_sex} cung cấp thông tin về loại xe để em tư vấn loại nhớt phù hợp nhất ạ !. Ví dụ như xe tay ga, xe số hay xe côn tay ạ !"
 
   utter_recommend_oil:
-  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm phụ gia phù hợp cho anh/chị ạ !"
+  - text: "Dạ xin lòng chờ em 1 chút ạ. Em sẽ tìm kiếm phụ gia phù hợp cho {cust_sex}!"
 
   utter_ask_size_recommendation:
-  - text: "Em gửi bảng size để anh/chị tham khảo ạ !."
+  - text: "Em gửi bảng size để {cust_sex} tham khảo ạ !."
 
   utter_recommend_protective_clothing_by_gender:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin sản phẩm cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin sản phẩm cho {cust_sex} !"
 
   utter_air_filter_change_advice:
   - text: "Trung bình xe đi từ 10.000 đến 12.000km thì chúng ta nên thay lọc gió xe máy. Tuy nhiên trong trường hợp xe máy bị ngập nước hoặc đi nhiều trong môi trường xung quanh nhiều bụi bẩn thì bạn nên kiểm tra lọc gió xe máy định kì 2 tháng 1 lần, xem có bẩn không để thay thế nếu cần thiết nhé!"
 
   utter_recommend_air_filter:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm lọc gió gia phù hợp cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm lọc gió gia phù hợp với xe cho {cust_sex} !"
 
   utter_bugi_change_advice:
-  - text: "Theo khuyến cáo chung, anh/chị nên thay bugi xe máy sau mỗi 13.000 - 16.000 km !"
+  - text: "Theo khuyến cáo chung, {cust_sex} nên thay bugi xe máy sau mỗi 13.000 - 16.000 km !"
 
   utter_recommend_bugi:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm bugi phù hợp cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm bugi phù hợp cho {cust_sex} ạ !"
 
   utter_ask_product_price:
-  - text: "Dạ em gửi anh/chị giá sản phẩm ạ !"
+  - text: "Dạ em gửi {cust_sex} giá sản phẩm ạ !"
 
   utter_ask_shipping_cost:
-  - text: "Dạ em anh/chị thông tin về phí vận chuyển ạ !"
+  - text: "Dạ em {cust_sex} thông tin về phí vận chuyển ạ !"
 
   utter_ask_payment_methods:
   - text: "Cửa hàng em hỗ trợ các hình thức thanh toán như thanh toán khi nhận hàng và thanh toán trực qua 2 ví điện tử ZaloPay và VNPay ạ!"
 
   utter_ask_promotions:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin khuyến mãi cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin khuyến mãi cho {cust_sex} ạ !"
 
   utter_ask_warranty_policy:
   - text: "Dạ, em xin gửi thông tin về chính sách bảo hành ạ! Chúng tôi cam kết bảo hành sản phẩm trong vòng 6 tháng kể từ ngày mua hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
@@ -263,13 +292,13 @@ responses:
   - text: "Dạ, em xin gửi thông tin về chính sách đổi trả ạ! Khách hàng có thể đổi trả sản phẩm trong vòng 15 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
 
   utter_recommend_helmets_by_type:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin mũ bảo hiểm phù hợp cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin mũ bảo hiểm phù hợp cho {cust_sex} ạ !"
 
   utter_ask_categories:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ tìm kiếm thông tin cho  {cust_sex} ạ !"
 
   utter_check_product_availability:
-  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ kiểm tra số lượng của sản phẩm {product_name} cho anh/chị ạ !"
+  - text: "Dạ xin vui lòng chờ em 1 chút ạ. Em sẽ kiểm tra số lượng của sản phẩm {product_name} cho  {cust_sex} ạ !"
 
 # Xác định các hành động
 actions:

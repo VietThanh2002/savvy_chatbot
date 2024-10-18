@@ -14,12 +14,21 @@ db = dbConnect()
 # query = "SELECT shipping_fee FROM shipping_cost"
 
 # query = "select count(id) from discount_coupons where status = 1"
-query = """SELECT o.id, o.status 
-            FROM orders o
-            JOIN users u ON o.user_id = u.id 
-            WHERE u.email = 'vthanh2410@gmail.com'
-        """
+# query = """SELECT o.id, o.status 
+#             FROM orders o
+#             JOIN users u ON o.user_id = u.id 
+#             WHERE u.email = 'vthanh2410@gmail.com'
+#         """
 
+query = """ SELECT p.name, p.slug, p.price, 
+       (SELECT pi.image 
+        FROM product_images pi 
+        WHERE pi.product_id = p.id 
+        ORDER BY pi.id ASC 
+        LIMIT 1) AS first_image
+        FROM products p
+        WHERE p.name  LIKE '%Áo giáp bảo hộ nam Alpinestar HONDA T-SP-1%'
+        """
 
 
  

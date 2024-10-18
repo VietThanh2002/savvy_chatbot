@@ -6,6 +6,11 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: Say greet with name anytime the user gives name
+  steps:
+  - intent: give_name
+  - action: utter_greet_with_name
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
