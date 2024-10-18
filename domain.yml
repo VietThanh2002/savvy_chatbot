@@ -29,7 +29,7 @@ intents:
   - recommend_air_filter:
       use_entities:
         - model_type
-        - filter_type
+        - sub_category_1
   
     # about bugi advice
   - bugi_change_advice:
@@ -38,7 +38,7 @@ intents:
   - recommend_bugi:
       use_entities:
         - model_type
-        - bugi_type
+        - sub_category_3
   
   
 
@@ -104,8 +104,8 @@ entities:
   - vehicle_type
   - product_type
   - model_type
-  - filter_type
-  - bugi_type
+  - sub_category_1
+  - sub_category_3
   - gender
   - product_name
   - province
@@ -159,21 +159,21 @@ slots:
           - recommend_air_filter
           - recommend_bugi
   
-  filter_type:
+  sub_category_1:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: filter_type
+        entity: sub_category_1
         intent:
           - recommend_air_filter
   
-  bugi_type:
+  sub_category_3:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: bugi_type
+        entity: sub_category_3
         intent:
           - recommend_bugi
 

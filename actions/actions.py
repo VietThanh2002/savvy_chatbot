@@ -130,17 +130,17 @@ class action_return_recommend_air_filter(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         model_type = tracker.get_slot("model_type")
-        filter_type = tracker.get_slot("filter_type")
+        sub_category_1 = tracker.get_slot("sub_category_1")
         
         
-        products = ProductInfo().get_products_by_category_and_name(filter_type, model_type)
+        products = ProductInfo().get_products_by_category_and_name(sub_category_1, model_type)
         
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
             return []
         else:
             base_url = "http://127.0.0.1:8000/product-details/"
-            list_items = f"Lọc gió phù hợp với xe {model_type} \n"  
+            list_items = f"Lọc gió phù hợp với xe {model_type}: \n"  
             for item in products:
                 product_name = item[0]
                 product_slug = item[1]
@@ -160,12 +160,12 @@ class action_return_recommend_bugi(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         model_type = tracker.get_slot("model_type")
-        bugi_type = tracker.get_slot("bugi_type")
+        sub_category_3 = tracker.get_slot("sub_category_3")
         
-        print(f"bugi_type: {bugi_type}")
+        print(f"sub_category_3: {sub_category_3}")
         print(f"model_type: {model_type}")
         
-        products = ProductInfo().get_products_by_category_and_name(bugi_type, model_type)
+        products = ProductInfo().get_products_by_category_and_name(sub_category_3, model_type)
         
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
@@ -185,7 +185,6 @@ class action_return_recommend_bugi(Action):
         
 
 # recommend protective clothing by gender
-
 class action_return_recommend_protective_clothing(Action):
     def name(self) -> Text:
         return "action_return_recommend_protective_clothing"
