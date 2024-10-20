@@ -21,6 +21,7 @@ from actions.functions.check_qty import CheckQty
 base_url_img = "http://127.0.0.1:8000/uploads/product/"
 base_url = "http://127.0.0.1:8000/product-details/"
 
+# custom fallback
 class action_custom_fallback(Action):
     def name(self) -> Text:
         return "action_custom_fallback"
@@ -32,8 +33,7 @@ class action_custom_fallback(Action):
         dispatcher.utter_message(text="Xin lỗi, em không hiểu yêu cầu của anh/chị. Anh chị có thể thử lại không ?")
         
         return []
-
-
+# response bot functions
 class action_return_bot_functions(Action):
 
     def name(self) -> Text:
@@ -64,7 +64,6 @@ class action_return_bot_functions(Action):
         dispatcher.utter_message(text=list_items)
         
         return []
-
 # response categories
 class action_return_categories(Action):
     
@@ -77,7 +76,7 @@ class action_return_categories(Action):
         
         categories = CategoriesInfo().get_categories()
          
-        list_items = "Danh sách danh mục sản phẩm cửa cửa hàng:\n"
+        list_items = "Danh mục sản phẩm của cửa hàng:\n"
 
         for category in  categories:
              list_items += f"- {str(category[0])} \n"
@@ -110,7 +109,7 @@ class action_return_recommend_oil(Action):
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
             return []
         
-        dispatcher.utter_message(text=f"Danh sách nhớt phù hợp với {type}: \n")
+        dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với {type}: \n")
         elements = []
         
         for item in products:
@@ -181,7 +180,7 @@ class action_return_recommend_air_filter(Action):
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[5]}",
-                    "subtitle": f"<div style='text-align: center;'>Giá: {PriceFormatter.format_price(item[2])}</div>",
+                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",
@@ -238,12 +237,6 @@ class action_return_recommend_bugi(Action):
             elements = []
             
             for item in products:
-            #     product_name = item[0] 
-            #     product_slug = item[1]
-            #     product_url = f"{base_url}{product_slug}" 
-            #     list_items += f"- {product_name}: {product_url} \n"
-            # # Gửi tin nhắn danh sách sản phẩm đến người dùng
-            # dispatcher.utter_message(text=list_items)
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[5]}",
@@ -358,7 +351,7 @@ class action_return_recommend_helmet(Action):
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
         else:
-            dispatcher.utter_message(text=f"Danh sách nón bảo hộ loại {helmet_type} : \n")
+            dispatcher.utter_message(text=f"Em gửi danh sách nón bảo hộ loại {helmet_type} : \n")
 
             elements = []
             for item in products:
@@ -396,27 +389,6 @@ class action_return_recommend_helmet(Action):
         
         return []
         
-# ask product price
-class action_return_product_price(Action):
-    def name(self) -> Text:
-        return "action_return_product_price"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        product_name = tracker.get_slot("product_name")
-        
-        price = ProductInfo().get_product_price(product_name)
-        
-        if not price:
-            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
-        else:
-            price = PriceFormatter.format_price(price)
-            dispatcher.utter_message(text=f"Giá của sản phẩm {product_name} là: {price}")
-        
-        return []
-
 # ask shipping fee
 class action_return_shipping_cost(Action):
     def name(self) -> Text:
@@ -460,8 +432,8 @@ class action_return_promotions(Action):
             dispatcher.utter_message(text=f"Truy cập vào đường link sau để xem chi tiết: {url_path}")
         
         return []
+    
 # check qty
-
 class action_check_qty(Action):
     def name(self) -> Text:
         return "action_check_qty"
@@ -491,10 +463,12 @@ class action_show_size_table_image(Action):
         product_type = tracker.get_slot("product_type")
         # Gửi hình ảnh
         if product_type == "áo":
-            dispatcher.utter_message(text="Bảng size:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
+            dispatcher.utter_message(text="Em gửi bảng size áo:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
             dispatcher.utter_message(text="Anh/chị có thể chọn lớn hơn 1 size để mặc thoải mái hơn ạ")
+        elif (product_type == "nón"):
+            dispatcher.utter_message(text= "Em gửi bảng size nón:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
         else:
-            dispatcher.utter_message(text= "Bảng size:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
+            dispatcher.utter_message(text="Hiện tại em không có bảng size cho sản phẩm này ạ !")
         return []
 
             

@@ -24,26 +24,21 @@ stories:
     - intent: recommend_oil_type
     - action: utter_recommend_oil_type
     - intent: recommend_oil
-    - action: utter_recommend_oil
     - action: action_return_recommend_oil
     - intent: air_filter_change_advice
     - action: utter_air_filter_change_advice
     - intent: recommend_air_filter
-    - action: utter_recommend_air_filter
     - action: action_return_recommend_air_filter
     - intent: bugi_change_advice
     - action: utter_bugi_change_advice
     - intent: recommend_bugi
-    - action: utter_recommend_bugi
     - action: action_return_recommend_bugi
 
 - story: product_recommendations
   steps:
     - intent: ask_size_recommendation
-    - action: utter_ask_size_recommendation
     - action: action_show_size_table_image
     - intent: recommend_helmets_by_type
-    - action: utter_recommend_helmets_by_type
     - action: action_return_recommend_helmet
     - intent: recommend_protective_clothing_by_gender
     - action: action_return_recommend_protective_clothing
@@ -51,21 +46,14 @@ stories:
 - story: shopping_information
   steps:
     - intent: ask_categories
-    - action: utter_ask_categories
     - action: action_return_categories
-    - intent: ask_product_price
-    - action: utter_ask_product_price
-    - action: action_return_product_price
     - intent: check_product_availability
-    - action: utter_check_product_availability
     - action: action_check_qty
     - intent: ask_shipping_cost
-    - action: utter_ask_shipping_cost
     - action: action_return_shipping_cost
     - intent: ask_payment_methods
     - action: utter_ask_payment_methods
     - intent: ask_promotions
-    - action: utter_ask_promotions
     - action: action_return_promotions
 
 - story: customer_service
