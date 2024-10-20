@@ -69,6 +69,6 @@ class ProductInfo:
         
 if __name__ == "__main__":
     product_info = ProductInfo()
-    # product_info.get_products_by_name("AB")
-    product_info.get_products_by_category_and_name("bugi", "future")
+    product_info.get_products_by_name("nam")
+    # product_info.get_products_by_category_and_name("bugi", "future")
     # product_info.get_products_by_category_and_subcategory("Nhớt xe số")

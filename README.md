@@ -33,3 +33,12 @@ Run actions server
 ```bash
 rasa run actions
 ```
+
+Open one more new terminal in this direction and activate virtual environment
+
+Run http server (in case you integrate in your appication, skip this step)
+
+```bash
+python -m http.server
+```
+

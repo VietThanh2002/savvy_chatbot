@@ -78,7 +78,6 @@ rules:
 - rule: Recommend protective clothing
   steps:
   - intent: recommend_protective_clothing_by_gender
-  - action: utter_recommend_protective_clothing_by_gender
   - action: action_return_recommend_protective_clothing
 
 - rule: Give advice on air filter change

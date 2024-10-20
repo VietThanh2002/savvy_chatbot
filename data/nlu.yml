@@ -371,19 +371,28 @@ nlu:
 
   - intent: recommend_protective_clothing_by_gender
     examples: |
-      - Tôi cần tư vấn áo bảo hộ phượt cho [nam](gender)
-      - Tư vấn giúp tôi áo bảo hộ phượt cho [nam](gender)
-      - Gợi ý giúp tôi áo bảo hộ cho [nam](gender)
-      - Tôi cần tư vấn áo bảo hộ phượt cho [nữ](gender)
-      - Tư vấn giúp tôi áo bảo hộ phượt cho [nữ](gender)
-      - Gợi ý giúp tôi áo bảo hộ phượt cho [nữ](gender)
-      - Gợi ý giúp chị áo bảo hộ phượt cho [nữ](gender)
-      - Có áo bảo hộ phượt cho [nữ](gender)
-      - Tôi cần tư vấn áo giáp bảo hộ cho [nam](gender)
-      - Tư vấn giúp tôi áo giáp bảo hộ cho [nam](gender)
-      - Gợi ý giúp tôi áo giáp bảo hộ cho [nam](gender)
-      - Tôi cần tư vấn áo giáp bảo hộ cho [nữ](gender)
-      - Tư vấn giúp tôi áo giáp bảo hộ cho [nữ](gender)
+      - [Anh](gender) muốn tìm áo giáp bảo hộ
+      - [Chị](gender) cần tư vấn về áo bảo hộ
+      - [Chị](gender) muốn tìm áo bảo hộ phượt
+      - Áo bảo hộ phượt nào phù hợp với [chị](gender)
+      - Tư vấn giúp [chị](gender) áo bảo hộ phượt loại tốt
+      - Gợi ý áo bảo hộ phượt cho [chị](gender)
+      - [Anh](gender) muốn mua áo bảo hộ phượt
+      - Tìm giúp [anh](gender) áo bảo hộ đi phượt
+      - [Anh](gender) cần tìm áo bảo hộ phượt
+      - Áo bảo hộ nào tốt cho [anh](gender)
+      - [Chú](gender) đang cần tư vấn áo bảo hộ
+      - Áo bảo hộ phượt nào hợp với [chú](gender)
+      - [Chú](gender) muốn tìm áo bảo hộ phượt phù hợp
+      - [Em](gender) muốn mua áo bảo hộ
+      - Tư vấn áo bảo hộ phượt giúp [em](gender)
+      - Gợi ý áo bảo hộ phượt cho [em](gender)
+      - Mua áo bảo hộ phượt nào tốt cho [em](gender)
+      - [Chị](gender) đang cần tìm áo bảo hộ
+      - Gợi ý cho [anh](gender) về áo bảo hộ phù hợp
+      - Tìm áo bảo hộ tốt nhất cho [chú](gender)
+      - Áo bảo hộ phượt nào thích hợp với [em](gender)
+
 
   - intent: ask_categories
     examples: |

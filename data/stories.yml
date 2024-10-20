@@ -46,7 +46,6 @@ stories:
     - action: utter_recommend_helmets_by_type
     - action: action_return_recommend_helmet
     - intent: recommend_protective_clothing_by_gender
-    - action: utter_recommend_protective_clothing_by_gender
     - action: action_return_recommend_protective_clothing
 
 - story: shopping_information

@@ -194,26 +194,66 @@ class action_return_recommend_protective_clothing(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         gender = tracker.get_slot("gender")
+        print(gender)
         
-        products = ProductInfo().get_products_by_name(gender)
-        
-        if not products:
-            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
+        # Lấy sản phẩm theo giới tính
+        if gender.lower() in ["anh", "chú"]:
+            products = ProductInfo().get_products_by_name("nam")
         else:
+            products = ProductInfo().get_products_by_name("nữ")
+        
+        # Kiểm tra nếu không có sản phẩm phù hợp
+        if not products:
+            dispatcher.utter_message(text=f"Hiện tại không có sản phẩm phù hợp cho {gender}!")
+        else:
+            dispatcher.utter_message(text=f"Em gửi {gender} danh sách áo bảo hộ: \n")
             base_url = "http://127.0.0.1:8000/product-details/"
-            list_items = f"Áo giáp bảo hộ cho {gender}: \n"  
+            base_img_url = "http://127.0.0.1:8000/uploads/product/"
+
+            
+            # Tạo danh sách các phần tử (elements) cho carousel
+            elements = []
             
             for item in products:
-                product_name = item[0]
-                product_slug = item[1]
-                product_url = f"{base_url}{product_slug}"
-                list_items += f"- {product_name}: {product_url} \n"
-
-            dispatcher.utter_message(text=list_items)
+                # Tạo từng mục trong carousel
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_img_url}{item[3]}",
+                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "compact"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Mua ngay",
+                            "payload": f"buy_{item[1]}"
+                        }
+                    ]
+                }
+                # Thêm mục vào danh sách elements
+                elements.append(element)
             
-            return []
+            # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
         
         return []
+
     
 # recommend helmet
 class action_return_recommend_helmet(Action):
