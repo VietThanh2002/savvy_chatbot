@@ -113,11 +113,17 @@ class action_return_recommend_oil(Action):
         elements = []
         
         for item in products:
-    
+            
+            if(item[4] == None):
+                     check_qty = f"Sản phẩm đã hết hàng"
+            else:
+                check_qty = f"SL tồn kho {item[4]}"
+            
             element = {
                 "title": item[0],
                 "image_url": f"{base_url_img}{item[3]}",
                 "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                "subtitle": f"SL tồn kho: {check_qty}",
                 "default_action": {
                     "type": "web_url",
                     "url": f"{base_url}{item[1]}",
@@ -172,15 +178,17 @@ class action_return_recommend_air_filter(Action):
             elements = []
             
             for item in products:
-            #     product_name = item[0]
-            #     product_slug = item[1]
-            #     product_url = f"{base_url}{product_slug}"
-            #     list_items += f"- {product_name}: {product_url} \n"
-            # dispatcher.utter_message(text=list_items)
+                
+                if(item[6] == None):
+                     check_qty = f"Sản phẩm đã hết hàng"
+                else:
+                    check_qty = f"SL tồn kho {item[6]}"
+                
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[5]}",
                     "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "subtitle": f"{check_qty}",
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",
@@ -237,10 +245,17 @@ class action_return_recommend_bugi(Action):
             elements = []
             
             for item in products:
+                
+                if(item[6] == None):
+                     check_qty = f"Sản phẩm đã hết hàng"
+                else:
+                    check_qty = f"SL tồn kho {item[6]}"
+                    
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[5]}",
                     "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "subtitle": f"{check_qty}",
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",
@@ -355,10 +370,16 @@ class action_return_recommend_helmet(Action):
 
             elements = []
             for item in products:
+                if(item[4] == None):
+                     check_qty = f"Sản phẩm đã hết hàng"
+                else:
+                    check_qty = f"SL tồn kho {item[4]}"
+                    
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[3]}",
                     "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "subtitle": f"{check_qty}",
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",

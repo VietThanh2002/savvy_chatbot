@@ -2,10 +2,10 @@ from actions.functions.db_connect import dbConnect
 
 db = dbConnect()
 
-# query = """SELECT p.name, i.quantity  FROM products p
-#         JOIN inventory i ON i.product_id = p.id WHERE i.quantity >= 0"""
+query = """SELECT p.name, i.quantity  FROM products p
+        JOIN inventory i ON i.product_id = p.id WHERE i.quantity >= 0"""
 
-query = "SELECT id FROM products"
+# query = "SELECT id FROM products"
 
 # query = "SELECT name FROM categories"
 
