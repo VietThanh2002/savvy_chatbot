@@ -11,7 +11,12 @@ class ProductInfo:
     
     def get_products_by_category_and_subcategory(self, category_name):
         query = """
-                SELECT p.name, p.price 
+                SELECT p.name, p.slug, p.price, 
+                (SELECT pi.image 
+                        FROM product_images pi 
+                        WHERE pi.product_id = p.id 
+                        ORDER BY pi.id ASC 
+                        LIMIT 1) AS first_image 
                 FROM products p
                 JOIN categories c ON p.category_id = c.id
                 LEFT JOIN sub_categories sc ON p.sub_category_id = sc.id
@@ -32,22 +37,28 @@ class ProductInfo:
                     WHERE p.name LIKE %s"""
         return self.db.execute_query(query, (name,))
     
-    def get_products_by_category_and_subcategory(self, category_name):
-        query = """
-                SELECT p.name, p.price 
-                FROM products p
-                JOIN categories c ON p.category_id = c.id
-                LEFT JOIN sub_categories sc ON p.sub_category_id = sc.id
-                WHERE c.name LIKE %s OR sc.name LIKE %s
-                """
-        category_pattern = f"%{category_name}%"
-        return self.db.execute_query(query, (category_pattern, category_pattern))
+    # def get_products_by_category_and_subcategory(self, category_name):
+    #     query = """
+    #             SELECT p.name, p.price 
+    #             FROM products p
+    #             JOIN categories c ON p.category_id = c.id
+    #             LEFT JOIN sub_categories sc ON p.sub_category_id = sc.id
+    #             WHERE c.name LIKE %s OR sc.name LIKE %s
+    #             """
+    #     category_pattern = f"%{category_name}%"
+    #     return self.db.execute_query(query, (category_pattern, category_pattern))
     
     def get_products_by_category_and_name(self, category_name, product_name):
         query = """
-                SELECT p.name, p.slug, p.price, c.name as category, COALESCE(sc.name, 'N/A') as subcategory
+                SELECT p.name, p.slug, p.price, c.name as category, COALESCE(sc.name, 'N/A') as subcategory,
+                (SELECT pi.image 
+                        FROM product_images pi 
+                        WHERE pi.product_id = p.id 
+                        ORDER BY pi.id ASC 
+                        LIMIT 1) AS first_image
                 FROM products p
                 JOIN categories c ON p.category_id = c.id
+                
                 LEFT JOIN sub_categories sc ON p.sub_category_id = sc.id
                 WHERE (c.name LIKE %s OR sc.name LIKE %s OR %s IS NULL)
                 AND (p.name LIKE %s OR %s IS NULL)

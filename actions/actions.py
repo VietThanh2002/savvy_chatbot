@@ -18,6 +18,9 @@ from actions.functions.get_shipping_fee import ShippingFee
 from actions.functions.get_promotions import PromotionsInfo
 from actions.functions.check_qty import CheckQty
 
+base_url_img = "http://127.0.0.1:8000/uploads/product/"
+base_url = "http://127.0.0.1:8000/product-details/"
+
 class action_custom_fallback(Action):
     def name(self) -> Text:
         return "action_custom_fallback"
@@ -94,33 +97,58 @@ class action_return_recommend_oil(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         type = tracker.get_slot("vehicle_type")
-        
+        type = type.lower()
         if (type == "xe tay ga"):
-            product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
         elif (type == "xe số" or type == "xe côn tay"):
-            product = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")
-            print(product)
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")
+            print(products)
         else:
-            product = None
+            products = None
       
-        if not product:
+        if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
             return []
         
-        list_items = f"Danh sách sản phẩm phù hợp với xe {type}:\n"
-        base_url = "http://127.0.0.1:8000/product-details/"
-        for item in product:
-            product_name = item[0]
-            product_slug = item[1]
-            product_url = f"{base_url}{product_slug}"
-            list_items += f"- {product_name}: {product_url} \n"
+        dispatcher.utter_message(text=f"Danh sách nhớt phù hợp với {type}: \n")
+        elements = []
+        
+        for item in products:
+    
+            element = {
+                "title": item[0],
+                "image_url": f"{base_url_img}{item[3]}",
+                "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                "default_action": {
+                    "type": "web_url",
+                    "url": f"{base_url}{item[1]}",
+                    "webview_height_ratio": "square"
+                },
+                "buttons": [
+                    {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "title": "Xem chi tiết"
+                    },
+                ]
+            }
+            elements.append(element)
             
-        dispatcher.utter_message(text=list_items)
+            # Nếu có ít nhất một sản phẩm, gửi carousel
+        if elements:
+            new_carousel = {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": elements  # Thêm danh sách các mục vào đây
+                }
+            }
+            dispatcher.utter_message(attachment=new_carousel)
+            return []
         
         return []
 
 # response recommend air filter
-
 class action_return_recommend_air_filter(Action):
     def name(self) -> Text:
         return "action_return_recommend_air_filter"
@@ -139,16 +167,50 @@ class action_return_recommend_air_filter(Action):
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
             return []
         else:
-            base_url = "http://127.0.0.1:8000/product-details/"
-            list_items = f"Lọc gió phù hợp với xe {model_type}: \n"  
-            for item in products:
-                product_name = item[0]
-                product_slug = item[1]
-                product_url = f"{base_url}{product_slug}"
-                list_items += f"- {product_name}: {product_url} \n"
-            dispatcher.utter_message(text=list_items)
+            # base_url = "http://127.0.0.1:8000/product-details/"
+            dispatcher.utter_message(text=f"Em gửi danh sách lọc gió phù hợp với xe {model_type}: \n")
+            # list_items = f"Lọc gió phù hợp với xe {model_type}: \n"  
+            elements = []
             
-            return []
+            for item in products:
+            #     product_name = item[0]
+            #     product_slug = item[1]
+            #     product_url = f"{base_url}{product_slug}"
+            #     list_items += f"- {product_name}: {product_url} \n"
+            # dispatcher.utter_message(text=list_items)
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[5]}",
+                    "subtitle": f"<div style='text-align: center;'>Giá: {PriceFormatter.format_price(item[2])}</div>",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                
+                elements.append(element)
+                
+                # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+                return []
+            
+        return []
         
 # recommend bugi
 class action_return_recommend_bugi(Action):
@@ -168,22 +230,53 @@ class action_return_recommend_bugi(Action):
         products = ProductInfo().get_products_by_category_and_name(sub_category_3, model_type)
         
         if not products:
-            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
+            dispatcher.utter_message(text=f"Hiện tại không có sản phẩm phù hợp cho xe {model_type} anh/chị đã cung cấp!")
         else:
-            base_url = "http://127.0.0.1:8000/product-details/"
-            list_items = f"Bugi phù hợp với {model_type}: \n"
-             
+            dispatcher.utter_message(text=f"Em gửi danh sách bugi phù hợp với xe {model_type}: \n")
+            # base_url = "http://127.0.0.1:8000/product-details/"
+            
+            elements = []
+            
             for item in products:
-                product_name = item[0] 
-                product_slug = item[1]
-                product_url = f"{base_url}{product_slug}" 
-                list_items += f"- {product_name}: {product_url} \n"
-            # Gửi tin nhắn danh sách sản phẩm đến người dùng
-            dispatcher.utter_message(text=list_items)
+            #     product_name = item[0] 
+            #     product_slug = item[1]
+            #     product_url = f"{base_url}{product_slug}" 
+            #     list_items += f"- {product_name}: {product_url} \n"
+            # # Gửi tin nhắn danh sách sản phẩm đến người dùng
+            # dispatcher.utter_message(text=list_items)
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[5]}",
+                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                elements.append(element)
+                
+                 # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+                return []
             
         return []
         
-
 # recommend protective clothing by gender
 class action_return_recommend_protective_clothing(Action):
     def name(self) -> Text:
@@ -210,7 +303,6 @@ class action_return_recommend_protective_clothing(Action):
             base_url = "http://127.0.0.1:8000/product-details/"
             base_img_url = "http://127.0.0.1:8000/uploads/product/"
 
-            
             # Tạo danh sách các phần tử (elements) cho carousel
             elements = []
             
@@ -246,9 +338,9 @@ class action_return_recommend_protective_clothing(Action):
                     }
                 }
                 dispatcher.utter_message(attachment=new_carousel)
+                return []
         
         return []
-
     
 # recommend helmet
 class action_return_recommend_helmet(Action):
@@ -266,19 +358,41 @@ class action_return_recommend_helmet(Action):
         if not products:
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho anh/chị !")
         else:
-            base_url = "http://127.0.0.1:8000/product-details/"
-              
-            list_items = f"Danh sách mũ bảo hiểm loại {helmet_type}: \n"
-            
+            dispatcher.utter_message(text=f"Danh sách nón bảo hộ loại {helmet_type} : \n")
+
+            elements = []
             for item in products:
-                product_name = item[0]
-                product_slug = item[1]
-                product_url = f"{base_url}{product_slug}"
-                list_items += f"- {product_name}: {product_url} \n"
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[3]}",
+                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                 
+                elements.append(element)
                 
-            dispatcher.utter_message(text=list_items)
-            
-            return []
+                # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+                return []
         
         return []
         
