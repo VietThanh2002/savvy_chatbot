@@ -43,6 +43,9 @@ class dbConnect:
         except Error as e:
             print(f"Lỗi khi chèn dữ liệu: {e}")
     
+          
+
+    
     def close_connection(self):
         if self.connection.is_connected():
             self.connection.close()

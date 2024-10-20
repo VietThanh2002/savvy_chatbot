@@ -223,7 +223,7 @@ class action_return_recommend_protective_clothing(Action):
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",
-                        "webview_height_ratio": "compact"
+                        "webview_height_ratio": "square"
                     },
                     "buttons": [
                         {
@@ -231,11 +231,6 @@ class action_return_recommend_protective_clothing(Action):
                             "url": f"{base_url}{item[1]}",
                             "title": "Xem chi tiết"
                         },
-                        {
-                            "type": "postback",
-                            "title": "Mua ngay",
-                            "payload": f"buy_{item[1]}"
-                        }
                     ]
                 }
                 # Thêm mục vào danh sách elements
