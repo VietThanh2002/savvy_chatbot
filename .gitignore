@@ -1,4 +1,7 @@
 .venv/
 .rasa/
+.vscode/
+.report/
+.results/
 models/
 __pycache__

@@ -1,0 +1,508 @@
+[
+  {
+    "text": "Anh đi xe xe tay ga thì nên chọn loại nhớt nào",
+    "entities": [
+      {
+        "start": 10,
+        "end": 19,
+        "value": "xe tay ga",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.8059753179550171,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 19,
+        "confidence_entity": 0.928973376750946,
+        "value": "xe tay ga",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Gửi hàng đến thành phố [Hồ Chí Minh] có giá là bao nhiêu?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 24,
+        "end": 26,
+        "confidence_entity": 0.9983904361724854,
+        "value": "Hồ",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "province",
+        "start": 31,
+        "end": 35,
+        "confidence_entity": 0.9784613847732544,
+        "value": "Minh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Phí vận chuyển về Hải Phòng là bao nhiêu?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 27,
+        "value": "Hải Phòng",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 18,
+        "end": 21,
+        "confidence_entity": 0.9929367899894714,
+        "value": "Hải",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Phí vận chuyển tới Bắc Kạn là bao nhiêu?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 26,
+        "value": "Bắc Kạn",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.9995496869087219,
+        "value": "Bắc",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Nón bảo hiểm 1/2 Yema còn hàng không?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "Nón bảo hiểm 1/2 Yema",
+        "entity": "product_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "product_type",
+        "start": 0,
+        "end": 21,
+        "confidence_entity": 0.735974907875061,
+        "value": "Nón bảo hiểm 1/2 Yema",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Giúp tôi chọn size áo bảo hộ phượt",
+    "entities": [
+      {
+        "start": 19,
+        "end": 21,
+        "value": "áo",
+        "entity": "product_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "product_name",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.6488284468650818,
+        "value": "Giúp",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "product_type",
+        "start": 19,
+        "end": 21,
+        "confidence_entity": 0.9855008721351624,
+        "value": "áo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Gửi hàng đến Bạc Liêu có giá bao nhiêu?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 21,
+        "value": "Bạc Liêu",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 13,
+        "end": 16,
+        "confidence_entity": 0.9076602458953857,
+        "value": "Bạc",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Lọc gió Yamaha Grande còn hàng không?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "Lọc gió Yamaha Grande",
+        "entity": "product_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "product_name",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9445050954818726,
+        "value": "Lọc gió Yamaha",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "model_type",
+        "start": 15,
+        "end": 21,
+        "confidence_entity": 0.7858284115791321,
+        "value": "Grande",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "hi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "cust_name",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.836506187915802,
+        "value": "hi",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe em là [xe côn tay]",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 10,
+        "end": 20,
+        "confidence_entity": 0.9854340553283691,
+        "value": "xe côn tay",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Size áo bảo hộ phượt phù hợp với tôi như thế nào ?",
+    "entities": [
+      {
+        "start": 5,
+        "end": 7,
+        "value": "áo",
+        "entity": "product_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Cần biết giá gửi hàng đến Điện Biên",
+    "entities": [
+      {
+        "start": 26,
+        "end": 35,
+        "value": "Điện Biên",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Phí vận chuyển về Đắk Nông là bao nhiêu?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 26,
+        "value": "Đắk Nông",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 18,
+        "end": 21,
+        "confidence_entity": 0.9906082153320312,
+        "value": "Đắk",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Cần biết giá gửi hàng đến Kiên Giang",
+    "entities": [
+      {
+        "start": 26,
+        "end": 36,
+        "value": "Kiên Giang",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 31,
+        "end": 36,
+        "confidence_entity": 0.9995278120040894,
+        "value": "Giang",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Lọc gió Vision còn hàng không?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Lọc gió Vision",
+        "entity": "product_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "product_name",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9536135792732239,
+        "value": "Lọc gió",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "model_type",
+        "start": 8,
+        "end": 14,
+        "confidence_entity": 0.9765442609786987,
+        "value": "Vision",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe tôi là [xe số]",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 11,
+        "end": 16,
+        "confidence_entity": 0.9981881976127625,
+        "value": "xe số",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe em là xe côn tay",
+    "entities": [
+      {
+        "start": 9,
+        "end": 19,
+        "value": "xe côn tay",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 9,
+        "end": 11,
+        "confidence_entity": 0.9002729058265686,
+        "value": "xe",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Gửi hàng đến TP HCM có giá là bao nhiêu?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 19,
+        "value": "TP HCM",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 13,
+        "end": 15,
+        "confidence_entity": 0.4638120234012604,
+        "value": "TP",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe tôi là xe số",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "xe số",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 13,
+        "end": 15,
+        "confidence_entity": 0.5490671396255493,
+        "value": "số",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Xe tôi là xe côn tay",
+    "entities": [
+      {
+        "start": 10,
+        "end": 20,
+        "value": "xe côn tay",
+        "entity": "vehicle_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vehicle_type",
+        "start": 13,
+        "end": 20,
+        "confidence_entity": 0.6873443722724915,
+        "value": "côn tay",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh muốn tìm áo giáp bảo hộ",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "Anh",
+        "entity": "gender"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "gender",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9948554039001465,
+        "value": "Anh",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "product_name",
+        "start": 16,
+        "end": 20,
+        "confidence_entity": 0.8015555739402771,
+        "value": "giáp",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Tôi muốn biết phí vận chuyển đến Cao Bằng",
+    "entities": [
+      {
+        "start": 33,
+        "end": 41,
+        "value": "Cao Bằng",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 37,
+        "end": 41,
+        "confidence_entity": 0.9538212418556213,
+        "value": "Bằng",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Chuyển hàng về Lào Cai giá bao nhiêu?",
+    "entities": [
+      {
+        "start": 15,
+        "end": 22,
+        "value": "Lào Cai",
+        "entity": "province"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "province",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.99604731798172,
+        "value": "Cai",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Lọc nhớt Yamaha còn hàng không?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Lọc nhớt Yamaha",
+        "entity": "product_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "product_name",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.46684369444847107,
+        "value": "Lọc nhớt",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

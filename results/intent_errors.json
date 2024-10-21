@@ -1,0 +1,66 @@
+[
+  {
+    "text": "Có ai ở đây không",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_promotions",
+      "confidence": 0.3443242907524109
+    }
+  },
+  {
+    "text": "Shop có chính sách vận chuyển như thế nào ?",
+    "intent": "ask_shipping_policy",
+    "intent_prediction": {
+      "name": "ask_warranty_policy",
+      "confidence": 0.8494699001312256
+    }
+  },
+  {
+    "text": "Hẹn gặp lại",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3015201687812805
+    }
+  },
+  {
+    "text": "Em có những chắc năng gì",
+    "intent": "bot_functions",
+    "intent_prediction": {
+      "name": "ask_categories",
+      "confidence": 0.7466206550598145
+    }
+  },
+  {
+    "text": "Cho em hỏi đi bao nhiêu km thì nên thay lọc gió cho xe máy",
+    "intent": "air_filter_change_advice",
+    "intent_prediction": {
+      "name": "oil_change_advice",
+      "confidence": 0.5296503901481628
+    }
+  },
+  {
+    "text": "Tôi có vài câu hỏi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2373104691505432
+    }
+  },
+  {
+    "text": "thật tuyệt vời",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.35330983996391296
+    }
+  },
+  {
+    "text": "Khi nào thì nên thay bugi cho xe",
+    "intent": "bugi_change_advice",
+    "intent_prediction": {
+      "name": "recommend_bugi",
+      "confidence": 0.5385922193527222
+    }
+  }
+]
