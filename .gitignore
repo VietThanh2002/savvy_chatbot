@@ -1,7 +1,7 @@
 .venv/
 .rasa/
 .vscode/
-.report/
-.results/
+report/
+results/
 models/
 __pycache__
