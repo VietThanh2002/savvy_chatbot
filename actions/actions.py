@@ -46,15 +46,16 @@ class action_return_bot_functions(Action):
         
         # Danh sách chức năng của bot
         bot_functions = [
-            "Tư vấn thay lọc gió",
-            "Tư vấn thay nhớt",
-            "Tư vấn chọn bugi",
-            "Tư vấn chọn size áo, nón bảo hộ",
-            "Thông tin giá cả của sản phẩm",
-            "Kiểm tra số lượng tồn kho của sản phẩm",
-            "Thông tin khuyến mãi",
-            "Thông tin vận chuyển",
-            "Thông tin chính sách đổi trả, bảo hành, vận chuyển"
+            "Tư vấn thời điểm cần thay nhớt và gợi ý nhớt",
+            "Tư vấn thời điểm cần thay lọc gió và gợi ý lọc gió",
+            "Tư vấn thời điểm cần thay bugi và gợi ý bugi",
+            "Tư vấn chọn size áo bảo hộ theo chiều cao và cân nặng",
+            "Tư vấn cách chọn size nón bảo hiểm",
+            "Cung cấp thông tin liên hệ cửa hàng",
+            "Cung cấp thông tin tồn kho của sản phẩm",
+            "Cung cấp thông tin khuyến mãi",
+            "Cung cấp thông tin phí vận chuyển theo khu vực",
+            "Cung cấp thông tin các chính sách đổi trả, bảo hành, và vận chuyển",
         ]
         
         # Dùng vòng lặp để gửi từng chức năng
@@ -96,6 +97,7 @@ class action_return_recommend_oil(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        cust_sex = tracker.get_slot("cust_sex")
         type = tracker.get_slot("vehicle_type")
         type = type.lower()
         if (type == "xe tay ga"):
@@ -150,6 +152,7 @@ class action_return_recommend_oil(Action):
                 }
             }
             dispatcher.utter_message(attachment=new_carousel)
+            dispatcher.utter_message(text=f"{cust_sex} có thể xem chi tiết sản phẩm bằng cách click vào nút Xem chi tiết.")
             return []
         
         return []
@@ -421,7 +424,11 @@ class action_return_shipping_cost(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        province = tracker.get_slot("province")
+        province = tracker.get_slot("province").capitalize()
+        
+        if province == "TP HCM" or province == "HCM" or province == "TP Hồ Chí Minh":
+            province = "TP HCM"
+        
         
         shipping_fee = ShippingFee().get_shippingFee_info(province)
         
