@@ -17,6 +17,7 @@ from actions.functions.get_products import ProductInfo
 from actions.functions.get_shipping_fee import ShippingFee
 from actions.functions.get_promotions import PromotionsInfo
 from actions.functions.check_qty import CheckQty
+import re
 
 base_url_img = "http://127.0.0.1:8000/uploads/product/"
 base_url = "http://127.0.0.1:8000/product-details/"
@@ -360,6 +361,7 @@ class action_return_recommend_helmet(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         helmet_type = tracker.get_slot("helmet_type")
+        print(helmet_type)
         
         products = ProductInfo().get_products_by_name(helmet_type)
         
@@ -484,17 +486,91 @@ class action_show_size_table_image(Action):
         product_type = tracker.get_slot("product_type")
         # Gửi hình ảnh
         if product_type == "áo":
-            dispatcher.utter_message(text="Em gửi bảng size áo:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
-            dispatcher.utter_message(text="Anh/chị có thể chọn lớn hơn 1 size để mặc thoải mái hơn ạ")
+            # dispatcher.utter_message(text="Em gửi bảng size áo:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
+            # dispatcher.utter_message(text="Anh/chị có thể chọn lớn hơn 1 size để mặc thoải mái hơn ạ")
+            dispatcher.utter_message(text= f"Anh/chị cung cấp thông tin chiều cao và cân nặng để em tư vấn size áo phù hợp ạ !")
         elif (product_type == "nón"):
             dispatcher.utter_message(text= "Em gửi bảng size nón:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
         else:
             dispatcher.utter_message(text="Hiện tại em không có bảng size cho sản phẩm này ạ !")
         return []
 
-            
-        
-        
+class action_recommend_shirt_size(Action):     
+    def name(self) -> Text:
+        return "action_recommend_shirt_size"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        cust_sex = tracker.get_slot("cust_sex")
+        height = tracker.get_slot("height")
+        weight = tracker.get_slot("weight")
+
+        # Updated height patterns to properly handle meters
+        height_patterns = [
+            r'1m([5-9][0-9])',    # Match 1m50-1m99
+            r'1m([5-9])',         # Match 1m5-1m9
+        ]
+
+        weight_patterns = [
+            r'100kg',            # Match 100kg
+            r'([5-9][0-9]?)kg',  # Match 50kg-99kg
+        ]
+
+        # Process height
+        height_in_cm = None
+        for pattern in height_patterns:
+            match = re.search(pattern, height)
+            if match:
+                matched_value = match.group(1)
+                if len(matched_value) == 1:  # trường hợp 1m6, 1m7, ..
+                    height_in_cm = int(matched_value) * 10  # lấy số sau m và nhân với 10
+                else:  # trường hợp 1m50, 1m51, ..
+                    height_in_cm = int(matched_value)
+                break
+
+        # nếu không tìm thấy chiều cao
+        if height_in_cm is None:
+            dispatcher.utter_message(text="Xin lỗi, tôi không hiểu định dạng chiều cao. Vui lòng nhập theo định dạng 1m80 hoặc 1.80")
+            return []
+
+        # Tính chiều cao thực tế
+        actual_height = height_in_cm + 100
+
+        # xử lý cân nặng
+        weight_value = None
+        for pattern in weight_patterns:
+            match = re.search(pattern, weight)
+            if match:
+                if pattern == r'100kg':
+                    weight_value = 100
+                else:
+                    weight_value = int(match.group(1)) # lấy số trước kg
+                break
+
+        if weight_value is None:
+            dispatcher.utter_message(text="Xin lỗi, tôi không hiểu định dạng cân nặng. Vui lòng nhập theo định dạng 70kg")
+            return []
+
+        # Determine size based on height
+        if actual_height < 160:
+            size = "S"
+        elif actual_height < 170:
+            size = "M"
+        elif actual_height < 180:
+            size = "L"
+        else:
+            size = "XL"
+
+        # Send response
+        dispatcher.utter_message(
+            text=f"Với chiều cao {actual_height}cm và cân nặng {weight_value}kg, "
+                 f"Em khuyên {cust_sex} nên chọn size {size}."
+        )
+
+        return []
+           
         
     
         

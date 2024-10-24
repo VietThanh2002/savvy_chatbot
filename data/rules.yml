@@ -67,6 +67,11 @@ rules:
   - intent: ask_size_recommendation
   - action: action_show_size_table_image
 
+- rule: Provide height and weight
+  steps:
+  - intent: provide_height_weight
+  - action: action_recommend_shirt_size
+
 - rule: Recommend helmets by type
   steps:
   - intent: recommend_helmets_by_type

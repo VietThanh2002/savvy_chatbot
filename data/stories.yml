@@ -38,6 +38,8 @@ stories:
   steps:
     - intent: ask_size_recommendation
     - action: action_show_size_table_image
+    - intent: provide_height_weight
+    - action: action_recommend_shirt_size
     - intent: recommend_helmets_by_type
     - action: action_return_recommend_helmet
     - intent: recommend_protective_clothing_by_gender

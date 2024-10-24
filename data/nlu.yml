@@ -305,8 +305,6 @@ nlu:
       - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
       - Tôi đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
-      - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
-      - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
       - Anh đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Anh đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
       - Anh đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
@@ -316,7 +314,6 @@ nlu:
       - Xe tôi là [xe tay ga](vehicle_type)
       - Xe tôi là [xe số](vehicle_type)
       - Xe tôi là [xe côn tay](vehicle_type)
-      - Xe tôi là [xe tay ga](vehicle_type)
       - Xe tôi là [xe số] 
       - Xe chú là [xe tay ga](vehicle_type)
       - Xe chú là [xe số](vehicle_type)
@@ -326,7 +323,6 @@ nlu:
       - Xe anh là [xe số](vehicle_type)
       - Xe em là [xe tay ga](vehicle_type)
       - Xe em là [xe số](vehicle_type)
-      - Xe em là [xe côn tay]
       - Xe em là [xe côn tay](vehicle_type)
       - Tôi nên chọn loại dầu nhớt nào cho [xe tay ga](vehicle_type)
       - Tôi nên chọn loại dầu nhớt nào cho [xe số](vehicle_type)
@@ -335,39 +331,217 @@ nlu:
       - [Xe tay ga](vehicle_type)
       - [Xe số](vehicle_type)
       - [Xe côn tay](vehicle_type)
+  
+  # - intent: ask_products_by_brand
+  #   examples: |
+  #     - Nhớt [Liqui] Molygen Scooter 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Liqui] Moly 4T Synth 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Motul] Scooter Power LE 5W40(brand_name) còn hàng không?
+  #     - Nhớt [Motul] 300V Racing/Road 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Motul] H-Tech 100 4T 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Liqui] Moly Motorbike Scooter 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Motul] Scooter Le 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Motul] Scooter Expert LE 10W40(brand_name) còn hàng không?
+  #     - Nhớt [Shell] Advance Ultra Scooter 5W40(brand_name) còn hàng không?
+  #     - Nhớt [Shell] Advance Ultra Scooter 5W40 1L(brand_name) còn hàng không?
+  #     - Nhớt [Shell] Advance AX7 Scooter 10W40 0.8L](brand_name) còn hàng không?
+  #     - Nhớt [Liqui] Moly Motorbike Street 4T 10W40 1L(brand_name) còn hàng không?
+  #     - Nhớt [Liqui] Motorbike 10W40 Formula(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [Pro-Bike] cho Future Fi(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [X1R] cho Winner 122L, Đen(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [X1R] cho Exciter 135(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [X1R] cho Wave RS, Future 114L, Vàng(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [Pro-Bike] Pin Gold cho Exciter 155 46T(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [Pro-Bike] cho Wave RS, Future 1, Neo, X(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [Pro-Bike] cho Winner sên vàng đen Pin Gold 44T(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [Pro-Bike] cho Wave, Dream(brand_name) còn hàng không?
+  #     - Bộ nhông sên dĩa [X1R] cho Winner 122L, Vàng(brand_name) còn hàng không?
+  #     - Bugi [NGK] Iridium CPR7EAIX-9 cho Wave, AB125, Future(brand_name) còn hàng không?
+  #     - Bugi [NGK] Laser Iridium cho SHVN 2020, SH350i, Vario 160](brand_name) còn hàng không?
+  #     - Bugi [Denso] IUF22 Dream, Wave, Sirius, Jupiter, Future, Viva](brand_name) còn hàng không?
+  #     - Bugi [NGK] Iridium CR6HIX chân ngắn dành cho Wave, Dream, Axelo](brand_name) còn hàng không?
+  #     - Bugi [NGK] Iridium CPR8EAIX-9 cho Exciter, NVX, SHVN, AB, Future Fi](brand_name) còn hàng không?
+  #     - Bugi [Denso] Iridium Power IU27 cho Winner 150](brand_name) còn hàng không?
+  #     - Bugi [Denso] IU22 Air Blade, PCX, Lead, Future, Wave, SH Mode, Vario](brand_name) còn hàng không?
+  #     - Bugi [Denso] IU24 Exciter, Raider, Vario, SHVN, Liberty, Vespa LX](brand_name) còn hàng không?
+  #     - Bugi [Denso] Iridium IUH24 dành cho SH Ý, Dylan, PS](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ nam Alpinestar HONDA T-SP-1](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ nam LS2 Riva](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ cho nữ LS2 AIRY Evo](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ cho nữ LS2 Alba](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ cho nam Furygan skull](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ cho nam Komine JK-1171](brand_name) còn hàng không?
+  #     - [Áo giáp bảo hộ cho nữ Touring Dainese Tonale](brand_name) còn hàng không?
+  #     - [MŨ bảo hiểm 1/2 hjc IS Cruiser](brand_name) còn hàng không?
+  #     - [Mũ bảo hiểm 3/4 HJC I40 Solid](brand_name) còn hàng không?
+  #     - [Mũ bảo hiểm fullface dual sport LS2](brand_name) còn hàng không?
+  #     - [Mũ bảo hiểm fullface LS2 Advant X](brand_name) còn hàng không?
+  #     - [Mũ bảo hiểm fullface LS2 FF900 Valiant II](brand_name) còn hàng không?
+  #     - [Mũ bảo hiểm 3/4 Cacbon N03](brand_name) còn hàng không?
+  #     - [Nón bảo hiểm 1/2 Yema](brand_name) còn hàng không?
 
   - intent: ask_size_recommendation
     examples: |
-      - Tôi cần tư vấn size [áo](product_type) bảo hộ phượt
-      - Giúp tôi chọn size [áo](product_type) bảo hộ phượt
-      - Làm thế nào để chọn size [áo](product_type) bảo hộ phượt phù hợp ?
-      - Size [áo](product_type) bảo hộ phượt như thế nào là vừa ?
-      - Size [áo](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
-      - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
-      - Cách để chọn [nón](product_type) bảo hộ phượt phù hợp với tôi ?
+      - Anh cần tư vấn size [áo](product_type) bảo hộ
+      - Chị cần tư vấn size [áo](product_type) bảo hộ
+      - Chú cần tư vấn size [áo](product_type) bảo hộ 
+      - Giúp tôi chọn size [áo](product_type) bảo hộ
+      - Chọn size [áo](product_type) bảo hộ phù hợp
+      - Cách chọn size [áo](product_type) bảo hộ phù hợp
+      - Làm thế nào để chọn size [áo](product_type) bảo hộ phù hợp
+      - Size [áo](product_type) bảo hộ như thế nào là vừa 
+      - Size [áo](product_type) bảo hộ như thế nào là phù hợp
+      - Cách để chọn [nón](product_type) bảo hộ phượt phù hợp 
       - Size [nón](product_type) bảo hộ phượt như thế nào là vừa ?
-      - Size [nón](product_type) bảo hộ phượt phù hợp với tôi như thế nào ?
+  
+  - intent: provide_height_weight
+    examples: |
+      - chiều cao [1m95](height)
+      - chiều cao [1m94](height)
+      - chiều cao [1m93](height)
+      - chiều cao [1m92](height)
+      - chiều cao [1m91](height)
+      - chiều cao [1m90](height)
+      - chiều cao [1m9](height)
+      - chiều cao [1m89](height) 
+      - chiều cao [1m88](height)  
+      - chiều cao [1m87](height)  
+      - chiều cao [1m86](height)  
+      - chiều cao [1m85](height)  
+      - chiều cao [1m84](height)  
+      - chiều cao [1m83](height)  
+      - chiều cao [1m82](height)  
+      - chiều cao [1m81](height) 
+      - chiều cao [1m8](height) 
+      - chiều cao [1m80](height) 
+      - chiều cao [1m79](height) 
+      - chiều cao [1m78](height) 
+      - chiều cao [1m77](height) 
+      - chiều cao [1m76](height) 
+      - chiều cao [1m75](height) 
+      - chiều cao [1m74](height) 
+      - chiều cao [1m72](height) 
+      - chiều cao [1m72](height) 
+      - chiều cao [1m71](height) 
+      - chiều cao [1m7](height) 
+      - chiều cao [1m70](height) 
+      - chiều cao [1m69](height)
+      - chiều cao [1m68](height)
+      - chiều cao [1m67](height)
+      - chiều cao [1m66](height)
+      - chiều cao [1m65](height)
+      - chiều cao [1m64](height)
+      - chiều cao [1m63](height)
+      - chiều cao [1m62](height)
+      - chiều cao [1m61](height)
+      - chiều cao [1m60](height)
+      - chiều cao [1m6](height)
+      - chiều cao [1m59](height) 
+      - chiều cao [1m58](height) 
+      - chiều cao [1m57](height) 
+      - chiều cao [1m56](height)
+      - chiều cao [1m55](height) 
+      - chiều cao [1m54](height) 
+      - chiều cao [1m53](height) 
+      - chiều cao [1m52](height) 
+      - chiều cao [1m51](height)
+      - chiều cao [1m50](height)
+      - chiều cao [1m5](height)
+      - cân nặng [100kg](weight)
+      - cân nặng [99kg](weight)
+      - cân nặng [99kg](weight)
+      - cân nặng [98kg](weight)
+      - cân nặng [97kg](weight)
+      - cân nặng [96kg](weight)
+      - cân nặng [95kg](weight)
+      - cân nặng [94kg](weight)
+      - cân nặng [93kg](weight)
+      - cân nặng [92kg](weight)
+      - cân nặng [91kg](weight)
+      - cân nặng [90kg](weight)
+      - cân nặng [89kg](weight)
+      - cân nặng [88kg](weight)
+      - cân nặng [87kg](weight)
+      - cân nặng [86kg](weight)
+      - cân nặng [85kg](weight)
+      - cân nặng [84kg](weight)
+      - cân nặng [83kg](weight)
+      - cân nặng [82kg](weight)
+      - cân nặng [81kg](weight)
+      - cân nặng [80kg](weight)
+      - cân nặng [79kg](weight)
+      - cân nặng [78kg](weight)
+      - cân nặng [77kg](weight)
+      - cân nặng [76kg](weight)
+      - cân nặng [75kg](weight)
+      - cân nặng [74kg](weight)
+      - cân nặng [73kg](weight)
+      - cân nặng [72kg](weight)
+      - cân nặng [71kg](weight)
+      - cân nặng [70kg](weight)
+      - cân nặng [69kg](weight)
+      - cân nặng [68kg](weight)
+      - cân nặng [67kg](weight)
+      - cân nặng [66kg](weight)
+      - cân nặng [65kg](weight)
+      - cân nặng [64kg](weight)
+      - cân nặng [63kg](weight)
+      - cân nặng [62kg](weight)
+      - cân nặng [61kg](weight)
+      - cân nặng [60kg](weight)
+      - cân nặng [58kg](weight)
+      - cân nặng [58kg](weight)
+      - cân nặng [57kg](weight)
+      - cân nặng [56kg](weight)
+      - cân nặng [55kg](weight)
+      - cân nặng [54kg](weight)
+      - cân nặng [53kg](weight)
+      - cân nặng [52kg](weight)
+      - cân nặng [51kg](weight)
+      - cân nặng [50kg](weight)
+      - cân nặng [49kg](weight)
+      - cân nặng [48kg](weight)
+      - cân nặng [47kg](weight)
+      - cân nặng [46kg](weight)
+      - cân nặng [45kg](weight)
 
+  
   - intent: recommend_helmets_by_type
     examples: |
-      - Cửa hàng có nón [3/4](helmet_type) không ?
-      - Cửa hàng có nón [fullface](helmet_type) không ?
-      - Shop có nón [3/4](helmet_type) không ?
+      - Cửa hàng có nón bảo hiểm [3/4](helmet_type) không ?
+      - Cửa hàng có nón bảo hộ [fullface](helmet_type) không ?
+      - Cửa hàng có nón bảo hiểm [1/2](helmet_type) không ?
+      - Shop có nón bảo hiểm [3/4](helmet_type) không ?
+      - Shop có nón bảo hộ [fullface](helmet_type) không ?
+      - Shop có nón bảo hiểm [1/2](helmet_type) không ?
       - Shop có nón [fullface](helmet_type) không ?
-      - Cửa hàng có [1/2](helmet_type) không ?
       - Shop có nón [1/2](helmet_type) không ?
       - Cửa hàng nón [1/2](helmet_type) không ?
       - Shop có bán nón [1/2](helmet_type) nào ?
-      - Cửa hàng có nón [1/2] không ?
-      - Cửa hàng có mũ [3/4](helmet_type) không ?
-      - Cửa hàng có mũ [fullface](helmet_type) không ?
+      - Cửa hàng có nón [1/2](helmet_type) không ?
+      - Cửa hàng có mũ bảo hiểm [3/4](helmet_type) không ?
+      - Cửa hàng có mũ bảo hiểm [fullface](helmet_type) không ?
+      - Cửa hàng có mũ bảo hiểm [1/2](helmet_type) không ?
+      - Cửa hàng có mũ bảo hộ [fullface](helmet_type) không ?
+      - Cửa hàng có mũ bảo hộ [3/4](helmet_type) không ?
+      - Cửa hàng có mũ bảo hộ [1/2](helmet_type) không ?
       - Shop có mũ [3/4](helmet_type) không ?
       - Shop có mũ [fullface](helmet_type) không ?
-      - Cửa hàng có mũ [1/2](helmet_type) không ?
       - Shop có mũ [1/2](helmet_type) không ?
       - Cửa hàng mũ [1/2](helmet_type) không ?
-      - Shop có bán mũ [1/2](helmet_type) nào ?
-      - Cửa hàng có mũ [1/2] không ?
+      - Cửa hàng có mũ [1/2](helmet_type) không ?
+      - Shop có bán mũ [1/2](helmet_type) không ?
+      - Shop có bán mũ [3/4](helmet_type) không ?
+      - Shop có bán mũ [fullface](helmet_type) không ?
+      - Cửa hàng có bán mũ [3/4](helmet_type) không ?
+      - Cửa hàng có bán mũ [fullface](helmet_type) không ?
+      - Cửa hàng có bán mũ [1/2](helmet_type) không ?
+      - Shop có bán nón bảo hiểm [3/4](helmet_type) không ?
+      - Shop có bán nón bảo hiểm [fullface](helmet_type) không ?
+      - Shop có bán nón bảo hiểm [1/2](helmet_type) không ?
+      - Cửa hàng có bán nón bảo hiểm [3/4](helmet_type) không ?
+      - Cửa hàng có bán nón bảo hiểm [fullface](helmet_type) không ?
+      - Cửa hàng có bán nón bảo hiểm [1/2](helmet_type) không ?
 
   - intent: recommend_protective_clothing_by_gender
     examples: |
@@ -392,7 +566,6 @@ nlu:
       - Gợi ý cho [anh](gender) về áo bảo hộ phù hợp
       - Tìm áo bảo hộ tốt nhất cho [chú](gender)
       - Áo bảo hộ phượt nào thích hợp với [em](gender)
-
 
   - intent: ask_categories
     examples: |
@@ -562,6 +735,7 @@ nlu:
       - Cần biết giá gửi hàng đến [Vĩnh Long](province)
       - Phí vận chuyển về [Vĩnh Phúc](province) là bao nhiêu?
       - Gửi hàng đến [Yên Bái](province) có giá bao nhiêu?
+
 
   - intent: ask_payment_methods
     examples: |

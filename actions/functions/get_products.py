@@ -37,8 +37,8 @@ class ProductInfo:
                         LIMIT 1) AS first_image,
                     i.quantity
                     FROM products p
-                    JOIN inventory i ON i.product_id = p.id
-                    WHERE p.name LIKE %s"""
+                    LEFT JOIN inventory i ON i.product_id = p.id
+                    WHERE p.name LIKE LOWER(%s)"""
         return self.db.execute_query(query, (name,))
     
     
@@ -75,6 +75,6 @@ class ProductInfo:
         
 if __name__ == "__main__":
     product_info = ProductInfo()
-    # product_info.get_products_by_name("nam")
-    product_info.get_products_by_category_and_name("Lọc gió", "SH350")
+    product_info.get_products_by_name("Nhớt")
+    # product_info.get_products_by_category_and_name("Lọc gió", "SH350")
     # product_info.get_products_by_category_and_subcategory("Nhớt xe số")
