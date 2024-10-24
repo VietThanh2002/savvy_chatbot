@@ -96,13 +96,11 @@ intents:
         - weight
 
 
-
-
-
 entities:
   - cust_sex
   - cust_name
   - vehicle_type
+  - helmet_type
   - product_type
   - model_type
   - sub_category_1
@@ -110,7 +108,6 @@ entities:
   - gender
   - product_name
   - province
-  - helmet_type
   - weight
   - height
   
@@ -235,14 +232,16 @@ slots:
         intent:
           - provide_height_weight
 
-
-
 responses:
   utter_greet:
-  - text: "Savvy xin chào!. Quý khách có thể cung cấp tên để em dễ xưng hô được không ạ?"
+  - text: "Kính chào quý khách! Để tiện xưng hô, quý khách vui lòng cho em biết tên ạ?"
+  - text: "Hi! Savvy có thể biết tên bạn được không ạ?"
+  - text: "Rất vui được phục vụ quý khách! Quý khách cho em xin phép được biết tên để tiện xưng hô ạ?"
 
   utter_greet_with_name:
-  - text: "Savvy xin chào {cust_sex} {cust_name} !. {cust_sex} cần tư vấn thông tin gì ạ?"
+  - text: "Xin chào {cust_sex} {cust_name}! Em có thể hỗ trợ tư vấn thông tin gì cho {cust_sex} ạ?"
+  - text: "Chào {cust_sex} {cust_name}! Savvy có thể giúp gì cho {cust_sex} hôm nay ạ?"
+  - text: "Chào {cust_sex} {cust_name}! {cust_sex} cần em hỗ trợ thông tin gì ạ?"
 
   utter_goodbye:
   - text: "Xin chào và hẹn gặp lại {cust_sex} ạ!."
@@ -250,10 +249,14 @@ responses:
 
   utter_thanks:
   - text: "Dạ không có chi ạ !"
-  - text: "Hân hạnh được phục vụ quý khách!"
+  - text: "Rất vui được hỗ trợ quý khách!"
+  - text: "Cảm ơn quý khách, rất hân hạnh được phục vụ!"
+  - text: "Rất vinh hạnh khi được giúp đỡ quý khách!"
 
   utter_iamabot:
-  - text: "Em là bot ạ !. Em có thể giúp gì cho {cust_sex} ạ ?"
+  - text: "Em là Savvy - trợ lý ảo được thiết kế để hỗ trợ quý khách 24/7 ạ."
+  - text: "Cho phép em giới thiệu, em là Savvy - trợ lý ảo đồng hành cùng quý khách ạ."
+  - text: "Hi, em là Savvy - trợ lý ảo thông minh luôn sẵn sàng phục vụ quý khách ạ!"
 
   utter_opening_time:
   - text: "Dạ cửa hàng mở cửa từ 8h sáng đến 9h tối ạ !"
@@ -288,12 +291,11 @@ responses:
   utter_ask_return_policy:
   - text: "Dạ, em xin gửi thông tin về chính sách đổi trả ạ! Khách hàng có thể đổi trả sản phẩm trong vòng 15 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
 
-
 # Xác định các hành động
 actions:
   - action_return_categories
   - action_return_recommend_oil
-  - action_show_size_table_image
+  - action_ask_product_size
   - action_recommend_shirt_size
   - action_return_recommend_air_filter
   - action_return_recommend_bugi

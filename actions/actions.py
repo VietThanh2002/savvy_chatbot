@@ -475,22 +475,23 @@ class action_check_qty(Action):
             dispatcher.utter_message(text=f"Hiện tại sản phẩm {product_name} đã hết hàng!")
         
 # show table chose size
-class action_show_size_table_image(Action):
+class action_ask_product_size(Action):
     def name(self):
-        return "action_show_size_table_image"
+        return "action_ask_product_size"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        cust_sex = tracker.get_slot("cust_sex")
+        cust_sex = cust_sex.capitalize()
+        
         product_type = tracker.get_slot("product_type")
         # Gửi hình ảnh
         if product_type == "áo":
-            # dispatcher.utter_message(text="Em gửi bảng size áo:", image="https://bigbike.vn/wp-content/uploads/2020/06/Alpinestars-Mens-Size-Chart.jpg")
-            # dispatcher.utter_message(text="Anh/chị có thể chọn lớn hơn 1 size để mặc thoải mái hơn ạ")
-            dispatcher.utter_message(text= f"Anh/chị cung cấp thông tin chiều cao và cân nặng để em tư vấn size áo phù hợp ạ !")
+            dispatcher.utter_message(text= f"{cust_sex} cung cấp thông tin chiều cao và cân nặng để em tư vấn size áo phù hợp ạ !")
         elif (product_type == "nón"):
-            dispatcher.utter_message(text= "Em gửi bảng size nón:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
+            dispatcher.utter_message(text= f"Em gửi {cust_sex} bảng size nón:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
         else:
             dispatcher.utter_message(text="Hiện tại em không có bảng size cho sản phẩm này ạ !")
         return []
@@ -507,7 +508,7 @@ class action_recommend_shirt_size(Action):
         height = tracker.get_slot("height")
         weight = tracker.get_slot("weight")
 
-        # Updated height patterns to properly handle meters
+        # Cập nhật các mẫu regex cho chiều cao và cân nặng
         height_patterns = [
             r'1m([5-9][0-9])',    # Match 1m50-1m99
             r'1m([5-9])',         # Match 1m5-1m9
@@ -553,16 +554,15 @@ class action_recommend_shirt_size(Action):
             dispatcher.utter_message(text="Xin lỗi, tôi không hiểu định dạng cân nặng. Vui lòng nhập theo định dạng 70kg")
             return []
 
-        # Determine size based on height
-        if actual_height < 160:
+        # Tính size áo
+        if ((actual_height <= 165) and (45 <= weight_value <= 60)):
             size = "S"
-        elif actual_height < 170:
+        elif ((165 < actual_height <= 170) and (60 < weight_value <= 65)):
             size = "M"
-        elif actual_height < 180:
+        elif ((170 < actual_height <= 180) and (65 < weight_value <= 80)):
             size = "L"
         else:
             size = "XL"
-
         # Send response
         dispatcher.utter_message(
             text=f"Với chiều cao {actual_height}cm và cân nặng {weight_value}kg, "
@@ -570,7 +570,7 @@ class action_recommend_shirt_size(Action):
         )
 
         return []
-           
+
         
     
         

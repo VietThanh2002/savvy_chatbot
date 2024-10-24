@@ -65,7 +65,7 @@ rules:
 - rule: Ask for size recommendation
   steps:
   - intent: ask_size_recommendation
-  - action: action_show_size_table_image
+  - action: action_ask_product_size
 
 - rule: Provide height and weight
   steps:

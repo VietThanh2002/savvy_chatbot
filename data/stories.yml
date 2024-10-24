@@ -37,7 +37,7 @@ stories:
 - story: product_recommendations
   steps:
     - intent: ask_size_recommendation
-    - action: action_show_size_table_image
+    - action: action_ask_product_size
     - intent: provide_height_weight
     - action: action_recommend_shirt_size
     - intent: recommend_helmets_by_type
