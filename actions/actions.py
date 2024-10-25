@@ -26,12 +26,14 @@ base_url = "http://127.0.0.1:8000/product-details/"
 class action_custom_fallback(Action):
     def name(self) -> Text:
         return "action_custom_fallback"
-
+    
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        dispatcher.utter_message(text="Xin lỗi, em không hiểu yêu cầu của anh/chị. Anh chị có thể thử lại không ?")
+        cust_sex = tracker.get_slot("cust_sex").capitalize()
+        
+        dispatcher.utter_message(text=f"Xin {cust_sex} vui lòng diễn đạt lại yêu cầu để em có thể hỗ trợ tốt hơn ạ.")
         
         return []
 # response bot functions
@@ -426,7 +428,7 @@ class action_return_shipping_cost(Action):
         
         province = tracker.get_slot("province").capitalize()
         
-        if province == "TP HCM" or province == "HCM" or province == "TP Hồ Chí Minh":
+        if province == "TP HCM" or province == "TP Hồ Chí Minh":
             province = "TP HCM"
         
         
@@ -497,8 +499,8 @@ class action_ask_product_size(Action):
         # Gửi hình ảnh
         if product_type == "áo":
             dispatcher.utter_message(text= f"{cust_sex} cung cấp thông tin chiều cao và cân nặng để em tư vấn size áo phù hợp ạ !")
-        elif (product_type == "nón"):
-            dispatcher.utter_message(text= f"Em gửi {cust_sex} bảng size nón:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
+        elif (product_type == "nón" or product_type == "mũ"):
+            dispatcher.utter_message(text= f"Em gửi {cust_sex} bảng size {product_type}:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
         else:
             dispatcher.utter_message(text="Hiện tại em không có bảng size cho sản phẩm này ạ !")
         return []

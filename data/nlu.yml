@@ -285,6 +285,23 @@ nlu:
       - Thông tin liên hệ của cửa hàng 
       - Thông tin liên hệ của shop
       - Thông tin liên hệ của shop là gì
+  
+  - intent: ask_categories
+    examples: |
+      - Cửa hàng mình có những loại sản phẩm gì
+      - Cửa hàng mình bán những mặt hàng gì
+      - Cửa hàng mình chuyển về những loại sản phẩm gì
+      - Cửa hàng mình chuyên về những mặt hàng gì
+      - Cửa hàng mình bán những loại hàng gì
+      - Shop bán những mặt hàng gì
+      - Shop chuyên về những loại hàng gì
+      - Shop chuyên về những mặt hàng gì
+      - Shop có những loại hàng gì
+      - Cửa hàng mình kinh doanh những loại hàng gì
+      - Cửa hàng mình kinh doanh những mặt hàng gì
+      - Em muốn biết các loại mặt hàng nào đang có tại shop?
+      - Mình có thể xem danh sách các sản phẩm cửa hàng đang kinh doanh không?
+      - Có thể cho em biết thêm về các loại sản phẩm đang bày bán không?
 
   - intent: oil_change_advice
     examples: |
@@ -315,22 +332,22 @@ nlu:
       - Nhớt nào là sự lựa chọn tốt nhất
       - Tư vấn giúp anh nhớt động cơ nào tốt
       - Anh cần tư vấn nhớt để thay cho xe
+      
 
   - intent: recommend_oil
     examples: |
-      - Tôi đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
-      - Tôi đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
-      - Tôi đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
-      - Anh đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
-      - Anh đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
-      - Anh đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
-      - Em đi xe [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
-      - Em đi xe [xe số](vehicle_type) thì nên chọn loại nhớt nào
-      - Em đi xe [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Tôi đi [xe số](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Anh đi [xe số](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi [xe số](vehicle_type) thì nên chọn loại nhớt nào
+      - Em đi [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Xe tôi là [xe tay ga](vehicle_type)
-      - Xe tôi là [xe số](vehicle_type)
       - Xe tôi là [xe côn tay](vehicle_type)
-      - Xe tôi là [xe số] 
+      - Xe tôi là [xe số](vehicle_type) 
       - Xe chú là [xe tay ga](vehicle_type)
       - Xe chú là [xe số](vehicle_type)
       - Xe chú là [xe côn tay](vehicle_type)
@@ -362,10 +379,10 @@ nlu:
       - Cách để chọn [nón](product_type) bảo hộ phượt phù hợp 
       - Size [nón](product_type) bảo hộ phượt như thế nào là vừa ?
       - Cách chọn size [nón](product_type) bảo hộ phượt phù hợp
-      - Cách chọn size [nón](product_type) mũ bảo hiểm
-      - Cách chọn size [nón](product_type) mũ bảo hiểm phượt phù hợp
-      - Cách chọn size [nón](product_type) nón bảo hiểm
-      - Cách chọn size [nón](product_type) nón bảo hiểm phượt phù hợp
+      - Cách chọn size [mũ](product_type) bảo hiểm
+      - Cách chọn size [mũ](product_type) bảo hiểm phượt phù hợp
+      - Cách chọn size [nón](product_type) bảo hiểm
+      - Cách chọn size [nón](product_type) bảo hiểm phượt phù hợp
   
   - intent: provide_height_weight
     examples: |
@@ -540,23 +557,6 @@ nlu:
       - Tìm áo bảo hộ tốt nhất cho [chú](gender)
       - Áo bảo hộ phượt nào thích hợp với [em](gender)
 
-  - intent: ask_categories
-    examples: |
-      - Cửa hàng mình có những loại sản phẩm gì
-      - Cửa hàng mình bán những mặt hàng gì
-      - Cửa hàng mình chuyển về những loại sản phẩm gì
-      - Cửa hàng mình chuyên về những mặt hàng gì
-      - Cửa hàng mình bán những loại hàng gì
-      - Shop bán những mặt hàng gì
-      - Shop chuyên về những loại hàng gì
-      - Shop chuyên về những mặt hàng gì
-      - Shop có những loại hàng gì
-      - Cửa hàng mình kinh doanh những loại hàng gì
-      - Cửa hàng mình kinh doanh những mặt hàng gì
-      - Em muốn biết các loại mặt hàng nào đang có tại shop?
-      - Mình có thể xem danh sách các sản phẩm cửa hàng đang kinh doanh không?
-      - Có thể cho em biết thêm về các loại sản phẩm đang bày bán không?
-  
   - intent: air_filter_change_advice
     examples: |
       - Khi nào thì nên thay lọc gió cho xe
