@@ -77,5 +77,9 @@ stories:
     - intent: bot_challenge
     - action: utter_iamabot
 
+- story: fallback story
+  steps:
+    - action: action_custom_fallback
+
 
 

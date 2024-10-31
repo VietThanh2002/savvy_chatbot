@@ -101,12 +101,25 @@ class action_return_recommend_oil(Action):
         
         cust_sex = tracker.get_slot("cust_sex")
         type = tracker.get_slot("vehicle_type")
-        type = type.lower()
+        motorbike_name =  tracker.get_slot("motorbike_name")
+        motorbike_name = motorbike_name.lower()
+        category_1 = tracker.get_slot("category_1")
+        category_1 = category_1.lower()
+      
         if (type == "xe tay ga"):
             products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
+        elif (category_1 != None  
+                or (motorbike_name == "grande" or motorbike_name == "ab" or motorbike_name == "air blade"
+                or motorbike_name == "lead" or motorbike_name == "vision" or motorbike_name == "click" 
+                or motorbike_name == "sh")):
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
         elif (type == "xe số" or type == "xe côn tay"):
-            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")
-            print(products)
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")      
+        elif (category_1 != None 
+                and (motorbike_name == "wave" or motorbike_name == "dream" or motorbike_name == "sirius" 
+                or motorbike_name == "future" or motorbike_name == "winner" or motorbike_name == "exciter", 
+                motorbike_name == "sonic" or motorbike_name == "ware alpha")):
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")      
         else:
             products = None
       
@@ -114,7 +127,12 @@ class action_return_recommend_oil(Action):
             dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
             return []
         
-        dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với {type}: \n")
+        if (type == None):
+            type = motorbike_name
+            dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với xe {type} : \n")
+        else:
+            dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với xe {type} : \n")
+                
         elements = []
         
         for item in products:

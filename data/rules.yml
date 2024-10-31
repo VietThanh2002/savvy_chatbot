@@ -57,7 +57,7 @@ rules:
   - intent: recommend_oil_type
   - action: utter_recommend_oil_type
 
-- rule: Recommend oil type for a specific vehicle
+- rule: Recommend oil type for a specific vehicle and motorbike name
   steps:
   - intent: recommend_oil
   - action: action_return_recommend_oil
@@ -141,3 +141,7 @@ rules:
   steps:
   - intent: check_product_availability
   - action: action_check_qty
+
+- rule: Response fallback
+  steps:
+  - action: action_custom_fallback

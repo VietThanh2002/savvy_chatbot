@@ -50,6 +50,8 @@ intents:
   - recommend_oil:
       use_entities:
         - vehicle_type
+        - category_1
+        - motorbike_name
 
     # about size
   - ask_size_recommendation:
@@ -110,7 +112,8 @@ entities:
   - province
   - weight
   - height
-  
+  - category_1
+  - motorbike_name
 
 slots:
   cust_sex:
@@ -231,6 +234,24 @@ slots:
         entity: height
         intent:
           - provide_height_weight
+
+  category_1:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: category_1
+        intent:
+          - recommend_oil
+
+  motorbike_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: motorbike_name
+        intent:
+          - recommend_oil
 
 responses:
   utter_greet:

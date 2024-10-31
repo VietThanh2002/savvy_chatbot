@@ -332,8 +332,29 @@ nlu:
       - Nhớt nào là sự lựa chọn tốt nhất
       - Tư vấn giúp anh nhớt động cơ nào tốt
       - Anh cần tư vấn nhớt để thay cho xe
-      
-
+  
+  # gợi ý nhớt theo tên xe
+  # - intent: recommend_oil_by_motorbike_name
+  #   examples: /
+  #     - Xe [Wave](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Dream](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Future](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Winner](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Exciter](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Sirius](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Air Blade](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [SH](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Lead](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Vision](motorbike_name) thì nên chọn [nhớt](category_1) nào
+  #     - Xe [Sonic](motorbike_name) nên chọn [nhớt](category_1)
+  #     - Xe [Future Neo](motorbike_name) nên chọn [nhớt](category_1)
+  #     - Xe [Grande](motorbike_name) nên chọn loại [nhớt](category_1)
+  #     - Xe [Vario](motorbike_name) nên chọn loại [nhớt](category_1)
+  #     - Xe [Ab](motorbike_name) nên chọn loại [nhớt](category_1)
+  #     - Xe [Vision](motorbike_name) nên chọn loại [nhớt](category_1)
+  #     - Xe [Winner](motorbike_name) nên chọn loại [nhớt](category_1)
+   
+   # gợi ý nhớt theo loại xe
   - intent: recommend_oil
     examples: |
       - Tôi đi [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
@@ -364,6 +385,25 @@ nlu:
       - [Xe tay ga](vehicle_type)
       - [Xe số](vehicle_type)
       - [Xe côn tay](vehicle_type)
+      - Xe [Wave](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Wave alpha](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Dream](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Future](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Winner](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Click](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Exciter](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Sirius](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Air Blade](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [SH](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Lead](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Vision](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Sonic](motorbike_name) nên chọn [nhớt](category_1)
+      - Xe [Future Neo](motorbike_name) nên chọn [nhớt](category_1)
+      - Xe [Grande](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Vario](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Ab](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Vision](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Winner](motorbike_name) nên chọn loại [nhớt](category_1)
   
   - intent: ask_size_recommendation
     examples: |
