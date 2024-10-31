@@ -1,14 +1,7 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 from actions.functions.db_connect import dbConnect
 from actions.functions.format_price import PriceFormatter
@@ -31,11 +24,42 @@ class action_custom_fallback(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        cust_sex = tracker.get_slot("cust_sex").capitalize()
+        cust_sex = tracker.get_slot("cust_sex")
+        cust_sex = cust_sex.capitalize()
         
         dispatcher.utter_message(text=f"Xin {cust_sex} vui lòng diễn đạt lại yêu cầu để em có thể hỗ trợ tốt hơn ạ.")
         
         return []
+    
+class action_greet(Action):
+    
+    def name(self) -> Text:
+        return "action_greet"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        cust_sex = tracker.get_slot("cust_sex")
+        cust_name = tracker.get_slot("cust_name")
+        
+        if cust_sex:
+            cust_sex = cust_sex.capitalize()
+        if cust_name:
+            cust_name = cust_name.capitalize()
+        
+        if cust_sex is None and cust_name is None:
+            return [
+                SlotSet("cust_sex", "Anh/Chị"),
+                SlotSet("cust_name", "Anh/Chị")
+            ]
+        else:
+            return [
+                SlotSet("cust_sex", cust_sex if cust_sex else "Anh/Chị"),
+                SlotSet("cust_name", cust_name if cust_name else "Anh/Chị")
+            ]
+        
+      
 # response bot functions
 class action_return_bot_functions(Action):
 

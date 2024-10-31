@@ -313,6 +313,7 @@ responses:
 
 # Xác định các hành động
 actions:
+  - action_greet
   - action_return_categories
   - action_return_recommend_oil
   - action_ask_product_size

@@ -5,6 +5,7 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_greet
 
 - rule: Say greet with name anytime the user gives name
   steps:
