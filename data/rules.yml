@@ -57,10 +57,15 @@ rules:
   - intent: recommend_oil_type
   - action: utter_recommend_oil_type
 
-- rule: Recommend oil type for a specific vehicle and motorbike name
+- rule: Recommend oil type for a specific vehicle type 
   steps:
-  - intent: recommend_oil
-  - action: action_return_recommend_oil
+  - intent: recommend_oil_by_vehicle_type
+  - action: action_return_recommend_oil_by_vehicle_type
+
+- rule: Recommend oil type for a specific motorbike name 
+  steps:
+  - intent: recommend_oil_by_motorbike_name
+  - action: action_return_recommend_oil_by_motorbike_name
 
 - rule: Ask for size recommendation
   steps:
@@ -107,6 +112,11 @@ rules:
   - intent: ask_payment_methods
   - action: utter_ask_payment_methods
 
+- rule: ask shipping cost
+  steps:
+  - intent: ask_shipping_cost
+  - action: utter_ask_shipping_cost
+
 - rule: Ask for promotions
   steps:
   - intent: ask_promotions
@@ -137,6 +147,7 @@ rules:
   - intent: membership_benefits
   - action: action_return_membership_benefits
 
-- rule: Response fallback
+- rule: Fallback
   steps:
-  - action: action_custom_fallback
+  - intent: nlu_fallback
+  - action: utter_please_rephrase

@@ -335,7 +335,7 @@ nlu:
   
 
    # gợi ý nhớt theo loại xe
-  - intent: recommend_oil
+  - intent: recommend_oil_by_vehicle_type
     examples: |
       - Tôi đi [xe côn tay](vehicle_type) thì nên chọn loại nhớt nào
       - Tôi đi [xe tay ga](vehicle_type) thì nên chọn loại nhớt nào
@@ -365,6 +365,9 @@ nlu:
       - [Xe tay ga](vehicle_type)
       - [Xe số](vehicle_type)
       - [Xe côn tay](vehicle_type)
+  
+  - intent: recommend_oil_by_motorbike_name
+    examples: |
       - Xe [Wave](motorbike_name) thì nên chọn [nhớt](category_1) nào
       - Xe [Ware](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Wave alpha](motorbike_name) thì nên chọn [nhớt](category_1) nào
@@ -702,6 +705,17 @@ nlu:
       - Có hỗ trợ thanh toán qua thẻ không ?
       - Những phương thức thanh toán ?
       - Cửa hàng chấp nhận thanh toán qua thẻ không ?
+  
+  - intent: ask_shipping_cost
+    examples: |
+      - Phí vận chuyển là bao nhiêu?
+      - Bao nhiêu tiền để giao hàng đến nhà?
+      - Cho anh hỏi chi phí ship hàng là bao nhiêu?
+      - Ship hàng về tỉnh tính phí như thế nào?
+      - Chi phí để giao hàng là bao nhiêu vậy?
+      - Phí ship hàng là bao nhiêu?
+      - Giao hàng về tỉnh phí như thế nào?
+      - Chi phí vận chuyển là bao nhiêu?
 
   - intent: ask_promotions
     examples: |
@@ -738,7 +752,6 @@ nlu:
       - Shop có chính sách bảo hành như thế nào vậy ?
       - Shop bảo hành sản phẩm như thế nào vậy ?
       - Chính sách bảo hành sản phẩm như thế nào ?
-
 
   - intent: ask_shipping_policy
     examples: |

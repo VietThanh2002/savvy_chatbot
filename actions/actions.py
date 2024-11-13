@@ -15,22 +15,6 @@ import random
 
 base_url_img = "http://127.0.0.1:8000/uploads/product/"
 base_url = "http://127.0.0.1:8000/product-details/"
-
-# custom fallback
-class action_custom_fallback(Action):
-    def name(self) -> Text:
-        return "action_custom_fallback"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        cust_sex = tracker.get_slot("cust_sex")
-        cust_sex = cust_sex.capitalize()
-        
-        dispatcher.utter_message(text=f"Xin {cust_sex} vui lòng diễn đạt lại yêu cầu để em có thể hỗ trợ tốt hơn ạ.")
-        
-        return []
     
 class action_greet_with_name(Action):
     def name(self) -> Text:
@@ -139,63 +123,49 @@ class action_return_categories(Action):
         return []
     
 # response recommend oil  
-class action_return_recommend_oil(Action):
+class action_return_recommend_oil_by_vehicle_type(Action):
     
     def name(self) -> Text:
-        return "action_return_recommend_oil"
+        return "action_return_recommend_oil_by_vehicle_type"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         cust_sex = tracker.get_slot("cust_sex")
-        type = tracker.get_slot("vehicle_type")
-        motorbike_name =  tracker.get_slot("motorbike_name")
-        motorbike_name = motorbike_name.lower()
-        category_1 = tracker.get_slot("category_1")
-        category_1 = category_1.lower()
+        vehicle_type = tracker.get_slot("vehicle_type")
       
-        if (type == "xe tay ga"):
+        # Kiểm tra loại xe để tìm sản phẩm phù hợp
+        if vehicle_type == "xe tay ga":
             products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
-        elif (category_1 != None  
-                or (motorbike_name == "grande" or motorbike_name == "ab" or motorbike_name == "air blade"
-                or motorbike_name == "lead" or motorbike_name == "vision" or motorbike_name == "click" 
-                or motorbike_name == "sh")):
-            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
-        elif (type == "xe số" or type == "xe côn tay"):
-            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")      
-        elif (category_1 != None 
-                and (motorbike_name == "wave" or motorbike_name == "dream" or motorbike_name == "sirius" 
-                or motorbike_name == "future" or motorbike_name == "winner" or motorbike_name == "exciter", 
-                motorbike_name == "sonic" or motorbike_name == "ware alpha")):
-            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")      
+        elif vehicle_type in ["xe số", "xe côn tay"]:
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")     
         else:
-            products = None
+            dispatcher.utter_message(text="Không xác định được loại xe. Vui lòng cung cấp loại xe hợp lệ.")
+            return []
       
+        # Kiểm tra nếu không có sản phẩm nào
         if not products:
-            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp !.")
+            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
             return []
         
-        if (type == None):
-            type = motorbike_name
-            dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với xe {type} : \n")
-        else:
-            dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với xe {type} : \n")
-                
+        # Thông báo danh sách sản phẩm nếu có
+        dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với {vehicle_type}: \n")
+        
         elements = []
         
         for item in products:
+            # Kiểm tra giá sản phẩm
+            price = "Liên hệ" if item[2] == 0 else PriceFormatter.format_price(item[2])
             
-            if(item[4] == None):
-                     check_qty = f"Sản phẩm đã hết hàng"
-            else:
-                check_qty = f"SL tồn kho {item[4]}"
+            # Kiểm tra số lượng tồn kho
+            check_qty = "Sản phẩm đã hết hàng" if item[4] is None or item[4] <= 0 else f"SL tồn kho {item[4]}"
             
+            # Tạo phần tử cho carousel
             element = {
-                "title": item[0],
-                "image_url": f"{base_url_img}{item[3]}",
-                "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
-                "subtitle": f"SL tồn kho: {check_qty}",
+                "title": item[0] or "Sản phẩm",
+                "image_url": f"{base_url_img}{item[3]}" if item[3] else "",
+                "subtitle": f"Giá: {price} - {check_qty}", 
                 "default_action": {
                     "type": "web_url",
                     "url": f"{base_url}{item[1]}",
@@ -210,22 +180,113 @@ class action_return_recommend_oil(Action):
                 ]
             }
             elements.append(element)
-            
-            # Nếu có ít nhất một sản phẩm, gửi carousel
+        
+        # Gửi carousel nếu có phần tử
         if elements:
             new_carousel = {
                 "type": "template",
                 "payload": {
                     "template_type": "generic",
-                    "elements": elements  # Thêm danh sách các mục vào đây
+                    "elements": elements
                 }
             }
             dispatcher.utter_message(attachment=new_carousel)
             dispatcher.utter_message(text=f"{cust_sex} có thể xem chi tiết sản phẩm bằng cách click vào nút Xem chi tiết.")
-            return []
         
         return []
 
+
+# recommend oil buy motobike name
+class action_return_recommend_oil_by_motorbike_name(Action):
+    def name(self) -> Text:
+        return "action_return_recommend_oil_by_motorbike_name"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        cust_sex = tracker.get_slot("cust_sex")
+        cust_sex = cust_sex.capitalize()
+        motorbike_name = tracker.get_slot("motorbike_name")
+        motorbike_name = motorbike_name.lower()
+        category_1 = tracker.get_slot("category_1")
+        category_1 = category_1.lower()
+        
+        scooter_bikes = set(["grande", "ab", "air blade", "lead", "vision", "click", "sh"])
+        manual_bikes = set(["wave", "dream", "sirius", "future", "winner", "exciter", "sonic", "ware alpha"])
+
+        if motorbike_name in scooter_bikes:
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
+        elif motorbike_name in manual_bikes:
+            products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe số")
+
+        if not products:
+            dispatcher.utter_message(text=f"Hiện tại không có sản phẩm phù hợp cho xe {motorbike_name} của {cust_sex}!")
+    
+        else:
+            dispatcher.utter_message(text=f"Em gửi danh sách nhớt phù hợp với xe {motorbike_name}: \n")
+            elements = []
+        
+            for item in products:
+                if item[2] == 0:
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                
+                if item[4] == None:
+                    check_qty = f"Sản phẩm đã hết hàng"
+                else:
+                    check_qty = f"SL tồn kho {item[4]}"
+                
+                elements = []
+        
+                for item in products:
+                    
+                    if(item[2] == 0):
+                        price = "Liên hệ"
+                    else:
+                        price = PriceFormatter.format_price(item[2])
+                    
+                    if(item[4] == None):
+                            check_qty = f"Sản phẩm đã hết hàng"
+                    else:
+                        check_qty = f"SL tồn kho {item[4]}"
+                    
+                    element = {
+                        "title": item[0],
+                        "image_url": f"{base_url_img}{item[3]}",
+                        "subtitle": f"Giá: {price} - {check_qty}", 
+                        "default_action": {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "webview_height_ratio": "square"
+                        },
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "url": f"{base_url}{item[1]}",
+                                "title": "Xem chi tiết"
+                            },
+                        ]
+                    }
+                    elements.append(element)
+                    
+                    # Nếu có ít nhất một sản phẩm, gửi carousel
+                if elements:
+                    new_carousel = {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "generic",
+                            "elements": elements  # Thêm danh sách các mục vào đây
+                        }
+                    }
+                    dispatcher.utter_message(attachment=new_carousel)
+                    dispatcher.utter_message(text=f"{cust_sex} có thể xem chi tiết sản phẩm bằng cách click vào nút Xem chi tiết.")
+                    return []
+                
+                return []
+        
+    
 # response recommend air filter
 class action_return_recommend_air_filter(Action):
     def name(self) -> Text:
@@ -254,6 +315,11 @@ class action_return_recommend_air_filter(Action):
             
             for item in products:
                 
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+            
                 if(item[6] == None):
                      check_qty = f"Sản phẩm đã hết hàng"
                 else:
@@ -262,8 +328,7 @@ class action_return_recommend_air_filter(Action):
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[5]}",
-                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
-                    "subtitle": f"{check_qty}",
+                    "subtitle": f"Giá: {price} - {check_qty}", 
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",
@@ -320,7 +385,11 @@ class action_return_recommend_bugi(Action):
             elements = []
             
             for item in products:
-                
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                    
                 if(item[6] == None):
                      check_qty = f"Sản phẩm đã hết hàng"
                 else:
@@ -329,7 +398,7 @@ class action_return_recommend_bugi(Action):
                 element = {
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[5]}",
-                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "subtitle": f"Giá: {price} - {check_qty}", 
                     "subtitle": f"{check_qty}",
                     "default_action": {
                         "type": "web_url",
@@ -390,11 +459,20 @@ class action_return_recommend_protective_clothing(Action):
             elements = []
             
             for item in products:
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                    
+                if(item[4] == None):
+                    check_qty = f"Sản phẩm đã hết hàng"
+                else:
+                    check_qty = f"SL tồn kho {item[4]}"    
                 # Tạo từng mục trong carousel
                 element = {
                     "title": item[0],
                     "image_url": f"{base_img_url}{item[3]}",
-                    "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
+                    "subtitle": f"Giá: {price} - {check_qty}", 
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",

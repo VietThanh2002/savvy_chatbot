@@ -23,8 +23,10 @@ stories:
     - action: utter_oil_change_advice
     - intent: recommend_oil_type
     - action: utter_recommend_oil_type
-    - intent: recommend_oil
-    - action: action_return_recommend_oil
+    - intent: recommend_oil_by_vehicle_type
+    - action: action_return_recommend_oil_by_vehicle_type
+    - intent: recommend_oil_by_motorbike_name
+    - action: action_return_recommend_oil_by_motorbike_name
     - intent: air_filter_change_advice
     - action: utter_air_filter_change_advice
     - intent: recommend_air_filter
@@ -51,6 +53,8 @@ stories:
     - action: action_return_categories
     - intent: ask_payment_methods
     - action: utter_ask_payment_methods
+    - intent: ask_shipping_cost
+    - action: utter_ask_shipping_cost
     - intent: ask_promotions
     - action: action_return_promotions
 
@@ -65,7 +69,6 @@ stories:
     - intent: ask_return_policy
     - action: utter_ask_return_policy
     
-
 - story: conversation_closers
   steps:
     - intent: goodbye
@@ -75,9 +78,7 @@ stories:
     - intent: bot_challenge
     - action: utter_iamabot
 
-- story: fallback story
-  steps:
-    - action: action_custom_fallback
+
 
 
 
