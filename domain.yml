@@ -64,10 +64,6 @@ intents:
     # about categories
   - ask_categories:
       use_entities: []
-  
-  - ask_shipping_cost:
-      use_entities:
-        - province
 
   - ask_payment_methods:
       use_entities: []
@@ -88,14 +84,13 @@ intents:
       use_entities:
         - helmet_type
 
-  - check_product_availability:
-      use_entities:
-        - product_name
-
   - provide_height_weight:
       use_entities:
         - height
         - weight
+  
+  - membership_benefits:
+      use_entities: []
 
 
 entities:
@@ -109,7 +104,6 @@ entities:
   - sub_category_3
   - gender
   - product_name
-  - province
   - weight
   - height
   - category_1
@@ -188,25 +182,6 @@ slots:
         entity: gender
         intent:
           - recommend_protective_clothing_by_gender
-
-  product_name:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: from_entity
-        entity: product_name
-        intent:
-          - ask_product_price
-          - check_product_availability
-  
-  province:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: from_entity
-        entity: province
-        intent:
-          - ask_shipping_cost
   
   helmet_type:
     type: text
@@ -256,13 +231,8 @@ slots:
 responses:
   utter_greet:
   - text: "Kính chào quý khách! Để tiện xưng hô, quý khách vui lòng cho em biết tên ạ?"
-  - text: "Hi! Savvy có thể biết tên bạn được không ạ?"
+  - text: "Hi! Savvy có thể biết tên quý khách được không ạ?"
   - text: "Rất vui được phục vụ quý khách! Quý khách cho em xin phép được biết tên để tiện xưng hô ạ?"
-
-  utter_greet_with_name:
-  - text: "Xin chào {cust_sex} {cust_name}! Em có thể hỗ trợ tư vấn thông tin gì cho {cust_sex} ạ?"
-  - text: "Chào {cust_sex} {cust_name}! Savvy có thể giúp gì cho {cust_sex} hôm nay ạ?"
-  - text: "Chào {cust_sex} {cust_name}! {cust_sex} cần em hỗ trợ thông tin gì ạ?"
 
   utter_goodbye:
   - text: "Hẹn gặp lại {cust_sex} {cust_name} ạ !"
@@ -313,7 +283,7 @@ responses:
 
 # Xác định các hành động
 actions:
-  - action_greet
+  - action_greet_with_name
   - action_return_categories
   - action_return_recommend_oil
   - action_ask_product_size
@@ -321,11 +291,10 @@ actions:
   - action_return_recommend_air_filter
   - action_return_recommend_bugi
   - action_return_recommend_protective_clothing
-  - action_return_shipping_cost
   - action_return_promotions
   - action_return_recommend_helmet
   - action_return_bot_functions
-  - action_check_qty
+  - action_return_membership_benefits
   - action_custom_fallback
 
 session_config:

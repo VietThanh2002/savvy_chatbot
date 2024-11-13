@@ -11,6 +11,7 @@ from actions.functions.get_shipping_fee import ShippingFee
 from actions.functions.get_promotions import PromotionsInfo
 from actions.functions.check_qty import CheckQty
 import re
+import random
 
 base_url_img = "http://127.0.0.1:8000/uploads/product/"
 base_url = "http://127.0.0.1:8000/product-details/"
@@ -31,35 +32,59 @@ class action_custom_fallback(Action):
         
         return []
     
-class action_greet(Action):
-    
+class action_greet_with_name(Action):
     def name(self) -> Text:
-        return "action_greet"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+        return "action_greet_with_name"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         cust_sex = tracker.get_slot("cust_sex")
         cust_name = tracker.get_slot("cust_name")
         
+        # Capitalize if values exist
         if cust_sex:
             cust_sex = cust_sex.capitalize()
         if cust_name:
             cust_name = cust_name.capitalize()
-        
+
+        formal_templates = [
+            "Xin chào quý khách! Em có thể hỗ trợ tư vấn thông tin gì ạ?",
+            "Chào quý khách! Em có thể giúp gì cho quý khách ạ?",
+            "Kính chào quý khách! Quý khách cần em hỗ trợ thông tin gì ạ?"
+        ]
+
+        name_only_templates = [
+            f"Xin chào {cust_name}! Em có thể hỗ trợ tư vấn thông tin gì ạ?",
+            f"Chào {cust_name}! Em có thể giúp gì cho quý khách ạ?",
+            f"Rất vui được gặp {cust_name}! Quý khách cần em hỗ trợ thông tin gì ạ?"
+        ]
+
+        full_info_templates = [
+            f"Xin chào {cust_sex} {cust_name}! Em có thể hỗ trợ tư vấn thông tin gì cho {cust_sex} ạ?",
+            f"Chào {cust_sex} {cust_name}! Em có thể giúp gì cho {cust_sex} ạ?",
+            f"Rất vui được gặp {cust_sex} {cust_name}! {cust_sex} cần em hỗ trợ thông tin gì ạ?"
+        ]
+
+        # Choose appropriate template based on available information
         if cust_sex is None and cust_name is None:
+            dispatcher.utter_message(text=random.choice(formal_templates))
             return [
-                SlotSet("cust_sex", "Anh/Chị"),
-                SlotSet("cust_name", "Anh/Chị")
+                SlotSet("cust_sex", "Quý khách"),
+                SlotSet("cust_name", "Quý khách")
+            ]
+        elif cust_sex is None and cust_name:
+            dispatcher.utter_message(text=random.choice(name_only_templates))
+            return [
+                SlotSet("cust_sex", "Quý khách"),
+                SlotSet("cust_name", cust_name)
             ]
         else:
+            dispatcher.utter_message(text=random.choice(full_info_templates))
             return [
-                SlotSet("cust_sex", cust_sex if cust_sex else "Anh/Chị"),
-                SlotSet("cust_name", cust_name if cust_name else "Anh/Chị")
+                SlotSet("cust_sex", cust_sex if cust_sex else "Quý khách"),
+                SlotSet("cust_name", cust_name if cust_name else "Quý khách")
             ]
         
-      
+        
 # response bot functions
 class action_return_bot_functions(Action):
 
@@ -210,14 +235,16 @@ class action_return_recommend_air_filter(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        
         model_type = tracker.get_slot("model_type")
         sub_category_1 = tracker.get_slot("sub_category_1")
-        
+        cust_sex = tracker.get_slot("cust_sex")
+        cust_sex = cust_sex.capitalize()
         
         products = ProductInfo().get_products_by_category_and_name(sub_category_1, model_type)
         
         if not products:
-            dispatcher.utter_message(text="Hiện tại không có sản phẩm phù hợp cho loại xe anh/chị đã cung cấp!")
+            dispatcher.utter_message(text=f"Hiện tại cửa hàng không có {sub_category_1} phù hợp cho xe của {cust_sex}")
             return []
         else:
             # base_url = "http://127.0.0.1:8000/product-details/"
@@ -459,35 +486,7 @@ class action_return_recommend_helmet(Action):
         
         return []
         
-# ask shipping fee
-class action_return_shipping_cost(Action):
-    def name(self) -> Text:
-        return "action_return_shipping_cost"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        province = tracker.get_slot("province").capitalize()
-        
-        if province == "TP HCM" or province == "TP Hồ Chí Minh":
-            province = "TP HCM"
-        
-        
-        shipping_fee = ShippingFee().get_shippingFee_info(province)
-        
-        if not shipping_fee:
-            fee_not_exist = 60000
-            fee_not_exist = PriceFormatter.format_price(fee_not_exist)
-            dispatcher.utter_message(text=f"Phí vận chuyển về { province } là {fee_not_exist}.")
-
-        else:
-            shipping_fee = PriceFormatter.format_price(shipping_fee)
-            dispatcher.utter_message(text=f"Phí vận chuyển về { province } là {shipping_fee}.")
-        
-        return []
 # about promotions
-
 class action_return_promotions(Action):
     def name(self) -> Text:
         return "action_return_promotions"
@@ -506,24 +505,6 @@ class action_return_promotions(Action):
             dispatcher.utter_message(text=f"Truy cập vào đường link sau để xem chi tiết: {url_path}")
         
         return []
-    
-# check qty
-class action_check_qty(Action):
-    def name(self) -> Text:
-        return "action_check_qty"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        product_name = tracker.get_slot("product_name")
-        
-        check_qty = CheckQty().check_qty(product_name)
-        
-        if check_qty and len(check_qty) > 0:
-            dispatcher.utter_message(text=f"Sản phẩm {product_name} còn hàng! Số lượng còn lại: {check_qty[0][1]}")
-        else:
-            dispatcher.utter_message(text=f"Hiện tại sản phẩm {product_name} đã hết hàng!")
         
 # show table chose size
 class action_ask_product_size(Action):
@@ -542,7 +523,7 @@ class action_ask_product_size(Action):
         if product_type == "áo":
             dispatcher.utter_message(text= f"{cust_sex} cung cấp thông tin chiều cao và cân nặng để em tư vấn size áo phù hợp ạ !")
         elif (product_type == "nón" or product_type == "mũ"):
-            dispatcher.utter_message(text= f"Em gửi {cust_sex} bảng size {product_type}:", image="https://shop2banh.vn/images/2020/05/20200527_d048f4b83908d99ebb740ab0b8355f05_1590565151.jpeg")
+            dispatcher.utter_message(text= f"Em gửi {cust_sex} bảng size {product_type}:", image="https://bigbike.vn/wp-content/uploads/2024/09/z5815672163854_fdc64e15333852403f43e7507805d32a.jpg")
         else:
             dispatcher.utter_message(text="Hiện tại em không có bảng size cho sản phẩm này ạ !")
         return []
@@ -620,6 +601,23 @@ class action_recommend_shirt_size(Action):
                  f"Em khuyên {cust_sex} nên chọn size {size}."
         )
 
+        return []
+    
+# response membership benefits
+class action_return_membership_benefits(Action):
+    def name(self) -> Text:
+        return "action_return_membership_benefits"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message(text="Chương trình thành viên của cửa hàng áp dụng ưu đãi xếp hạng mua sắm trong tháng như sau: \n"
+                                    "- Tặng voucher giảm giá 20.000đ cho khách hàng bậc Bạc\n"
+                                    "- Tặng voucher giảm giá 50.000đ cho khách hàng bậc Vàng\n"
+                                    "- Tặng voucher giảm giá 100.000đ cho khách hàng bậc Kim Cương\n")
+                                   
+        
         return []
 
         

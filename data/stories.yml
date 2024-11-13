@@ -6,9 +6,8 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
-    - action: action_greet
     - intent: give_name
-    - action: utter_greet_with_name
+    - action: action_greet_with_name
     - intent: opening_time
     - action: utter_opening_time
     - intent: ask_address
@@ -50,10 +49,6 @@ stories:
   steps:
     - intent: ask_categories
     - action: action_return_categories
-    - intent: check_product_availability
-    - action: action_check_qty
-    - intent: ask_shipping_cost
-    - action: action_return_shipping_cost
     - intent: ask_payment_methods
     - action: utter_ask_payment_methods
     - intent: ask_promotions
@@ -61,6 +56,8 @@ stories:
 
 - story: customer_service
   steps:
+    - intent: membership_benefits
+    - action: action_return_membership_benefits
     - intent: ask_warranty_policy
     - action: utter_ask_warranty_policy
     - intent: ask_shipping_policy

@@ -5,12 +5,11 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-  - action: action_greet
 
 - rule: Say greet with name anytime the user gives name
   steps:
   - intent: give_name
-  - action: utter_greet_with_name
+  - action: action_greet_with_name
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -103,11 +102,6 @@ rules:
   - intent: recommend_bugi
   - action: action_return_recommend_bugi
 
-- rule: Ask for shipping cost
-  steps:
-  - intent: ask_shipping_cost
-  - action: action_return_shipping_cost
-
 - rule: Ask for payment methods
   steps:
   - intent: ask_payment_methods
@@ -138,10 +132,10 @@ rules:
   - intent: ask_categories
   - action: action_return_categories
 
-- rule: Check product availability
+- rule: Ask membership benefits
   steps:
-  - intent: check_product_availability
-  - action: action_check_qty
+  - intent: membership_benefits
+  - action: action_return_membership_benefits
 
 - rule: Response fallback
   steps:

@@ -333,27 +333,7 @@ nlu:
       - Tư vấn giúp anh nhớt động cơ nào tốt
       - Anh cần tư vấn nhớt để thay cho xe
   
-  # gợi ý nhớt theo tên xe
-  # - intent: recommend_oil_by_motorbike_name
-  #   examples: /
-  #     - Xe [Wave](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Dream](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Future](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Winner](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Exciter](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Sirius](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Air Blade](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [SH](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Lead](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Vision](motorbike_name) thì nên chọn [nhớt](category_1) nào
-  #     - Xe [Sonic](motorbike_name) nên chọn [nhớt](category_1)
-  #     - Xe [Future Neo](motorbike_name) nên chọn [nhớt](category_1)
-  #     - Xe [Grande](motorbike_name) nên chọn loại [nhớt](category_1)
-  #     - Xe [Vario](motorbike_name) nên chọn loại [nhớt](category_1)
-  #     - Xe [Ab](motorbike_name) nên chọn loại [nhớt](category_1)
-  #     - Xe [Vision](motorbike_name) nên chọn loại [nhớt](category_1)
-  #     - Xe [Winner](motorbike_name) nên chọn loại [nhớt](category_1)
-   
+
    # gợi ý nhớt theo loại xe
   - intent: recommend_oil
     examples: |
@@ -386,24 +366,56 @@ nlu:
       - [Xe số](vehicle_type)
       - [Xe côn tay](vehicle_type)
       - Xe [Wave](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Ware](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Wave alpha](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Dream](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Dream](motorbike_name) thì nên chọn [nhớt](category_1) nào
       - Xe [Future](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Future](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Winner](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Winner](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Click](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Click](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Exciter](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Exciter](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Sirius](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Sirius](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Air Blade](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Air Blade](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [SH](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [SH](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Lead](motorbike_name) thì nên chọn [nhớt](category_1) nào
+      - Xe [Lead](motorbike_name) thì nên thay [nhớt](category_1) nào
       - Xe [Vision](motorbike_name) thì nên chọn [nhớt](category_1) nào
-      - Xe [Sonic](motorbike_name) nên chọn [nhớt](category_1)
-      - Xe [Future Neo](motorbike_name) nên chọn [nhớt](category_1)
-      - Xe [Grande](motorbike_name) nên chọn loại [nhớt](category_1)
-      - Xe [Vario](motorbike_name) nên chọn loại [nhớt](category_1)
-      - Xe [Ab](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Vision](motorbike_name) thì nên thay [nhớt](category_1) nào
+      - Xe [Sonic](motorbike_name) nên chọn [nhớt](category_1) nào
+      - Xe [Sonic](motorbike_name) nên thay [nhớt](category_1) nào
+      - Xe [Future Neo](motorbike_name) nên chọn [nhớt](category_1) nào
+      - Xe [Future Neo](motorbike_name) nên thay [nhớt](category_1) nào
+      - Xe [Grande](motorbike_name) nên chọn loại [nhớt](category_1) nào
+      - Xe yamaha [Grande](motorbike_name) nên thay [nhớt](category_1) nào
+      - Xe [Vario](motorbike_name) nên chọn loại [nhớt](category_1) nào
+      - Xe [Vario](motorbike_name) nên thay [nhớt](category_1) nào
+      - Xe [Ab](motorbike_name) nên chọn loại [nhớt](category_1) nào
+      - Xe [Ab](motorbike_name) nên thay [nhớt](category_1) nào
       - Xe [Vision](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Vision](motorbike_name) nên thay [nhớt](category_1) nào
       - Xe [Winner](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Winner](motorbike_name) nên thay [nhớt](category_1) nào
+      - Có [nhớt](category_1) cho xe [ab](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [wave](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [wave alpha](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [dream](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [future](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [winner](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [click](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [exciter](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [sirius](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [air blade](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [sh](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [lead](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [vision](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [sonic](motorbike_name) không
   
   - intent: ask_size_recommendation
     examples: |
@@ -535,7 +547,6 @@ nlu:
       - cân nặng [46kg](weight)
       - cân nặng [45kg](weight)
 
-  
   - intent: recommend_helmets_by_type
     examples: |
       - Cửa hàng có nón bảo hiểm [3/4](helmet_type) không?
@@ -682,137 +693,6 @@ nlu:
       - Nên thay [bugi](sub_category_3) nào cho xe [sh](model_type)
       - Nên thay [bugi](sub_category_3) nào cho xe [winner](model_type)
 
-  - intent: ask_shipping_cost
-    examples: |
-      - Chuyển hàng về [Đồng Tháp](province) giá bao nhiêu?
-      - Ship hàng về [Đồng Tháp](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Hà Nội](province) là bao nhiêu?
-      - Ship hàng đến [Hà Nội](province) có giá là bao nhiêu?
-      - Gửi hàng đến [TP HCM](province) có giá là bao nhiêu?
-      - Ship hàng đến [TP HCM](province) giá bao nhiêu?
-      - Phí vận chuyển tới [TP Hồ Chí Minh](province) là bao nhiêu?
-      - Gửi hàng đến thành phố [Hồ Chí Minh] có giá là bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Bắc Ninh](province)
-      - Ship hàng đến [Bắc Ninh](province) giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Cà Mau](province)
-      - Ship hàng đến [Cà Mau](province) có giá bao nhiêu?
-      - Phí vận chuyển về [Hải Phòng](province) là bao nhiêu?
-      - Ship hàng đến [Hải Phòng](province) giá bao nhiêu?
-      - Gửi hàng đến [Đà Nẵng](province) có giá bao nhiêu?
-      - Ship hàng đến [Đà Nẵng](province) giá bao nhiêu?
-      - Chuyển hàng về [An Giang](province) giá bao nhiêu?
-      - Ship hàng về [An Giang](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Bà Rịa - Vũng Tàu](province) là bao nhiêu?
-      - Ship hàng đến [Bà Rịa - Vũng Tàu](province) giá bao nhiêu?
-      - Gửi hàng đến [Bình Dương](province) có giá là bao nhiêu?
-      - Ship hàng đến [Bình Dương](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Bình Phước](province) 
-      - Ship hàng đến [Bình Phước](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Bình Thuận](province)
-      - Ship hàng đến [Bình Thuận](province) giá bao nhiêu?
-      - Phí vận chuyển về [Bình Định](province) là bao nhiêu?
-      - Ship hàng đến [Bình Định](province) giá bao nhiêu?
-      - Gửi hàng đến [Bạc Liêu](province) có giá bao nhiêu?
-      - Ship hàng đến [Bạc Liêu](province) giá bao nhiêu?
-      - Chuyển hàng về [Bắc Giang](province) giá bao nhiêu?
-      - Ship hàng về [Bắc Giang](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Bắc Kạn](province) là bao nhiêu?
-      - Ship hàng đến [Bắc Kạn](province) giá bao nhiêu?
-      - Gửi hàng đến [Bến Tre](province) có giá là bao nhiêu?
-      - Ship hàng đến [Bến Tre](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Cao Bằng](province)
-      - Ship hàng đến [Cao Bằng](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Điện Biên](province)
-      - Ship hàng đến [Điện Biên](province) giá bao nhiêu?
-      - Phí vận chuyển về [Đắk Nông](province) là bao nhiêu?
-      - Ship hàng đến [Đắk Nông](province) giá bao nhiêu?
-      - Gửi hàng đến [Đắk Lắk](province) có giá bao nhiêu?
-      - Ship hàng đến [Đắk Lắk](province) giá bao nhiêu?
-      - Chuyển hàng về [Đồng Nai](province) giá bao nhiêu?
-      - Ship hàng về [Đồng Nai](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Đồng Tháp](province) là bao nhiêu?
-      - Ship hàng đến [Đồng Tháp](province) giá bao nhiêu?
-      - Gửi hàng đến [Gia Lai](province) có giá là bao nhiêu?
-      - Ship hàng đến [Gia Lai](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Hà Giang](province)
-      - Ship hàng đến [Hà Giang](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Hà Nam](province)
-      - Ship hàng đến [Hà Nam](province) giá bao nhiêu?
-      - Phí vận chuyển về [Hà Tĩnh](province) là bao nhiêu?
-      - Ship hàng đến [Hà Tĩnh](province) giá bao nhiêu?
-      - Gửi hàng đến [Hòa Bình](province) có giá bao nhiêu?
-      - Ship hàng đến [Hòa Bình](province) giá bao nhiêu?
-      - Chuyển hàng về [Hải Dương](province) giá bao nhiêu?
-      - Ship hàng về [Hải Dương](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Hậu Giang](province) là bao nhiêu?
-      - Ship hàng đến [Hậu Giang](province) giá bao nhiêu?
-      - Gửi hàng đến [Hưng Yên](province) có giá là bao nhiêu?
-      - Ship hàng đến [Hưng Yên](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Khánh Hòa](province)
-      - Ship hàng đến [Khánh Hòa](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Kiên Giang](province)
-      - Ship hàng đến [Kiên Giang](province) giá bao nhiêu?
-      - Phí vận chuyển về [Kon Tum](province) là bao nhiêu?
-      - Ship hàng đến [Kon Tum](province) giá bao nhiêu?
-      - Gửi hàng đến [Lai Châu](province) có giá bao nhiêu?
-      - Ship hàng đến [Lai Châu](province) giá bao nhiêu?
-      - Chuyển hàng về [Lào Cai](province) giá bao nhiêu?
-      - Ship hàng về [Lào Cai](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Lâm Đồng](province) là bao nhiêu?
-      - Ship hàng đến [Lâm Đồng](province) giá bao nhiêu?
-      - Gửi hàng đến [Lạng Sơn](province) có giá là bao nhiêu?
-      - Ship hàng đến [Lạng Sơn](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Long An](province)
-      - Ship hàng đến [Long An](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Nam Định](province)
-      - Ship hàng đến [Nam Định](province) giá bao nhiêu?
-      - Phí vận chuyển về [Nghệ An](province) là bao nhiêu?
-      - Ship hàng đến [Nghệ An](province) giá bao nhiêu?
-      - Gửi hàng đến [Ninh Bình](province) có giá bao nhiêu?
-      - Ship hàng đến [Ninh Bình](province) giá bao nhiêu?
-      - Chuyển hàng về [Ninh Thuận](province) giá bao nhiêu?
-      - Ship hàng về [Ninh Thuận](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Phú Thọ](province) là bao nhiêu?
-      - Ship hàng đến [Phú Thọ](province) giá bao nhiêu?
-      - Gửi hàng đến [Phú Yên](province) có giá là bao nhiêu?
-      - Ship hàng đến [Phú Yên](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Quảng Bình](province)
-      - Ship hàng đến [Quảng Bình](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Quảng Nam](province)
-      - Ship hàng đến [Quảng Nam](province) giá bao nhiêu?
-      - Phí vận chuyển về [Quảng Ngãi](province) là bao nhiêu?
-      - Ship hàng đến [Quảng Ngãi](province) giá bao nhiêu?
-      - Gửi hàng đến [Quảng Ninh](province) có giá bao nhiêu?
-      - Ship hàng đến [Quảng Ninh](province) giá bao nhiêu?
-      - Chuyển hàng về [Quảng Trị](province) giá bao nhiêu?
-      - Ship hàng về [Quảng Trị](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Sóc Trăng](province) là bao nhiêu?
-      - Ship hàng đến [Sóc Trăng](province) giá bao nhiêu?
-      - Gửi hàng đến [Sơn La](province) có giá là bao nhiêu?
-      - Ship hàng đến [Sơn La](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Tây Ninh](province)
-      - Ship hàng đến [Tây Ninh](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Thanh Hóa](province)
-      - Ship hàng đến [Thanh Hóa](province) giá bao nhiêu?
-      - Phí vận chuyển về [Thái Bình](province) là bao nhiêu?
-      - Ship hàng đến [Thái Bình](province) giá bao nhiêu?
-      - Gửi hàng đến [Thái Nguyên](province) có giá bao nhiêu?
-      - Ship hàng đến [Thái Nguyên](province) giá bao nhiêu?
-      - Chuyển hàng về [Thừa Thiên Huế](province) giá bao nhiêu?
-      - Ship hàng về [Thừa Thiên Huế](province) giá bao nhiêu?
-      - Phí vận chuyển tới [Tiền Giang](province) là bao nhiêu?
-      - Ship hàng đến [Tiền Giang](province) giá bao nhiêu?
-      - Gửi hàng đến [Trà Vinh](province) có giá là bao nhiêu?
-      - Ship hàng đến [Trà Vinh](province) giá bao nhiêu?
-      - Tôi muốn biết phí vận chuyển đến [Tuyên Quang](province)
-      - Ship hàng đến [Tuyên Quang](province) có giá bao nhiêu?
-      - Cần biết giá gửi hàng đến [Vĩnh Long](province)
-      - Ship hàng đến [Vĩnh Long](province) giá bao nhiêu?
-      - Phí vận chuyển về [Vĩnh Phúc](province) là bao nhiêu?
-      - Ship hàng đến [Vĩnh Phúc](province) giá bao nhiêu?
-      - Gửi hàng đến [Yên Bái](province) có giá bao nhiêu?
-      - Ship hàng đến [Yên Bái](province) giá bao nhiêu?
-
   - intent: ask_payment_methods
     examples: |
       - Cửa hàng có hỗ trợ những hình thức thanh toán nào ?
@@ -840,98 +720,43 @@ nlu:
       - Cửa hàng có khuyến mãi không ?
       - Có chương trình khuyến mãi gì đang diễn ra không ?
       - Shop có chương trình khuyến mãi không ?
-  
-  - intent: check_product_availability
+
+  - intent: membership_benefits
     examples: |
-      - [Nhớt Liqui Molygen Scooter 10W40](product_name) còn hàng không?
-      - [Nhớt Liqui Moly 4T Synth 10W40](product_name) còn hàng không?
-      - [Nhớt Motul Scooter Power LE 5W40](product_name) còn hàng không?
-      - [Nhớt Motul 300V Racing/Road 10W40](product_name) còn hàng không?
-      - [Nhớt Motul H-Tech 100 4T 10W40](product_name) còn hàng không?
-      - [Nhớt Liqui Moly Motorbike Scooter 10W40](product_name) còn hàng không?
-      - [Nhớt Motul Scooter Le 10W40](product_name) còn hàng không?
-      - [Nhớt Motul Scooter Expert LE 10W40](product_name) còn hàng không?
-      - [Nhớt Shell Advance Ultra Scooter 5W40](product_name) còn hàng không?
-      - [Nhớt Shell Advance Ultra Scooter 5W40 1L](product_name) còn hàng không?
-      - [Nhớt Shell Advance AX7 Scooter 10W40 0.8L](product_name) còn hàng không?
-      - [Nhớt Liqui Moly Motorbike Street 4T 10W40 1L](product_name) còn hàng không?
-      - [Nhớt Liqui Motorbike 10W40 Formula](product_name) còn hàng không?
-      - [Lọc gió zin cho SH350i](product_name) còn hàng không?
-      - [Lọc gió SH Mode 125](product_name) còn hàng không?
-      - [Lọc gió cho Winner 150, Winner X](product_name) còn hàng không?
-      - [Lọc gió Vision](product_name) còn hàng không?
-      - [Lọc gió Yamaha Exciter 150/ 155](product_name) còn hàng không?
-      - [Lọc gió Yamaha Exciter 135](product_name) còn hàng không?
-      - [Lọc gió Yamaha Grande](product_name) còn hàng không?
-      - [Lọc gió AB 110 Fi](product_name) còn hàng không?
-      - [Lọc nhớt Yamaha](product_name) còn hàng không?
-      - [Lọc nhớt Winner](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa Pro-Bike cho Future Fi](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa X1R cho Winner 122L, Đen](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa X1R cho Exciter 135](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa X1R cho Wave RS, Future 114L, Vàng](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa ProBike Pin Gold cho Exciter 155 46T](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa Pro-Bike cho Wave RS, Future 1, Neo, X](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa Pro-Bike cho Winner sên vàng đen Pin Gold 44T](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa Pro-Bike cho Wave, Dream](product_name) còn hàng không?
-      - [Bộ nhông sên dĩa X1R cho Winner 122L, Vàng](product_name) còn hàng không?
-      - [Bugi NGK Iridium CPR7EAIX-9 cho Wave, AB125, Future](product_name) còn hàng không?
-      - [Bugi NGK Laser Iridium cho SHVN 2020, SH350i, Vario 160](product_name) còn hàng không?
-      - [Bugi Denso IUF22 Dream, Wave, Sirius, Jupiter, Future, Viva](product_name) còn hàng không?
-      - [Bugi NGK Iridium CR6HIX chân ngắn dành cho Wave, Dream, Axelo](product_name) còn hàng không?
-      - [Bugi NGK Iridium CPR8EAIX-9 cho Exciter, NVX, SHVN, AB, Future Fi](product_name) còn hàng không?
-      - [Bugi Denso Iridium Power IU27 cho Winner 150](product_name) còn hàng không?
-      - [Bugi Denso IU22 Air Blade, PCX, Lead, Future, Wave, SH Mode, Vario](product_name) còn hàng không?
-      - [Bugi Denso IU24 Exciter, Raider, Vario, SHVN, Liberty, Vespa LX](product_name) còn hàng không?
-      - [Bugi Denso Iridium IUH24 dành cho SH Ý, Dylan, PS](product_name) còn hàng không?
-      - [Áo giáp bảo hộ nam Alpinestar HONDA T-SP-1](product_name) còn hàng không?
-      - [Áo giáp bảo hộ nam LS2 Riva](product_name) còn hàng không?
-      - [Áo giáp bảo hộ cho nữ LS2 AIRY Evo](product_name) còn hàng không?
-      - [Áo giáp bảo hộ cho nữ LS2 Alba](product_name) còn hàng không?
-      - [Áo giáp bảo hộ cho nam Furygan skull](product_name) còn hàng không?
-      - [Áo giáp bảo hộ cho nam Komine JK-1171](product_name) còn hàng không?
-      - [Áo giáp bảo hộ cho nữ Touring Dainese Tonale](product_name) còn hàng không?
-      - [MŨ bảo hiểm 1/2 hjc IS Cruiser](product_name) còn hàng không?
-      - [Mũ bảo hiểm 3/4 HJC I40 Solid](product_name) còn hàng không?
-      - [Mũ bảo hiểm fullface dual sport LS2](product_name) còn hàng không?
-      - [Mũ bảo hiểm fullface LS2 Advant X](product_name) còn hàng không?
-      - [Mũ bảo hiểm fullface LS2 FF900 Valiant II](product_name) còn hàng không?
-      - [Mũ bảo hiểm 3/4 Cacbon N03](product_name) còn hàng không?
-      - [Nón bảo hiểm 1/2 Yema](product_name) còn hàng không?
+      - Có những quyền lợi gì khi trở thành thành viên của cửa hàng ?
+      - Có những ưu đãi gì khi trở thành thành viên của cửa hàng ?
+      - Có những quyền lợi gì khi trở thành thành viên của shop ?
+      - Có những ưu đãi gì khi trở thành thành viên của shop ?
+      - Khách hàng thành viên được hưởng những quyền lợi gì ?
+      - Khách hàng thành viên được hưởng những ưu đãi gì ?
+
 
   - intent: ask_warranty_policy
     examples: |
       - Cửa hàng có chính sách bảo hành như thế nào ?
       - Cửa hàng có chính sách bảo hành như thế nào vậy ?
-      - Shop có chính sách bảo hành như thế nào ?
-      - Shop bảo hành sản phẩm như thế nào ?
       - Shop có chính sách bảo hành như thế nào vậy ?
       - Shop bảo hành sản phẩm như thế nào vậy ?
       - Chính sách bảo hành sản phẩm như thế nào ?
-      - Chính sách bảo hành sản phẩm như thế nào vậy ?
+
 
   - intent: ask_shipping_policy
     examples: |
       - Cửa hàng có chính sách giao hàng như thế nào ?
-      - Cửa hàng có chính sách giao hàng như thế nào vậy ?
       - Khoảng bao lâu thì nhận được hàng ?
-      - Shop có chính sách giao hàng như thế nào ?
       - Shop có chính sách vận chuyển như thế nào ?
       - Shop có chính sách giao hàng như thế nào vậy ?
       - Cho mình hỏi khoảng bao lâu thì nhận được hàng ?
       - Chính sách giao hàng như thế nào ?
-      - Chính sách giao hàng như thế nào vậy ?
 
   - intent: ask_return_policy
     examples: |
       - Cửa hàng có chính sách đổi trả như thế nào ?
-      - Cửa hàng có chính sách đổi trả như thế nào vậy ?
       - Shop có chính sách đổi trả như thế nào ?
-      - Shop có chính sách đổi trả như thế nào vậy ?
       - Chính sách đổi trả như thế nào ?
-      - Chính sách đổi trả như thế nào vậy ?
       - Cho mình hỏi chính sách đổi trả như thế nào ?
-      - Cho mình hỏi chính sách đổi trả như thế nào vậy ?
+
+
  
       
 

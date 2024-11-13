@@ -65,12 +65,12 @@ class ProductInfo:
         # Thực hiện truy vấn với thứ tự danh mục trước, sản phẩm sau
         return self.db.execute_query(query, (category_pattern, category_pattern, category_name, product_pattern, product_name))
 
-    def get_product_price(self, name):
-        name = f"%{name}%"
-        query = "select price from products where name like %s"
-        result = self.db.execute_query(query, (name,))
-        # Giả sử execute_query trả về danh sách các tuple
-        return result[0][0] if result else None
+    # def get_product_price(self, name):
+    #     name = f"%{name}%"
+    #     query = "select price from products where name like %s"
+    #     result = self.db.execute_query(query, (name,))
+    #     # Giả sử execute_query trả về danh sách các tuple
+    #     return result[0][0] if result else None
     
         
 if __name__ == "__main__":
