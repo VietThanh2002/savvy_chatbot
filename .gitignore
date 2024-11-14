@@ -2,6 +2,6 @@
 .rasa/
 .vscode/
 report/
-results/
+results
 models/
 __pycache__
