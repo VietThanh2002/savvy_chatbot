@@ -87,9 +87,8 @@ class action_return_bot_functions(Action):
             "Tư vấn chọn size áo bảo hộ theo chiều cao và cân nặng",
             "Tư vấn cách chọn size nón bảo hiểm",
             "Cung cấp thông tin liên hệ cửa hàng",
-            "Cung cấp thông tin tồn kho của sản phẩm",
             "Cung cấp thông tin khuyến mãi",
-            "Cung cấp thông tin phí vận chuyển theo khu vực",
+            "Cung cấp thông tin về chương trình thành viên",
             "Cung cấp thông tin các chính sách đổi trả, bảo hành, và vận chuyển",
         ]
         
@@ -212,8 +211,8 @@ class action_return_recommend_oil_by_motorbike_name(Action):
         category_1 = tracker.get_slot("category_1")
         category_1 = category_1.lower()
         
-        scooter_bikes = set(["grande", "ab", "air blade", "lead", "vision", "click", "sh"])
-        manual_bikes = set(["wave", "dream", "sirius", "future", "winner", "exciter", "sonic", "ware alpha"])
+        scooter_bikes = set(["grande", "ab", "air blade", "lead", "vision", "click", "sh", "vespa", "air blade"])
+        manual_bikes = set(["wave", "dream", "sirius", "future", "winner", "exciter", "sonic", "ware alpha", "jupiter", "dream"])
 
         if motorbike_name in scooter_bikes:
             products = ProductInfo().get_products_by_category_and_subcategory("Nhớt xe tay ga")
@@ -524,6 +523,12 @@ class action_return_recommend_helmet(Action):
 
             elements = []
             for item in products:
+                
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                
                 if(item[4] == None):
                      check_qty = f"Sản phẩm đã hết hàng"
                 else:
@@ -533,7 +538,7 @@ class action_return_recommend_helmet(Action):
                     "title": item[0],
                     "image_url": f"{base_url_img}{item[3]}",
                     "subtitle": f"Giá: {PriceFormatter.format_price(item[2])}",
-                    "subtitle": f"{check_qty}",
+                    "subtitle": f"Giá: {price} - {check_qty}",
                     "default_action": {
                         "type": "web_url",
                         "url": f"{base_url}{item[1]}",

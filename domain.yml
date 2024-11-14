@@ -285,14 +285,14 @@ responses:
   - text: "Dạ, em xin gửi thông tin về chính sách bảo hành ạ! Chúng tôi cam kết bảo hành sản phẩm trong vòng 6 tháng kể từ ngày mua hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
 
   utter_ask_shipping_policy:
-  - text: "Dạ, em xin gửi thông tin về chính sách vận chuyển ạ! Giao hàng toàn quốc, thời gian từ 2-5 ngày làm việc, và miễn phí vận chuyển cho đơn hàng đạt giá trị nhất định. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
+  - text: "Dạ, em xin gửi thông tin về chính sách vận chuyển ạ! Giao hàng toàn quốc, thời gian từ 2-5 ngày làm việc. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
 
   utter_ask_return_policy:
   - text: "Dạ, em xin gửi thông tin về chính sách đổi trả ạ! Khách hàng có thể đổi trả sản phẩm trong vòng 15 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên vẹn. Chúng tôi cam kết chịu trách nhiệm với các lỗi từ phía cửa hàng và sẽ đổi trả miễn phí. Khách hàng vui lòng kiểm tra sản phẩm ngay khi nhận để đảm bảo chất lượng và sự hài lòng."
 
   utter_please_rephrase:
   - text: "Xin lỗi, em chưa hiểu ý {cust_sex}, {cust_sex} có thể diễn đạt lại được không?"
-  - text: "Em không chắc là mình hiểu đúng, {cust_sex} có thể nói rõ hơn được không?"
+  
 # Xác định các hành động
 actions:
   - action_greet_with_name

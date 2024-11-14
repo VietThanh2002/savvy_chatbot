@@ -15,6 +15,7 @@ nlu:
       - Chào shop
       - alo
       - Chào cửa hàng
+      - Chào nhóc
 
   - intent: give_name
     examples: |
@@ -247,6 +248,8 @@ nlu:
       - Liệt kê các chức năng của bot
       - Liệt kê các chức năng của em
       - Em có thể thực hiện được những chức năng gì
+      - Chức năng có thể thực hiện của em là gì
+      - Chức năng mà em thực hiện được là gì
 
   - intent: ask_address
     examples: |
@@ -263,6 +266,7 @@ nlu:
       - Cửa hàng của bạn ở đâu
       - Shop của em ở đâu
       - Cửa hàng của bạn ở đâu vậy
+      - Địa chỉ
 
   - intent: opening_time
     examples: |
@@ -272,6 +276,8 @@ nlu:
       - Shop mở cửa vào lúc nào
       - Shop mình bắt đầu hoạt động vào lúc mấy giờ
       - Cửa hàng mình bắt đầu hoạt động vào lúc mấy giờ
+      - Mấy giờ mở cửa
+      - Mấy giờ cửa hàng mở cửa
 
   - intent: contact_info
     examples: |
@@ -283,8 +289,11 @@ nlu:
       - Cho chị xin thông tin liên lạc của shop
       - Cho chú xin thông tin liên hệ với cửa hàng
       - Thông tin liên hệ của cửa hàng 
-      - Thông tin liên hệ của shop
       - Thông tin liên hệ của shop là gì
+      - Thông tin liên hệ
+      - Liên hê với cửa hàng bằng cách nào
+      - Liên hệ với shop bằng cách nào
+      - Liên hệ với cửa hàng
   
   - intent: ask_categories
     examples: |
@@ -305,18 +314,13 @@ nlu:
 
   - intent: oil_change_advice
     examples: |
-      - Khi nào thì nên thay nhớt cho xe
       - Khi nào thì nên thay nhớt cho xe máy
-      - Xe đi được bao lâu thì nên thay nhớt
       - Xe đi được bao lâu thì nên thay nhớt cho xe máy
       - Khi nào thì nên thay nhớt
-      - Cho em hỏi đi bao nhiêu km thì nên thay nhớt
       - Cho em hỏi đi bao nhiêu km thì nên thay nhớt cho xe máy
       - Bao nhiêu km thì nên thay nhớt
-      - Xe đi bao nhiêu km thì nên thay nhớt
       - Xe đi bao nhiêu km thì nên thay nhớt cho xe máy
       - Sau bao nhiêu km thì nên thay nhớt cho xe
-      - Cho anh hỏi sau bao nhiêu km thì nên thay nhớt
       - Cho anh hỏi sau bao nhiêu km thì nên thay nhớt cho xe máy
 
   - intent: recommend_oil_type
@@ -328,12 +332,14 @@ nlu:
       - Xe em nên thay nhớt gì ạ
       - Loại nhớt nào tốt cho xe máy
       - Tư vấn giúp anh nhớt nào tốt coi
-      - Nhớt nào tốt cho xe
       - Nhớt nào là sự lựa chọn tốt nhất
       - Tư vấn giúp anh nhớt động cơ nào tốt
       - Anh cần tư vấn nhớt để thay cho xe
+      - Anh cần tư vấn nhớt cho xe
+      - Em cần tư vấn nhớt cho xe
+      - Tư vấn giúp anh nhớt nào tốt tốt cho xe
+      - Nhớt nào tốt cho xe máy
   
-
    # gợi ý nhớt theo loại xe
   - intent: recommend_oil_by_vehicle_type
     examples: |
@@ -405,9 +411,13 @@ nlu:
       - Xe [Vision](motorbike_name) nên thay [nhớt](category_1) nào
       - Xe [Winner](motorbike_name) nên chọn loại [nhớt](category_1)
       - Xe [Winner](motorbike_name) nên thay [nhớt](category_1) nào
+      - Xe [Vespa](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Vespa](motorbike_name) nên thay [nhớt](category_1) nào
+      - Xe [Jupiter](motorbike_name) nên chọn loại [nhớt](category_1)
+      - Xe [Jupiter](motorbike_name) nên thay [nhớt](category_1) nào
       - Có [nhớt](category_1) cho xe [ab](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [air blade](motorbike_name) không
       - Có [nhớt](category_1) cho xe [wave](motorbike_name) không
-      - Có [nhớt](category_1) cho xe [wave alpha](motorbike_name) không
       - Có [nhớt](category_1) cho xe [dream](motorbike_name) không
       - Có [nhớt](category_1) cho xe [future](motorbike_name) không
       - Có [nhớt](category_1) cho xe [winner](motorbike_name) không
@@ -419,6 +429,9 @@ nlu:
       - Có [nhớt](category_1) cho xe [lead](motorbike_name) không
       - Có [nhớt](category_1) cho xe [vision](motorbike_name) không
       - Có [nhớt](category_1) cho xe [sonic](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [jupiter](motorbike_name) không
+      - Có [nhớt](category_1) cho xe [vespa](motorbike_name) không
+  
   
   - intent: ask_size_recommendation
     examples: |
@@ -438,6 +451,7 @@ nlu:
       - Cách chọn size [mũ](product_type) bảo hiểm phượt phù hợp
       - Cách chọn size [nón](product_type) bảo hiểm
       - Cách chọn size [nón](product_type) bảo hiểm phượt phù hợp
+      - size [mũ](product_type) bảo hiểm như thế nào là vừa
   
   - intent: provide_height_weight
     examples: |
@@ -613,16 +627,16 @@ nlu:
 
   - intent: air_filter_change_advice
     examples: |
-      - Khi nào thì nên thay lọc gió cho xe
-      - Xe đi được bao lâu thì nên thay lọc gió
       - Xe đi được bao lâu thì nên thay lọc gió cho xe máy
       - Khi nào thì nên thay lọc gió
       - Khi nào thì nên thay lọc gió cho xe máy
-      - Cho em hỏi đi bao nhiêu km thì nên thay lọc gió
       - Cho em hỏi đi bao nhiêu km thì nên thay lọc gió cho xe máy
       - Bao nhiêu km thì nên thay lọc gió
       - Lọc gió cần thay sau bao nhiêu km
       - Xe đi bao nhiêu km thì nên thay lọc gió
+      - Sau bao nhiêu km thì nên thay lọc gió
+      - Cho anh hỏi sau bao nhiêu km thì nên thay lọc gió
+      - Cho anh hỏi sau bao nhiêu km thì nên thay lọc gió cho xe máy
   
   - intent: recommend_air_filter
     examples: |
@@ -663,18 +677,26 @@ nlu:
       - Cửa hàng có [lọc gió](sub_category_1) nào phù hợp với xe [vision](model_type)
       - Cửa hàng có [lọc gió](sub_category_1) nào phù hợp với xe [winner](model_type)
       - Cửa hàng có [lọc gió](sub_category_1) nào phù hợp với xe [grande](model_type)
+      - [Lọc gió](sub_category_1) xe [winner](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [grande](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [air blade](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [ab](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [sh](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [exciter](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [vision](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [sh](model_type) nào phù hợp
+      - [Lọc gió](sub_category_1) xe [air blade](model_type) nào phù hợp
+
     
   - intent: bugi_change_advice
     examples: |
       - Khi nào thì nên thay bugi cho xe
-      - Khi nào thì nên thay bugi cho xe máy
       - Xe đi được bao lâu thì nên thay bugi
-      - Xe đi được bao lâu thì nên thay bugi cho xe máy
-      - Khi nào thì nên thay bugi
-      - Cho em hỏi đi bao nhiêu km thì nên thay bugi
       - Cho em hỏi đi bao nhiêu km thì nên thay bugi cho xe máy
       - Bao nhiêu km thì nên thay bugi
-  
+      - Bugi cần thay sau bao nhiêu km
+      - Xe đi bao nhiêu km thì nên thay bugi
+
   - intent: recommend_bugi
     examples: |
       - [Bugi](sub_category_3) nào phù hợp với xe [Vision](model_type)
@@ -689,12 +711,59 @@ nlu:
       - [Bugi](sub_category_3) nào phù hợp với xe [winner](model_type)
       - [Bugi](sub_category_3) nào phù hợp với xe [exciter](model_type)
       - [Bugi](sub_category_3) nào phù hợp với xe [grande](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [future](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [vario](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [click](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [sirius](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [wave](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [wave alpha](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [dream](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [nvx](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [lead](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [jupiter](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [vespa](model_type)
+      - [Bugi](sub_category_3) nào phù hợp với xe [pcx](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [Axelo](model_type)
       - Nên thay [bugi](sub_category_3) nào cho xe [winner](model_type)
       - Nên thay [bugi](sub_category_3) nào cho xe [grande](model_type)
       - Nên thay [bugi](sub_category_3) nào cho xe [air blade](model_type)
       - Nên thay [bugi](sub_category_3) nào cho xe [ab](model_type)
       - Nên thay [bugi](sub_category_3) nào cho xe [sh](model_type)
-      - Nên thay [bugi](sub_category_3) nào cho xe [winner](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [dream](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [future](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [vario](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [click](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [sirius](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [wave](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [wave alpha](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [nvx](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [lead](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [jupiter](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [exciter](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [vision](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [Vespa](model_type)
+      - Nên thay [bugi](sub_category_3) nào cho xe [PCX](model_type)
+      - Gợi ý [bugi](sub_category_3) phù hợp với [Axelo](model_type)
+      - [Bugi](sub_category_3) cho xe [winner](model_type)
+      - [Bugi](sub_category_3) cho xe [grande](model_type)
+      - [Bugi](sub_category_3) cho xe [air blade](model_type)
+      - [Bugi](sub_category_3) cho xe [ab](model_type)
+      - [Bugi](sub_category_3) cho xe [sh](model_type)
+      - [Bugi](sub_category_3) cho xe [exciter](model_type)
+      - [Bugi](sub_category_3) cho xe [vision](model_type)
+      - [Bugi](sub_category_3) cho xe [future](model_type)
+      - [Bugi](sub_category_3) cho xe [vario](model_type)
+      - [Bugi](sub_category_3) cho xe [click](model_type)
+      - [Bugi](sub_category_3) cho xe [sirius](model_type)
+      - [Bugi](sub_category_3) cho xe [wave](model_type)
+      - [Bugi](sub_category_3) cho xe [wave alpha](model_type)
+      - [Bugi](sub_category_3) cho xe [nvx](model_type)
+      - [Bugi](sub_category_3) cho xe [lead](model_type)
+      - [Bugi](sub_category_3) cho xe [jupiter](model_type)
+      - [Bugi](sub_category_3) cho xe [dream](model_type)
+      - [Bugi](sub_category_3) cho xe [Vespa](model_type)
+      - [Bugi](sub_category_3) cho xe [PCX](model_type)
+      - [Bugi](sub_category_3) cho xe [Axelo](model_type)
 
   - intent: ask_payment_methods
     examples: |
@@ -705,6 +774,10 @@ nlu:
       - Có hỗ trợ thanh toán qua thẻ không ?
       - Những phương thức thanh toán ?
       - Cửa hàng chấp nhận thanh toán qua thẻ không ?
+      - Cửa hàng chấp nhận thanh toán qua ngân hàng không ?
+      - Shop có hỗ trợ thanh toán qua thẻ không ?
+      - Shop có hỗ trợ thanh toán qua ngân hàng không ?
+      - Cửa hàng có hỗ trợ thanh toán qua thẻ không ?
   
   - intent: ask_shipping_cost
     examples: |
@@ -716,17 +789,15 @@ nlu:
       - Phí ship hàng là bao nhiêu?
       - Giao hàng về tỉnh phí như thế nào?
       - Chi phí vận chuyển là bao nhiêu?
+      - Phí ship hàng về tỉnh là bao nhiêu?
+      - Phí vận chuyến được tính như thế nào?
 
   - intent: ask_promotions
     examples: |
       - Cửa hàng có khuyến mãi gì không ?
       - Có chương trình khuyến mãi nào không ?
       - Shop có khuyến mãi không ?
-      - Có chương trình giảm giá không ?
       - Cửa hàng đang có chương trình khuyến mãi không ?
-      - Có chương trình giảm giá không ?
-      - Có chương trình khuyến mãi không ?
-      - Shop có chương trình khuyến mãi gì không ?
       - Cửa hàng có khuyến mãi không ?
       - Có chương trình giảm giá không ?
       - Có chương trình khuyến mãi không ?
@@ -743,15 +814,22 @@ nlu:
       - Có những ưu đãi gì khi trở thành thành viên của shop ?
       - Khách hàng thành viên được hưởng những quyền lợi gì ?
       - Khách hàng thành viên được hưởng những ưu đãi gì ?
-
-
+      - Có những quyền lợi gì khi trở thành thành viên của cửa hàng ?
+      - Khách hàng thành viên được hưởng những ưu đãi gì ?
+      - Thành viên của cửa hàng được hưởng những quyền lợi gì ?
+      - Ưu đãi cho khách hàng thành viên
+    
   - intent: ask_warranty_policy
     examples: |
       - Cửa hàng có chính sách bảo hành như thế nào ?
-      - Cửa hàng có chính sách bảo hành như thế nào vậy ?
       - Shop có chính sách bảo hành như thế nào vậy ?
       - Shop bảo hành sản phẩm như thế nào vậy ?
       - Chính sách bảo hành sản phẩm như thế nào ?
+      - Chính sách bảo hành như thế nào ?
+      - Bảo hành sản phẩm như thế nào ?
+      - Bảo hành sản phẩm có chính sách như thế nào ?
+      - Điều kiện để được bảo hành sản phẩm là gì ?
+      - Chính sách bảo hành
 
   - intent: ask_shipping_policy
     examples: |
@@ -761,6 +839,10 @@ nlu:
       - Shop có chính sách giao hàng như thế nào vậy ?
       - Cho mình hỏi khoảng bao lâu thì nhận được hàng ?
       - Chính sách giao hàng như thế nào ?
+      - Giao hàng như thế nào ?
+      - Giao hàng có chính sách như thế nào ?
+      - Chính sách giao hàng
+      - Chính sách vận chuyển
 
   - intent: ask_return_policy
     examples: |
@@ -768,6 +850,12 @@ nlu:
       - Shop có chính sách đổi trả như thế nào ?
       - Chính sách đổi trả như thế nào ?
       - Cho mình hỏi chính sách đổi trả như thế nào ?
+      - Chính sách đổi trả sản phẩm như thế nào ?
+      - Đổi trả sản phẩm như thế nào ?
+      - Đổi trả sản phẩm có chính sách như thế nào ?
+      - Điều kiện để được đổi trả sản phẩm là gì ?
+      - Chính sách đổi trả
+
 
 
  
