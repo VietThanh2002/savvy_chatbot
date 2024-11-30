@@ -703,6 +703,233 @@ class action_return_membership_benefits(Action):
         
         return []
 
+# response best selling products
+class action_return_best_selling_products(Action):
+    def name(self) -> Text:
+        return "action_return_best_selling_products"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        products = ProductInfo().get_best_selling_products()
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại cửa hàng không có sản phẩm bán chạy !")
+        else:
+            dispatcher.utter_message(text="Sản phẩm bán chạy nhất của cửa hàng: \n")
+        
+            elements = []
+            for item in products:
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                    
+                    
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[4]}",
+                    "subtitle": f"Giá: {price}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                elements.append(element)
+                
+                # Nếu có ít nhất một sản phẩm, gửi carousel 
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+            return []
+                
+        return []
+    
+# response cheapest products
+class action_return_cheapest_products(Action):
+    def name(self) -> Text:
+        return "action_return_cheapest_products"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        products = ProductInfo().get_cheapest_product()
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại cửa hàng không có sản phẩm giá rẻ !")
+        else:
+            dispatcher.utter_message(text="Sản phẩm giá thấp nhất của cửa hàng: \n")
+    
+            elements = []
+            for item in products:
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                    
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[3]}",
+                    "subtitle": f"Giá: {price}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                elements.append(element)
+                
+                # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+            return []
+                
+        return []
+    
+#response most expensive products
+class action_return_most_expensive_products(Action):
+    def name(self) -> Text:
+        return "action_return_most_expensive_products"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        products = ProductInfo().get_most_expensive_product()
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại cửa hàng không có sản phẩm giá cao !")
+        else:
+            dispatcher.utter_message(text="Sản phẩm giá cao nhất của cửa hàng: \n")
+    
+            elements = []
+            for item in products:
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                    
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[3]}",
+                    "subtitle": f"Giá: {price}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                elements.append(element)
+                
+                # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+            return []
+                
+        return []
+
+# response most wished products
+class action_return_most_favorite_products(Action):
+    def name(self) -> Text:
+        return "action_return_most_favorite_products"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        products = ProductInfo().get_most_favorited_product()
+        
+        if not products:
+            dispatcher.utter_message(text="Hiện tại cửa hàng không có sản phẩm được yêu thích !")
+        else:
+            dispatcher.utter_message(text="Sản phẩm được yêu thích nhất của cửa hàng: \n")
+    
+            elements = []
+            for item in products:
+                if(item[2] == 0):
+                    price = "Liên hệ"
+                else:
+                    price = PriceFormatter.format_price(item[2])
+                    
+                element = {
+                    "title": item[0],
+                    "image_url": f"{base_url_img}{item[3]}",
+                    "subtitle": f"Giá: {price}",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": f"{base_url}{item[1]}",
+                        "webview_height_ratio": "square"
+                    },
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": f"{base_url}{item[1]}",
+                            "title": "Xem chi tiết"
+                        },
+                    ]
+                }
+                elements.append(element)
+                
+                # Nếu có ít nhất một sản phẩm, gửi carousel
+            if elements:
+                new_carousel = {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": elements  # Thêm danh sách các mục vào đây
+                    }
+                }
+                dispatcher.utter_message(attachment=new_carousel)
+            return []
+                
+        return []
+            
+            
+
         
     
         

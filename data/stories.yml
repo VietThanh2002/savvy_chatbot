@@ -36,6 +36,17 @@ stories:
     - intent: recommend_bugi
     - action: action_return_recommend_bugi
 
+- story: discover_best_selling_favorite_and_price_range_products
+  steps:
+    - intent: ask_best_selling_products
+    - action: action_return_best_selling_products
+    - intent: ask_cheapest_products
+    - action: action_return_cheapest_products
+    - intent: ask_most_expensive_products
+    - action: action_return_most_expensive_products
+    - intent: ask_most_favorite_products
+    - action: action_return_most_favorite_products
+
 - story: product_recommendations
   steps:
     - intent: ask_size_recommendation

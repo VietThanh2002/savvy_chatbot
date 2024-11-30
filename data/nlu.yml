@@ -855,6 +855,50 @@ nlu:
       - Đổi trả sản phẩm có chính sách như thế nào ?
       - Điều kiện để được đổi trả sản phẩm là gì ?
       - Chính sách đổi trả
+    
+  - intent: ask_best_selling_products
+    examples: |
+      - Cửa hàng bán chạy nhất là sản phẩm gì ?
+      - Shop bán chạy nhất là sản phẩm gì ?
+      - Sản phẩm bán chạy nhất của cửa hàng là gì ?
+      - Sản phẩm bán chạy nhất
+      - Bán chạy nhất sản phẩm gì ?
+      - Bán chạy nhất
+      - Sản phẩm bán chạy nhất của shop là gì ?
+      - Sản phẩm có lượng bán cao nhất
+      - Sản phẩm bán chạy nhất của cửa hàng
+      - Sản có số lướt bán nhiều nhất
+  
+  - intent: ask_cheapest_products
+    examples: |
+      - Cửa hàng có sản phẩm nào giá rẻ không ?
+      - Shop có sản phẩm nào giá rẻ không ?
+      - Sản phẩm nào giá rẻ nhất của cửa hàng ?
+      - Sản phẩm giá rẻ nhất
+      - Sản phẩm giá rẻ nhất của shop là gì ?
+      - Sản phẩm có giá thấp nhất
+      - Sản phẩm giá thấp nhất của cửa hàng
+
+  - intent: ask_most_expensive_products
+    examples: |
+      - Cửa hàng có sản phẩm nào giá cao không ?
+      - Shop có sản phẩm nào giá cao không ?
+      - Sản phẩm nào giá cao nhất của cửa hàng ?
+      - Sản phẩm giá cao nhất
+      - Sản phẩm giá cao nhất của shop là gì ?
+      - Sản phẩm có giá cao nhất
+  
+  - intent: ask_most_favorite_products
+    examples: |
+      - Cửa hàng có sản phẩm nào được yêu thích không ?
+      - Shop có sản phẩm nào được yêu thích không ?
+      - Sản phẩm nào được yêu thích nhất của cửa hàng ?
+      - Sản phẩm được yêu thích nhất
+      - Sản phẩm được yêu thích nhất của shop là gì ?
+      - Sản phẩm có lượt yêu thích cao nhất
+      - Sản phẩm được yêu thích nhiều nhất
+      - Sản phẩm được yêu thích nhất của cửa hàng
+      
 
 
 

@@ -9,6 +9,70 @@ class ProductInfo:
         query = "select name, price from products"
         return self.db.execute_query(query)
     
+    # Lấy sản phẩm bán chạy nhất
+    def get_best_selling_products(self):
+        query = """SELECT p.name, p.slug, p.price, SUM(oi.qty) AS total_sold,
+            (SELECT pi.image
+            FROM product_images pi
+            WHERE pi.product_id = p.id
+            ORDER BY pi.id ASC
+            LIMIT 1) AS first_image
+            
+            FROM products p
+            JOIN order_details oi ON p.id = oi.product_id
+            GROUP BY p.id, p.name, p.price
+            ORDER BY total_sold DESC
+            LIMIT 1;
+            """
+        return self.db.execute_query(query)
+    
+    # Lấy sản phẩm giá thấp nhất
+    def get_cheapest_product(self):
+        query = """SELECT p.name, p.slug, p.price,
+                    (SELECT pi.image
+                        FROM product_images pi
+                        WHERE pi.product_id = p.id
+                        ORDER BY pi.id ASC
+                        LIMIT 1) AS first_image
+                    FROM products p  
+                    WHERE p.price > 0
+                    ORDER BY p.price ASC
+                    LIMIT 2;
+                 """
+        return self.db.execute_query(query)
+
+    # Lấy sản phẩm giá cao nhất
+    def get_most_expensive_product(self):
+        query = """SELECT p.name, p.slug, p.price,
+                    (SELECT pi.image
+                        FROM product_images pi
+                        WHERE pi.product_id = p.id
+                        ORDER BY pi.id ASC
+                        LIMIT 1) AS first_image
+                    FROM products p  
+                    WHERE p.price > 0
+                    ORDER BY p.price DESC
+                    LIMIT 1;
+                 """
+        return self.db.execute_query(query)
+    
+    # Lấy sản phẩm được yêu thích nhất
+    def get_most_favorited_product(self):
+        query = """SELECT p.name, p.slug, p.price, COUNT(w.product_id) AS total_wishlist,
+                    (SELECT pi.image
+                        FROM product_images pi
+                        WHERE pi.product_id = p.id
+                        ORDER BY pi.id ASC
+                        LIMIT 1) AS first_image
+                    FROM products p
+                    LEFT JOIN wishlists w ON p.id = w.product_id
+                    GROUP BY p.id, p.name, p.price
+                    ORDER BY COUNT(w.product_id) DESC
+                    LIMIT 1;
+                 """
+        return self.db.execute_query(query)
+    
+    
     def get_products_by_category_and_subcategory(self, category_name):
         query = """
                 SELECT p.name, p.slug, p.price, 

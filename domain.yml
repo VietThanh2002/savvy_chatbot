@@ -97,6 +97,19 @@ intents:
   
   - membership_benefits:
       use_entities: []
+  
+  - ask_best_selling_products:
+      use_entities: []
+  
+  - ask_cheapest_products:
+      use_entities: []
+  
+  - ask_most_expensive_products:
+      use_entities: []
+  
+  - ask_most_favorite_products:
+      use_entities: []
+
 
 
 entities:
@@ -308,6 +321,10 @@ actions:
   - action_return_recommend_helmet
   - action_return_bot_functions
   - action_return_membership_benefits
+  - action_return_best_selling_products
+  - action_return_cheapest_products
+  - action_return_most_expensive_products
+  - action_return_most_favorite_products
 
 session_config:
   session_expiration_time: 60
